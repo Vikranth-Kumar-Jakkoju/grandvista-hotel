@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Your Stay — GrandVista Hotel</title>
+  <meta name="description" content="Book your luxury suite at GrandVista Hotel. Direct reservation with best rate guaranteed, flexible cancellation, and bespoke concierge services.">
+
+  <!-- Favicon placeholder (monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link">Dining</a></li>
+            <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 11 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Page Header & Breadcrumbs
+         ========================================================================= -->
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="rooms.html">Accommodations</a>
+          <span>/</span>
+          <span aria-current="page">Reservation Engine</span>
+        </nav>
+        <h1 class="page-header__title">Reserve Your Grand Stay</h1>
+        <p class="page-header__subtitle">
+          Experience seamless, bespoke booking with guaranteed best rates, flexible cancellation, and exclusive amenities.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         3. Multi-Step Booking Engine Container
+         ========================================================================= -->
+    <section class="booking-page-wrap" id="booking-flow-container">
+      <div class="container">
+        
+        <!-- Stepper Progress Bar Header -->
+        <div class="booking-stepper-wrap" id="booking-stepper-wrap">
+          <div class="stepper-header">
+            <span class="stepper-counter-text" id="stepper-counter-text">
+              Step 1 of 6: Stay Dates &amp; Guests
+            </span>
+            <span style="font-size: 0.8rem; color: var(--color-accent-dark); font-weight: 600;">
+              Direct Reservation
+            </span>
+          </div>
+
+          <!-- Progress fill track -->
+          <div class="stepper-progress-bg">
+            <div class="stepper-progress-fill" id="stepper-progress-fill"></div>
+          </div>
+
+          <!-- Desktop Step Labels -->
+          <div class="stepper-steps-list">
+            <div class="stepper-step is-active" data-step="1">
+              <span class="stepper-circle">1</span>
+              <span class="stepper-title">Dates &amp; Guests</span>
+            </div>
+            <div class="stepper-step" data-step="2">
+              <span class="stepper-circle">2</span>
+              <span class="stepper-title">Select Room</span>
+            </div>
+            <div class="stepper-step" data-step="3">
+              <span class="stepper-circle">3</span>
+              <span class="stepper-title">Guest Details</span>
+            </div>
+            <div class="stepper-step" data-step="4">
+              <span class="stepper-circle">4</span>
+              <span class="stepper-title">Special Requests</span>
+            </div>
+            <div class="stepper-step" data-step="5">
+              <span class="stepper-circle">5</span>
+              <span class="stepper-title">Review &amp; Pricing</span>
+            </div>
+            <div class="stepper-step" data-step="6">
+              <span class="stepper-circle">6</span>
+              <span class="stepper-title">Confirmation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             STEP 1: Stay Dates & Search Criteria
+             ===================================================================== -->
+        <div class="booking-panel is-active" id="panel-step-1" data-step="1">
+          <div class="panel-title-block">
+            <h2 class="panel-title">1. Select Your Stay Dates</h2>
+            <p class="panel-subtitle">Specify your arrival and departure dates, guest party size, and room count.</p>
+          </div>
+
+          <form id="step1-form" novalidate>
+            <div class="filters-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+              <!-- Check-In -->
+              <div class="form-group">
+                <label for="step1-checkin" class="form-label">Check-In Date</label>
+                <input type="date" id="step1-checkin" class="form-input" required />
+              </div>
+
+              <!-- Check-Out -->
+              <div class="form-group">
+                <label for="step1-checkout" class="form-label">Check-Out Date</label>
+                <input type="date" id="step1-checkout" class="form-input" required />
+              </div>
+
+              <!-- Adults -->
+              <div class="form-group">
+                <label for="step1-adults" class="form-label">Adults (18+)</label>
+                <select id="step1-adults" class="form-select">
+                  <option value="1">1 Adult</option>
+                  <option value="2" selected>2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                </select>
+              </div>
+
+              <!-- Children -->
+              <div class="form-group">
+                <label for="step1-children" class="form-label">Children</label>
+                <select id="step1-children" class="form-select">
+                  <option value="0" selected>0 Children</option>
+                  <option value="1">1 Child</option>
+                  <option value="2">2 Children</option>
+                </select>
+              </div>
+
+              <!-- Rooms Count -->
+              <div class="form-group">
+                <label for="step1-rooms" class="form-label">Rooms</label>
+                <select id="step1-rooms" class="form-select">
+                  <option value="1" selected>1 Room</option>
+                  <option value="2">2 Rooms</option>
+                  <option value="3">3 Rooms</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Validation Feedback Alert -->
+            <div id="step1-alert" class="booking-alert" role="alert"></div>
+
+            <div class="step-actions-footer">
+              <a href="rooms.html" class="btn btn--outline-dark">
+                &larr; View Rooms Catalog
+              </a>
+              <button type="submit" class="btn btn--primary">
+                Find Available Rooms &rarr;
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- =====================================================================
+             STEP 2: Select Room
+             ===================================================================== -->
+        <div class="booking-panel" id="panel-step-2" data-step="2">
+          <div class="panel-title-block">
+            <h2 class="panel-title">2. Choose Your Accommodation</h2>
+            <p class="panel-subtitle">Select an available luxury suite or room for your chosen travel dates.</p>
+          </div>
+
+          <!-- Selectable Cards Container -->
+          <div class="selectable-rooms-grid" id="selectable-rooms-container" role="radiogroup" aria-label="Select an accommodation">
+            <!-- Populated via js/booking.js -->
+          </div>
+
+          <!-- Validation Alert -->
+          <div id="step2-alert" class="booking-alert" role="alert"></div>
+
+          <div class="step-actions-footer">
+            <button type="button" class="btn btn--outline-dark" id="step2-back-btn">
+              &larr; Back to Dates
+            </button>
+            <button type="button" class="btn btn--primary" id="step2-next-btn">
+              Continue to Guest Details &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             STEP 3: Guest Information
+             ===================================================================== -->
+        <div class="booking-panel" id="panel-step-3" data-step="3">
+          <div class="panel-title-block">
+            <h2 class="panel-title">3. Primary Guest Information</h2>
+            <p class="panel-subtitle">Please enter the contact details of the lead guest. A reservation confirmation will be sent here.</p>
+          </div>
+
+          <form id="step3-form" novalidate>
+            <div class="filters-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="guest-name" class="form-label">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="guest-name" 
+                  class="form-input" 
+                  placeholder="e.g. Eleanor Vance" 
+                  required 
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="guest-email" class="form-label">Email Address *</label>
+                <input 
+                  type="email" 
+                  id="guest-email" 
+                  class="form-input" 
+                  placeholder="e.g. eleanor.vance@example.com" 
+                  required 
+                />
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="guest-phone" class="form-label">Mobile Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="guest-phone" 
+                  class="form-input" 
+                  placeholder="e.g. +91 98110 24890" 
+                  required 
+                />
+              </div>
+
+              <!-- Country -->
+              <div class="form-group">
+                <label for="guest-country" class="form-label">Country of Residence</label>
+                <select id="guest-country" class="form-select">
+                  <option value="India" selected>India</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Number of Guests -->
+              <div class="form-group">
+                <label for="guest-count-select" class="form-label">Total Staying Guests</label>
+                <select id="guest-count-select" class="form-select">
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Validation Alert -->
+            <div id="step3-alert" class="booking-alert" role="alert"></div>
+
+            <div class="step-actions-footer">
+              <button type="button" class="btn btn--outline-dark" id="step3-back-btn">
+                &larr; Back to Room Selection
+              </button>
+              <button type="submit" class="btn btn--primary">
+                Continue to Special Requests &rarr;
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- =====================================================================
+             STEP 4: Special Requests & Add-On Services
+             ===================================================================== -->
+        <div class="booking-panel" id="panel-step-4" data-step="4">
+          <div class="panel-title-block">
+            <h2 class="panel-title">4. Personalize Your Stay (Optional)</h2>
+            <p class="panel-subtitle">Select bespoke amenities and transfer options. You can skip this step with no selections if you prefer.</p>
+          </div>
+
+          <form id="step4-form">
+            <div class="services-selection-list">
+              <!-- 1. Airport Pickup -->
+              <div class="service-item-card" data-service-key="airport_pickup">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-pickup" />
+                    <span class="service-item-title">Airport Pickup (Chauffeured Sedan)</span>
+                  </label>
+                  <span class="service-item-price">+ ₹1,200 flat</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Flight number &amp; estimated arrival time" 
+                  aria-label="Airport pickup notes"
+                />
+              </div>
+
+              <!-- 2. Airport Drop -->
+              <div class="service-item-card" data-service-key="airport_drop">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-drop" />
+                    <span class="service-item-title">Airport Drop (Chauffeured Sedan)</span>
+                  </label>
+                  <span class="service-item-price">+ ₹1,200 flat</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Departure flight &amp; departure time" 
+                  aria-label="Airport drop notes"
+                />
+              </div>
+
+              <!-- 3. Breakfast Buffet -->
+              <div class="service-item-card" data-service-key="breakfast">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-breakfast" />
+                    <span class="service-item-title">Daily Gourmet Breakfast Buffet</span>
+                  </label>
+                  <span class="service-item-price">+ ₹600 / night</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Preferred breakfast dining time or tastes" 
+                  aria-label="Breakfast notes"
+                />
+              </div>
+
+              <!-- 4. Extra Bed -->
+              <div class="service-item-card" data-service-key="extra_bed">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-extrabed" />
+                    <span class="service-item-title">Rollaway Extra Bed Setup</span>
+                  </label>
+                  <span class="service-item-price">+ ₹800 / night</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Age of guest or bedding preferences" 
+                  aria-label="Extra bed notes"
+                />
+              </div>
+
+              <!-- 5. Spa Session -->
+              <div class="service-item-card" data-service-key="spa">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-spa" />
+                    <span class="service-item-title">Signature Holistic Spa Session (60m)</span>
+                  </label>
+                  <span class="service-item-price">+ ₹2,500 flat</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Preferred appointment date &amp; hour" 
+                  aria-label="Spa session notes"
+                />
+              </div>
+
+              <!-- 6. Special Dinner -->
+              <div class="service-item-card" data-service-key="dinner">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-dinner" />
+                    <span class="service-item-title">Chef's Table 4-Course Fine Dining</span>
+                  </label>
+                  <span class="service-item-price">+ ₹1,500 flat</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Preferred dinner venue or occasion" 
+                  aria-label="Dinner notes"
+                />
+              </div>
+
+              <!-- 7. Celebration Decoration -->
+              <div class="service-item-card" data-service-key="celebration">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-celebration" />
+                    <span class="service-item-title">Celebration Setup (Flowers &amp; Artisanal Cake)</span>
+                  </label>
+                  <span class="service-item-price">+ ₹2,000 flat</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Anniversary, Birthday, or customized greeting text" 
+                  aria-label="Celebration setup notes"
+                />
+              </div>
+
+              <!-- 8. Late Checkout -->
+              <div class="service-item-card" data-service-key="late_checkout">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-latecheckout" />
+                    <span class="service-item-title">Guaranteed Late Checkout (Until 4:00 PM)</span>
+                  </label>
+                  <span class="service-item-price">+ ₹1,000 flat</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Departure logistics or flight departure time" 
+                  aria-label="Late checkout notes"
+                />
+              </div>
+
+              <!-- 9. Early Check-in -->
+              <div class="service-item-card" data-service-key="early_checkin">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-earlycheckin" />
+                    <span class="service-item-title">Priority Early Check-in Request (11:00 AM)</span>
+                  </label>
+                  <span class="service-item-price">Complimentary</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Optional: Expected early arrival time" 
+                  aria-label="Early check-in notes"
+                />
+              </div>
+
+              <!-- 10. Dietary Requirements -->
+              <div class="service-item-card" data-service-key="dietary">
+                <div class="service-item-top">
+                  <label class="service-checkbox-wrap">
+                    <input type="checkbox" id="svc-dietary" />
+                    <span class="service-item-title">Dietary &amp; Allergen Notifications</span>
+                  </label>
+                  <span class="service-item-price">Complimentary</span>
+                </div>
+                <input 
+                  type="text" 
+                  class="service-item-note-input" 
+                  placeholder="Please specify any food allergies (Gluten-free, Vegan, Nut-free, Halal)" 
+                  aria-label="Dietary notes"
+                />
+              </div>
+            </div>
+
+            <div class="step-actions-footer">
+              <button type="button" class="btn btn--outline-dark" id="step4-back-btn">
+                &larr; Back to Guest Info
+              </button>
+              <button type="button" class="btn btn--primary" id="step4-next-btn">
+                Continue to Review &rarr;
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- =====================================================================
+             STEP 5: Review & Cost Calculation
+             ===================================================================== -->
+        <div class="booking-panel" id="panel-step-5" data-step="5">
+          <div class="panel-title-block">
+            <h2 class="panel-title">5. Review Your Reservation</h2>
+            <p class="panel-subtitle">Verify your selected suite, dates, and itemized cost breakdown before confirming.</p>
+          </div>
+
+          <div class="review-grid">
+            <!-- Left Column: Details Summaries with Edit Links -->
+            <div>
+              <!-- Chosen Room Card -->
+              <div class="review-card">
+                <div class="review-card-header">
+                  <h3 class="review-card-title">Accommodation</h3>
+                  <a href="#" class="review-edit-link" data-jump-step="2">Edit Room</a>
+                </div>
+                <div id="review-room-content"></div>
+              </div>
+
+              <!-- Dates & Stay Duration -->
+              <div class="review-card">
+                <div class="review-card-header">
+                  <h3 class="review-card-title">Dates &amp; Schedule</h3>
+                  <a href="#" class="review-edit-link" data-jump-step="1">Edit Dates</a>
+                </div>
+                <div id="review-dates-content"></div>
+              </div>
+
+              <!-- Guest Information -->
+              <div class="review-card">
+                <div class="review-card-header">
+                  <h3 class="review-card-title">Primary Guest</h3>
+                  <a href="#" class="review-edit-link" data-jump-step="3">Edit Contact</a>
+                </div>
+                <div id="review-guest-content"></div>
+              </div>
+
+              <!-- Selected Special Requests -->
+              <div class="review-card">
+                <div class="review-card-header">
+                  <h3 class="review-card-title">Selected Add-Ons &amp; Requests</h3>
+                  <a href="#" class="review-edit-link" data-jump-step="4">Edit Add-Ons</a>
+                </div>
+                <div id="review-services-content"></div>
+              </div>
+            </div>
+
+            <!-- Right Column: Cost Breakdown Table -->
+            <aside>
+              <div class="cost-breakdown-card">
+                <h3 class="details-card-title" style="margin-bottom: var(--space-md);">Price Breakdown</h3>
+                
+                <table class="cost-table" aria-label="Reservation price summary">
+                  <tbody id="cost-table-body">
+                    <!-- Populated dynamically via calculateTotals() in js/booking.js -->
+                  </tbody>
+                </table>
+
+                <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--space-lg);">
+                  🔒 <strong>Payment on Arrival:</strong> No prepayment required today. Total will be settled at hotel reception. Includes all luxury cess &amp; applicable 12% GST.
+                </div>
+
+                <button type="button" class="btn btn--primary btn--block" id="confirm-booking-btn">
+                  Confirm Booking Now
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+
+                <div class="sidebar-guarantee-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>Free Cancellation up to 48h prior</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="step-actions-footer">
+            <button type="button" class="btn btn--outline-dark" id="step5-back-btn">
+              &larr; Back to Special Requests
+            </button>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             STEP 6: Booking Confirmation
+             ===================================================================== -->
+        <div class="booking-panel" id="panel-step-6" data-step="6">
+          <div class="confirmation-container">
+            <div class="confirmation-badge-circle" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 2.25rem;">Reservation Confirmed</h2>
+            <p class="panel-subtitle" style="max-width: 500px; margin: 0 auto;">
+              Thank you for choosing GrandVista Hotel. A copy of this confirmation receipt has been generated for your records.
+            </p>
+
+            <!-- Booking Reference Number Display -->
+            <div class="confirmation-reference-box">
+              <span class="confirmation-reference-label">Reservation Reference</span>
+              <div class="confirmation-reference-code" id="confirm-booking-reference">
+                GVH-2026-00000
+              </div>
+              <span class="room-card__status-badge room-card__status-badge--limited" style="display: inline-block; margin-top: 6px;">
+                Pending Confirmation
+              </span>
+            </div>
+
+            <!-- Receipt Breakdown Table -->
+            <table class="confirmation-summary-table" aria-label="Confirmed booking details">
+              <tbody>
+                <tr>
+                  <th>Primary Guest</th>
+                  <td id="confirm-guest-name">Eleanor Vance</td>
+                </tr>
+                <tr>
+                  <th>Accommodation</th>
+                  <td id="confirm-room-name">Executive Suite</td>
+                </tr>
+                <tr>
+                  <th>Check-In</th>
+                  <td id="confirm-checkin">Tomorrow</td>
+                </tr>
+                <tr>
+                  <th>Check-Out</th>
+                  <td id="confirm-checkout">Day after tomorrow</td>
+                </tr>
+                <tr>
+                  <th>Duration</th>
+                  <td id="confirm-nights">1 Night</td>
+                </tr>
+                <tr>
+                  <th>Guest Party</th>
+                  <td id="confirm-guests">2 Adults</td>
+                </tr>
+                <tr>
+                  <th>Total Due at Check-In</th>
+                  <td id="confirm-total-amount" style="color: var(--color-accent-dark); font-weight: 700; font-size: 1.1rem;">₹0</td>
+                </tr>
+                <tr>
+                  <th>Hotel Concierge</th>
+                  <td>+91 11 4820 9000 &bull; reservations@grandvistahotel.com</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Next Actions -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl);">
+              <button type="button" class="btn btn--primary" id="book-another-btn">
+                Book Another Stay
+              </button>
+              <a href="index.html" class="btn btn--outline-dark">
+                Return to Homepage
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       4. Footer (Same as index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Info -->
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-desc">
+            GrandVista Hotel offers an unforgettable encounter with luxury, warmth, and peerless service in India's capital enclave.
+          </p>
+          <div class="footer-social-list">
+            <!-- Instagram -->
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a href="#" class="social-icon-btn" aria-label="X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="amenities.html" class="footer-link">Hotel Amenities</a></li>
+            <li><a href="facilities.html" class="footer-link">Event Facilities</a></li>
+            <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Experiences & Policies -->
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+            <li><a href="booking.html" class="footer-link">Book A Room</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact &amp; Reservations</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>7 Mansingh Heritage Boulevard, Diplomatic Enclave, New Delhi, 110011, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+91 11 4820 9000 / +91 11 4820 9001</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>reservations@grandvistahotel.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+            <span>24/7 Front Desk &amp; Concierge Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Student Project.</p>
+        <p>Built with Semantic HTML5, CSS3 Custom Properties &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Main Navigation & Multi-Step Booking Flow -->
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
