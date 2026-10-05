@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dining Experience &amp; Digital Menu — GrandVista Hotel</title>
+  <meta name="description" content="Explore artisanal menus, signature dishes, photo gallery, and reserve your table at GrandVista Hotel fine dining enclaves.">
+
+  <!-- Favicon placeholder (monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link active">Dining</a></li>
+            <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link active" style="color: var(--color-accent);">Dining</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 11 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Breadcrumbs & Venue Hero Header
+         ========================================================================= -->
+    <header class="page-header" style="padding-bottom: var(--space-xl);">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="dining.html">Dining</a>
+          <span>/</span>
+          <span aria-current="page" id="venue-breadcrumb">GrandVista Restaurant</span>
+        </nav>
+        <h1 class="page-header__title" id="venue-title">GrandVista Restaurant</h1>
+        <p class="page-header__subtitle" id="venue-subtitle">
+          Contemporary Fine Dining &amp; Royal Indian Heritage
+        </p>
+        <div id="venue-cuisines" style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: var(--space-sm);">
+          <!-- Cuisines injected via JS -->
+        </div>
+      </div>
+    </header>
+
+    <section class="section section--warm" style="padding-top: var(--space-lg);">
+      <div class="container">
+        
+        <!-- Venue Meta Bar -->
+        <div class="restaurant-hero-bar">
+          <div class="restaurant-hero-item">
+            <span class="restaurant-hero-label">Hours of Service</span>
+            <span class="restaurant-hero-val" id="venue-hours-val">Loading hours...</span>
+          </div>
+          <div class="restaurant-hero-item">
+            <span class="restaurant-hero-label">Dress Code</span>
+            <span class="restaurant-hero-val" id="venue-dress-val">Smart Casual</span>
+          </div>
+          <div class="restaurant-hero-item">
+            <span class="restaurant-hero-label">Location</span>
+            <span class="restaurant-hero-val" id="venue-location-val">Main Lobby Level</span>
+          </div>
+          <div class="restaurant-hero-item">
+            <span class="restaurant-hero-label">Reservations</span>
+            <span class="restaurant-hero-val">
+              <a href="#reserve" style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">Book Table Below &darr;</a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Venue Narrative -->
+        <div style="max-width: 800px; margin: 0 auto var(--space-2xl); text-align: center;">
+          <p id="venue-description" style="font-size: var(--font-size-base); color: var(--color-text-muted); line-height: 1.8;">
+            GrandVista Restaurant presents an epicurean journey marrying centuries-old royal culinary heritage with progressive global gastronomy.
+          </p>
+        </div>
+
+        <!-- Lightbox Gallery Section -->
+        <div style="margin-bottom: var(--space-3xl);">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-md);">
+            <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-primary); margin: 0;">
+              Visual Journey
+            </h2>
+            <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">
+              Click any photo to expand
+            </span>
+          </div>
+
+          <div class="restaurant-gallery-grid" id="restaurant-gallery-grid">
+            <!-- Rendered by js/restaurant-details.js -->
+          </div>
+        </div>
+
+        <!-- Signature Dishes Highlight -->
+        <div style="margin-bottom: var(--space-3xl);">
+          <div style="text-align: center; margin-bottom: var(--space-xl);">
+            <span class="eyebrow" style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+              Executive Chef's Selections
+            </span>
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-primary); margin-top: var(--space-2xs);">
+              Signature Culinary Highlights
+            </h2>
+          </div>
+
+          <div class="signature-dishes-grid" id="signature-dishes-grid">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Digital Menu Section -->
+        <div style="margin-bottom: var(--space-3xl);">
+          <div style="text-align: center; margin-bottom: var(--space-xl);">
+            <span class="eyebrow" style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+              Artisanal Offerings
+            </span>
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-primary); margin-top: var(--space-2xs); margin-bottom: var(--space-xs);">
+              Complete Digital Menu
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+              All items freshly prepared to order. Look for <span class="dietary-badge dietary-badge--veg" style="vertical-align: middle;"></span> Vegetarian and <span class="dietary-badge dietary-badge--nonveg" style="vertical-align: middle;"></span> Non-Vegetarian indicators.
+            </p>
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="menu-filter-bar" role="toolbar" aria-label="Filter digital menu categories">
+            <button type="button" class="menu-filter-btn is-active" data-category="all" aria-pressed="true">All Offerings</button>
+            <button type="button" class="menu-filter-btn" data-category="starters" aria-pressed="false">Starters &amp; Appetizers</button>
+            <button type="button" class="menu-filter-btn" data-category="mains" aria-pressed="false">Main Courses</button>
+            <button type="button" class="menu-filter-btn" data-category="desserts" aria-pressed="false">Artisan Desserts</button>
+            <button type="button" class="menu-filter-btn" data-category="drinks" aria-pressed="false">Beverages &amp; Cocktails</button>
+          </div>
+
+          <!-- Menu Items Grid -->
+          <div class="menu-grid" id="menu-grid">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- =========================================================================
+             Table Reservation Form (#reserve)
+             ========================================================================= -->
+        <div id="reserve" style="scroll-margin-top: 100px;">
+          <div class="reservation-card">
+            <div style="text-align: center; margin-bottom: var(--space-xl);">
+              <span class="eyebrow" style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+                Table Reservations
+              </span>
+              <h2 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--color-primary); margin-top: var(--space-2xs); margin-bottom: var(--space-xs);">
+                Reserve Your Table at <span id="reserve-venue-name">GrandVista Restaurant</span>
+              </h2>
+              <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); max-width: 580px; margin: 0 auto;">
+                Please reserve your dining time slot below. Special dietary requirements and seating preferences will be attended to with exquisite care.
+              </p>
+            </div>
+
+            <!-- Confirmation Message (Hidden Initially) -->
+            <div id="reservation-confirmation" class="reservation-confirmation" style="display: none;">
+              <svg class="reservation-confirmation__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <h3 class="reservation-confirmation__title">Table Reserved Successfully!</h3>
+              <p class="reservation-confirmation__text">
+                Thank you, <strong id="conf-guest-name">Guest</strong>! Your dining reservation has been confirmed. A confirmation SMS &amp; email voucher have been dispatched.
+              </p>
+
+              <div class="reservation-confirmation__details">
+                <div><strong>Confirmation Code:</strong> <span id="conf-ref-id" style="font-family: monospace; font-weight: 700; color: var(--color-accent);">GVR-XXXXX</span></div>
+                <div><strong>Venue:</strong> <span id="conf-venue">GrandVista Restaurant</span></div>
+                <div><strong>Date &amp; Time:</strong> <span id="conf-datetime">Today</span></div>
+                <div><strong>Party Details:</strong> <span id="conf-party">2 Guests</span></div>
+                <div id="conf-notes-row" style="display: none;"><strong>Special Requests:</strong> <span id="conf-notes"></span></div>
+              </div>
+
+              <button type="button" class="btn btn--outline btn--sm" id="res-reset-btn">
+                Make Another Reservation
+              </button>
+            </div>
+
+            <!-- Reservation Form -->
+            <form id="table-reservation-form" novalidate>
+              <div class="reservation-grid">
+                
+                <!-- Venue Selector -->
+                <div class="form-group reservation-grid__full">
+                  <label for="res-venue" class="form-label">Dining Venue</label>
+                  <select id="res-venue" name="venue" class="form-input">
+                    <option value="grandvista-restaurant">GrandVista Restaurant (Fine Dining)</option>
+                    <option value="sky-lounge">Sky Lounge &amp; Rooftop Bar (Cocktails &amp; Tapas)</option>
+                    <option value="the-grand-cafe">The Grand Café (Boulangerie &amp; Coffee)</option>
+                  </select>
+                </div>
+
+                <!-- Date -->
+                <div class="form-group">
+                  <label for="res-date" class="form-label">Reservation Date <span style="color: #ef4444;">*</span></label>
+                  <input type="date" id="res-date" name="date" class="form-input" required>
+                  <span class="form-error" id="res-date-error" style="color: #ef4444; font-size: 0.75rem; display: block; margin-top: 4px;"></span>
+                </div>
+
+                <!-- Time Slot -->
+                <div class="form-group">
+                  <label for="res-time" class="form-label">Seating Time <span style="color: #ef4444;">*</span></label>
+                  <select id="res-time" name="time" class="form-input" required>
+                    <option value="">Select a seating slot...</option>
+                    <optgroup label="Lunch / Afternoon">
+                      <option value="12:30 PM">12:30 PM</option>
+                      <option value="1:00 PM">1:00 PM</option>
+                      <option value="1:30 PM">1:30 PM</option>
+                      <option value="2:00 PM">2:00 PM</option>
+                      <option value="2:30 PM">2:30 PM</option>
+                    </optgroup>
+                    <optgroup label="Dinner / Evening">
+                      <option value="7:00 PM">7:00 PM</option>
+                      <option value="7:30 PM">7:30 PM</option>
+                      <option value="8:00 PM">8:00 PM</option>
+                      <option value="8:30 PM">8:30 PM</option>
+                      <option value="9:00 PM">9:00 PM</option>
+                      <option value="9:30 PM">9:30 PM</option>
+                      <option value="10:00 PM">10:00 PM</option>
+                    </optgroup>
+                  </select>
+                  <span class="form-error" id="res-time-error" style="color: #ef4444; font-size: 0.75rem; display: block; margin-top: 4px;"></span>
+                </div>
+
+                <!-- Party Size -->
+                <div class="form-group">
+                  <label for="res-guests" class="form-label">Number of Guests</label>
+                  <select id="res-guests" name="guests" class="form-input">
+                    <option value="1">1 Guest (Solo Dining)</option>
+                    <option value="2" selected>2 Guests (Table for Two)</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests (Standard Family Table)</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7">7 Guests</option>
+                    <option value="8">8 Guests (Large Party)</option>
+                    <option value="9">9 Guests</option>
+                    <option value="10">10 Guests (Executive Banquet Table)</option>
+                  </select>
+                </div>
+
+                <!-- Seating Preference -->
+                <div class="form-group">
+                  <label for="res-seating" class="form-label">Seating Preference</label>
+                  <select id="res-seating" name="seating" class="form-input">
+                    <option value="Indoor Main Dining Room" selected>Indoor Main Dining Room</option>
+                    <option value="Courtyard / Al Fresco Verandah">Courtyard / Al Fresco Verandah</option>
+                    <option value="Window Skyline View">Window Skyline View</option>
+                    <option value="Private Dining Salon">Private Dining Salon (Subject to availability)</option>
+                  </select>
+                </div>
+
+                <!-- Guest Full Name -->
+                <div class="form-group">
+                  <label for="res-name" class="form-label">Full Name <span style="color: #ef4444;">*</span></label>
+                  <input type="text" id="res-name" name="name" class="form-input" placeholder="e.g. Vikramaditya Roy" required>
+                  <span class="form-error" id="res-name-error" style="color: #ef4444; font-size: 0.75rem; display: block; margin-top: 4px;"></span>
+                </div>
+
+                <!-- Guest Email -->
+                <div class="form-group">
+                  <label for="res-email" class="form-label">Email Address <span style="color: #ef4444;">*</span></label>
+                  <input type="email" id="res-email" name="email" class="form-input" placeholder="e.g. roy@example.com" required>
+                  <span class="form-error" id="res-email-error" style="color: #ef4444; font-size: 0.75rem; display: block; margin-top: 4px;"></span>
+                </div>
+
+                <!-- Guest Phone -->
+                <div class="form-group reservation-grid__full">
+                  <label for="res-phone" class="form-label">Contact Telephone <span style="color: #ef4444;">*</span></label>
+                  <input type="tel" id="res-phone" name="phone" class="form-input" placeholder="e.g. +91 98110 23456" required>
+                  <span class="form-error" id="res-phone-error" style="color: #ef4444; font-size: 0.75rem; display: block; margin-top: 4px;"></span>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-group reservation-grid__full">
+                  <label for="res-requests" class="form-label">Special Occasion or Dietary Preferences (Optional)</label>
+                  <textarea id="res-requests" name="requests" class="form-input" rows="3" placeholder="e.g. Anniversary celebration, celebrating birthday, gluten allergy, quiet corner preferred..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="reservation-grid__full" style="margin-top: var(--space-sm);">
+                  <button type="submit" class="btn btn--primary btn--block">Confirm Table Reservation</button>
+                  <p style="text-align: center; font-size: 0.75rem; color: var(--color-text-light-muted); margin-top: var(--space-xs);">
+                    Reservations held for 20 minutes past booking time. Cancellations can be made anytime free of charge.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Lightbox Modal
+         ========================================================================= -->
+    <div 
+      class="lightbox-modal" 
+      id="lightbox-modal" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-label="Enlarged photo view" 
+      aria-hidden="true"
+    >
+      <div class="lightbox-content">
+        <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Close fullscreen view">
+          &times;
+        </button>
+
+        <button type="button" class="lightbox-nav-btn lightbox-nav-btn--prev" id="lightbox-prev" aria-label="Previous photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged view" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn lightbox-nav-btn--next" id="lightbox-next" aria-label="Next photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        <div class="lightbox-footer">
+          <span class="lightbox-caption" id="lightbox-caption"></span>
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Footer
+       ========================================================================= -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-desc">
+            GrandVista Hotel offers an unforgettable encounter with luxury, warmth, and peerless service in India's capital enclave.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="amenities.html" class="footer-link">Hotel Amenities</a></li>
+            <li><a href="facilities.html" class="footer-link">Event Facilities</a></li>
+            <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+            <li><a href="booking.html" class="footer-link">Book A Room</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact &amp; Reservations</h4>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light-muted); line-height: 1.6;">
+            7 Mansingh Heritage Boulevard, Diplomatic Enclave, New Delhi, India<br>
+            Phone: +91 11 4820 9000<br>
+            Email: reservations@grandvistahotel.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Student Project.</p>
+        <p>Built with Semantic HTML5, CSS3 Custom Properties &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/restaurant-details.js"></script>
+</body>
+</html>

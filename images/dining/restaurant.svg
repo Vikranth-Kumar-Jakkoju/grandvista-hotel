@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="restBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1c22"/>
+      <stop offset="50%" stop-color="#242730"/>
+      <stop offset="100%" stop-color="#141519"/>
+    </linearGradient>
+    <radialGradient id="chandelierGlow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#ffecb3" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffecb3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc8a5"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#restBg)"/>
+  <!-- Ambient Chandelier Glow -->
+  <circle cx="400" cy="140" r="220" fill="url(#chandelierGlow)"/>
+  <!-- Arched Windows in Background -->
+  <path d="M120 120 C120 70 170 30 220 30 C270 30 320 70 320 120 L320 320 L120 320 Z" fill="#2a2e3a" opacity="0.6"/>
+  <path d="M480 120 C480 70 530 30 580 30 C630 30 680 70 680 120 L680 320 L480 320 Z" fill="#2a2e3a" opacity="0.6"/>
+  <line x1="220" y1="30" x2="220" y2="320" stroke="#3d4252" stroke-width="2"/>
+  <line x1="120" y1="180" x2="320" y2="180" stroke="#3d4252" stroke-width="2"/>
+  <line x1="580" y1="30" x2="580" y2="320" stroke="#3d4252" stroke-width="2"/>
+  <line x1="480" y1="180" x2="680" y2="180" stroke="#3d4252" stroke-width="2"/>
+  <!-- Grand Chandelier -->
+  <line x1="400" y1="0" x2="400" y2="90" stroke="url(#gold)" stroke-width="3"/>
+  <path d="M340 100 Q400 130 460 100" fill="none" stroke="url(#gold)" stroke-width="4"/>
+  <path d="M360 120 Q400 145 440 120" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <circle cx="400" cy="115" r="5" fill="#fff9db"/>
+  <circle cx="340" cy="98" r="4" fill="#fff9db"/>
+  <circle cx="460" cy="98" r="4" fill="#fff9db"/>
+  <circle cx="370" cy="120" r="3.5" fill="#fff9db"/>
+  <circle cx="430" cy="120" r="3.5" fill="#fff9db"/>
+  <!-- Dining Floor -->
+  <polygon points="0,320 800,320 800,500 0,500" fill="#181a20"/>
+  <line x1="0" y1="320" x2="800" y2="320" stroke="url(#gold)" stroke-width="1.5" opacity="0.6"/>
+  <!-- Center Main Fine Dining Table -->
+  <ellipse cx="400" cy="400" rx="190" ry="55" fill="#2d303b" stroke="url(#gold)" stroke-width="2"/>
+  <ellipse cx="400" cy="395" rx="170" ry="46" fill="#f8f6f0"/>
+  <!-- Tableware & Setting -->
+  <ellipse cx="400" cy="385" rx="28" ry="12" fill="#c5a880" opacity="0.4"/>
+  <circle cx="400" cy="380" r="8" fill="#e2583e"/> <!-- Floral centerpiece -->
+  <!-- Left Plate & Wine Glass -->
+  <ellipse cx="300" cy="395" rx="20" ry="9" fill="#ffffff" stroke="#e0dacf" stroke-width="1.5"/>
+  <circle cx="300" cy="395" r="7" fill="#dfc8a5"/>
+  <line x1="265" y1="390" x2="265" y2="402" stroke="#bbb" stroke-width="2"/> <!-- Fork -->
+  <line x1="335" y1="390" x2="335" y2="402" stroke="#bbb" stroke-width="2"/> <!-- Knife -->
+  <ellipse cx="330" cy="378" rx="5" ry="3" fill="#a82338"/> <!-- Red wine in glass -->
+  <!-- Right Plate & Wine Glass -->
+  <ellipse cx="500" cy="395" rx="20" ry="9" fill="#ffffff" stroke="#e0dacf" stroke-width="1.5"/>
+  <circle cx="500" cy="395" r="7" fill="#dfc8a5"/>
+  <line x1="465" y1="390" x2="465" y2="402" stroke="#bbb" stroke-width="2"/>
+  <line x1="535" y1="390" x2="535" y2="402" stroke="#bbb" stroke-width="2"/>
+  <ellipse cx="530" cy="378" rx="5" ry="3" fill="#a82338"/>
+  <!-- Elegant Chairs -->
+  <path d="M220 330 C220 300 280 300 280 330 L280 430 L260 430 L260 380 L240 380 L240 430 L220 430 Z" fill="#20232b" stroke="url(#gold)" stroke-width="1"/>
+  <path d="M520 330 C520 300 580 300 580 330 L580 430 L560 430 L560 380 L540 380 L540 430 L520 430 Z" fill="#20232b" stroke="url(#gold)" stroke-width="1"/>
+  <!-- Title Overlay Plaque -->
+  <rect x="250" y="445" width="300" height="34" rx="17" fill="rgba(18, 19, 23, 0.85)" stroke="url(#gold)" stroke-width="1"/>
+  <text x="400" y="467" fill="#dfc8a5" font-family="'Playfair Display', serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="2">GRANDVISTA RESTAURANT</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bizBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e24"/>
+      <stop offset="60%" stop-color="#282932"/>
+      <stop offset="100%" stop-color="#121317"/>
+    </linearGradient>
+    <linearGradient id="silverGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <radialGradient id="blueGlow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bizBg)"/>
+  <circle cx="400" cy="180" r="170" fill="url(#blueGlow)"/>
+
+  <!-- Border decor -->
+  <rect x="50" y="50" width="700" height="400" rx="8" fill="none" stroke="url(#silverGold)" stroke-width="1.2" opacity="0.6"/>
+  <rect x="65" y="65" width="670" height="370" rx="4" fill="none" stroke="url(#silverGold)" stroke-width="0.6" stroke-dasharray="6,4" opacity="0.8"/>
+
+  <!-- Briefcase & Wi-Fi Icon -->
+  <rect x="350" y="160" width="100" height="75" rx="6" fill="#181a20" stroke="url(#silverGold)" stroke-width="2.5"/>
+  <path d="M380 160 L380 145 C380 140 420 140 420 145 L420 160" fill="none" stroke="url(#silverGold)" stroke-width="2.5"/>
+  <line x1="350" y1="195" x2="450" y2="195" stroke="url(#silverGold)" stroke-width="1.5"/>
+  <rect x="393" y="190" width="14" height="10" rx="2" fill="url(#silverGold)"/>
+
+  <text x="400" y="315" fill="url(#silverGold)" font-family="serif" font-size="32" font-weight="700" letter-spacing="4" text-anchor="middle">EXECUTIVE BUSINESS STAY</text>
+  <text x="400" y="352" fill="#cbd5e1" font-family="sans-serif" font-size="14" letter-spacing="3" text-anchor="middle">AIRPORT TRANSFERS + LAUNDRY &amp; BOARDROOM ACCESS</text>
+  <rect x="320" y="375" width="160" height="28" rx="14" fill="url(#silverGold)"/>
+  <text x="400" y="394" fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">CORPORATE RATE</text>
+</svg>

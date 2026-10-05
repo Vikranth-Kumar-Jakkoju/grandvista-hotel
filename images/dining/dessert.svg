@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="dessertBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#241e1c"/>
+      <stop offset="100%" stop-color="#120e0d"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc8a5"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+    <linearGradient id="chocGloss" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="50%" stop-color="#2a0f02"/>
+      <stop offset="100%" stop-color="#1a0901"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#dessertBg)"/>
+  <!-- White porcelain plate -->
+  <circle cx="400" cy="260" r="175" fill="#fcfbf9" stroke="#ddd6cc" stroke-width="2"/>
+  <circle cx="400" cy="260" r="145" fill="#ffffff"/>
+  <!-- Gold dust ring -->
+  <circle cx="400" cy="260" r="120" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-dasharray="4,8"/>
+
+  <!-- Belgian Dark Chocolate Dome -->
+  <path d="M340 270 C340 200 460 200 460 270 Z" fill="url(#chocGloss)"/>
+  <!-- Gloss reflection highlight -->
+  <path d="M360 230 Q400 215 425 225" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Gold leaf crown -->
+  <polygon points="395,200 405,195 403,205 410,203" fill="#fef08a"/>
+  <!-- Fresh raspberries -->
+  <circle cx="330" cy="265" r="12" fill="#be123c"/>
+  <circle cx="342" cy="275" r="10" fill="#9f1239"/>
+  <circle cx="470" cy="268" r="12" fill="#be123c"/>
+  <!-- Mint sprig -->
+  <path d="M400 190 Q415 175 420 185 Q410 190 400 190 Z" fill="#22c55e"/>
+
+  <!-- Raspberry coulis streak -->
+  <path d="M280 300 Q400 320 520 280" fill="none" stroke="#be123c" stroke-width="8" stroke-linecap="round"/>
+
+  <text x="400" y="470" fill="url(#gold)" font-family="serif" font-size="16" letter-spacing="3" text-anchor="middle">ARTISAN PATISSERIE &amp; DESSERTS</text>
+</svg>

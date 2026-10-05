@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="patioSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdba74"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc8a5"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#patioSky)"/>
+
+  <!-- Sunset Glow -->
+  <circle cx="400" cy="200" r="80" fill="#fef08a" opacity="0.6"/>
+
+  <!-- Garden Pergola & Plants -->
+  <rect x="0" y="320" width="800" height="180" fill="#1e1b24"/>
+  <line x1="0" y1="320" x2="800" y2="320" stroke="url(#gold)" stroke-width="2"/>
+
+  <!-- Pergola Beams -->
+  <rect x="60" y="40" width="16" height="280" fill="#2d2836"/>
+  <rect x="220" y="40" width="16" height="280" fill="#2d2836"/>
+  <rect x="560" y="40" width="16" height="280" fill="#2d2836"/>
+  <rect x="720" y="40" width="16" height="280" fill="#2d2836"/>
+  <rect x="20" y="40" width="760" height="14" fill="#3b3346"/>
+
+  <!-- Hanging Vines / Planters -->
+  <path d="M120 54 Q130 110 125 150" stroke="#15803d" stroke-width="3" fill="none"/>
+  <circle cx="125" cy="110" r="8" fill="#16a34a"/>
+  <circle cx="122" cy="140" r="7" fill="#22c55e"/>
+
+  <path d="M640 54 Q650 115 645 160" stroke="#15803d" stroke-width="3" fill="none"/>
+  <circle cx="648" cy="100" r="8" fill="#16a34a"/>
+  <circle cx="642" cy="135" r="9" fill="#22c55e"/>
+
+  <!-- Al Fresco Dining Table -->
+  <ellipse cx="400" cy="400" rx="140" ry="40" fill="#312a3d" stroke="url(#gold)" stroke-width="1.5"/>
+  <ellipse cx="400" cy="396" rx="125" ry="32" fill="#faf8f5"/>
+  <!-- Candle lantern -->
+  <rect x="392" y="365" width="16" height="24" rx="3" fill="rgba(255,255,255,0.2)" stroke="url(#gold)" stroke-width="1.5"/>
+  <circle cx="400" cy="377" r="4" fill="#fbbf24"/>
+
+  <!-- Chairs -->
+  <ellipse cx="230" cy="405" rx="35" ry="20" fill="#272330" stroke="url(#gold)" stroke-width="1"/>
+  <ellipse cx="570" cy="405" rx="35" ry="20" fill="#272330" stroke="url(#gold)" stroke-width="1"/>
+
+  <text x="400" y="475" fill="url(#gold)" font-family="serif" font-size="16" letter-spacing="3" text-anchor="middle">AL FRESCO TERRACE DINING</text>
+</svg>

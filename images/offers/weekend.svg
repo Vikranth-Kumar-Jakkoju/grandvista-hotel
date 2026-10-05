@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="weekendBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e1c8"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#937248"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="35%" r="40%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#weekendBg)"/>
+  <circle cx="400" cy="180" r="180" fill="url(#sunGlow)"/>
+
+  <!-- Geometric luxury frame -->
+  <rect x="50" y="50" width="700" height="400" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.4"/>
+  <rect x="65" y="65" width="670" height="370" rx="4" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Iconography: Weekend Escape Cocktail & Champagne Flutes -->
+  <path d="M375 220 L375 270 L360 270 L360 275 L410 275 L410 270 L395 270 L395 220 Z" fill="url(#goldGrad)"/>
+  <path d="M370 170 C370 215 400 215 400 170 Z" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+  <path d="M372 185 C372 210 398 210 398 185 Z" fill="#fde047" opacity="0.75"/>
+
+  <path d="M425 225 L425 270 L415 270 L415 275 L455 275 L455 270 L445 270 L445 225 Z" fill="url(#goldGrad)"/>
+  <path d="M420 175 C420 220 450 220 450 175 Z" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+  <path d="M422 190 C422 215 448 215 448 190 Z" fill="#fde047" opacity="0.75"/>
+
+  <!-- Sparkles -->
+  <circle cx="350" cy="150" r="3" fill="#fff"/>
+  <circle cx="460" cy="160" r="4" fill="#fef08a"/>
+  <circle cx="400" cy="130" r="2.5" fill="#fff"/>
+
+  <text x="400" y="325" fill="url(#goldGrad)" font-family="serif" font-size="32" font-weight="700" letter-spacing="4" text-anchor="middle">WEEKEND INDULGENCE</text>
+  <text x="400" y="360" fill="#cbd5e1" font-family="sans-serif" font-size="14" letter-spacing="3" text-anchor="middle">COMPLIMENTARY HIGH TEA &amp; LATE CHECKOUT</text>
+  <rect x="330" y="380" width="140" height="28" rx="14" fill="url(#goldGrad)"/>
+  <text x="400" y="399" fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">UP TO 25% OFF</text>
+</svg>

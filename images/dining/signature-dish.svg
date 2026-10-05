@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="plateGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2c2824"/>
+      <stop offset="100%" stop-color="#141312"/>
+    </radialGradient>
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc8a5"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#997b53"/>
+    </linearGradient>
+    <linearGradient id="salmon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#plateGlow)"/>
+  <!-- Slate presentation plate -->
+  <circle cx="400" cy="250" r="180" fill="#202226" stroke="url(#goldRim)" stroke-width="2"/>
+  <circle cx="400" cy="250" r="160" fill="#18191d"/>
+  <!-- Culinary Puree Swirl -->
+  <path d="M300 240 Q380 180 480 230 Q440 310 330 280" fill="none" stroke="#eab308" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+  <!-- Pan-seared delicacy filet -->
+  <path d="M360 210 Q420 195 450 240 Q410 285 350 260 Z" fill="url(#salmon)"/>
+  <!-- Sear marks -->
+  <line x1="375" y1="220" x2="395" y2="255" stroke="#7f1d1d" stroke-width="3"/>
+  <line x1="395" y1="215" x2="415" y2="250" stroke="#7f1d1d" stroke-width="3"/>
+  <line x1="415" y1="215" x2="435" y2="245" stroke="#7f1d1d" stroke-width="3"/>
+  <!-- Microgreens & Edible Gold Leaf -->
+  <circle cx="390" cy="235" r="4" fill="#22c55e"/>
+  <circle cx="410" cy="230" r="5" fill="#4ade80"/>
+  <circle cx="420" cy="245" r="3" fill="#16a34a"/>
+  <polygon points="405,215 412,218 408,225" fill="#fef08a"/>
+  <!-- Gastronomy reductions drops -->
+  <circle cx="310" cy="220" r="5" fill="#450a0a"/>
+  <circle cx="325" cy="205" r="3.5" fill="#450a0a"/>
+  <circle cx="485" cy="280" r="6" fill="#450a0a"/>
+  <circle cx="470" cy="300" r="4" fill="#450a0a"/>
+  <text x="400" y="470" fill="url(#goldRim)" font-family="serif" font-size="16" letter-spacing="3" text-anchor="middle">SIGNATURE CULINARY CREATION</text>
+</svg>

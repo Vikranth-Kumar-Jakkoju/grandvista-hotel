@@ -1,0 +1,242 @@
+{
+  "grandvista-restaurant": [
+    {
+      "id": "gvr-1",
+      "name": "Kashmiri Morel & Truffle Tikka",
+      "category": "starters",
+      "description": "Charcoal-tandoor smoked cottage cheese morsels stuffed with wild Himalayan morels, brushed with black truffle butter.",
+      "price": 1250,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "gvr-2",
+      "name": "Galouti Kebab on Sheermal",
+      "category": "starters",
+      "description": "Melt-in-mouth Awadhi spiced lamb patties seasoned with 24 royal herbs, served atop miniature saffron milk breads.",
+      "price": 1400,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "gvr-3",
+      "name": "Burrata with Charred Fig & Kasundi",
+      "category": "starters",
+      "description": "Fresh artisan burrata paired with wood-roasted figs, Bengal mustard Kasundi dressing, and roasted walnuts.",
+      "price": 950,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "gvr-4",
+      "name": "Pan-Seared Sea Bass with Saffron Jus",
+      "category": "mains",
+      "description": "Wild-caught Chilean sea bass filet on a bed of curried leeks, served with fragrant Kashmiri saffron emulsion.",
+      "price": 1850,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "gvr-5",
+      "name": "Dal GrandVista — 36-Hour Simmered",
+      "category": "mains",
+      "description": "Our legendary black lentils slowly simmered over woodfire embers for 36 hours with churned white butter and tomato puree.",
+      "price": 890,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "gvr-6",
+      "name": "Dum Pukht Awadhi Nalli Nihari",
+      "category": "mains",
+      "description": "Slow-braised tender lamb shanks in an aromatic spiced marrow gravy, topped with ginger juliennes and fresh mint.",
+      "price": 1650,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "gvr-7",
+      "name": "Grand Cru Valrhona Chocolate Sphere",
+      "category": "desserts",
+      "description": "Dark chocolate dome filled with salted caramel mousse and hazelnut praline, melted table-side with hot berry coulis.",
+      "price": 850,
+      "is_veg": true,
+      "image": "images/dining/dessert.svg"
+    },
+    {
+      "id": "gvr-8",
+      "name": "Rosewater & Pistachio Kulfi Tasting",
+      "category": "desserts",
+      "description": "Slow-reduced clotted milk ice cream scented with Persian rosewater and edible 24K silver leaf.",
+      "price": 680,
+      "is_veg": true,
+      "image": "images/dining/dessert.svg"
+    },
+    {
+      "id": "gvr-9",
+      "name": "The Royal Viceroy — Signature Concoction",
+      "category": "drinks",
+      "description": "Rare scotch whisky infused with Darjeeling First Flush tea, smoked clove mist, and spiced demerara syrup.",
+      "price": 1100,
+      "is_veg": true,
+      "image": "images/dining/cocktail.svg"
+    },
+    {
+      "id": "gvr-10",
+      "name": "Saffron Cardamom Lassi Shrub (Mocktail)",
+      "category": "drinks",
+      "description": "Hand-churned organic yogurt shaken with organic saffron honey, crushed green cardamom, and rose petal infusion.",
+      "price": 550,
+      "is_veg": true,
+      "image": "images/dining/cocktail.svg"
+    }
+  ],
+  "sky-lounge": [
+    {
+      "id": "sky-1",
+      "name": "Robata Glazed Shiitake & Asparagus",
+      "category": "starters",
+      "description": "Charcoal-grilled mountain asparagus and jumbo shiitake mushrooms glazed with sweet yuzu soy reduction.",
+      "price": 890,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "sky-2",
+      "name": "Crispy Calamari & Tiger Prawns",
+      "category": "starters",
+      "description": "Lightly tempura-dusted squid rings and wild prawns tossed in Togarashi spice with citrus wasabi aioli.",
+      "price": 1200,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "sky-3",
+      "name": "Truffle & Edamame Crystal Dumplings",
+      "category": "starters",
+      "description": "Delicate steamed translucent parcels filled with crushed edamame beans and aromatic black truffle oil.",
+      "price": 980,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "sky-4",
+      "name": "Wagyu & Truffle Brioche Sliders (2 pcs)",
+      "category": "mains",
+      "description": "Premium wagyu patties seared rare on toasted mini brioche buns with aged Gruyère and onion jam.",
+      "price": 1650,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "sky-5",
+      "name": "Artisanal Mezze & Flatbread Platter",
+      "category": "mains",
+      "description": "Roasted beet hummus, smoked baba ganoush, muhammara, marinated kalamata olives, and fresh wood-fired za'atar lavash.",
+      "price": 1150,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "sky-6",
+      "name": "Smoked Hickory Old Fashioned",
+      "category": "drinks",
+      "description": "Kentucky bourbon, aromatic bitters, brown sugar cube, presented in cut crystal with captured hickory smoke.",
+      "price": 950,
+      "is_veg": true,
+      "image": "images/dining/cocktail.svg"
+    },
+    {
+      "id": "sky-7",
+      "name": "GrandVista Twilight Sky Martini",
+      "category": "drinks",
+      "description": "Empress 1908 botanical gin, elderflower liqueur, freshly squeezed lime juice, and a lavender mist float.",
+      "price": 900,
+      "is_veg": true,
+      "image": "images/dining/cocktail.svg"
+    },
+    {
+      "id": "sky-8",
+      "name": "Yuzu Citrus Posset & Matcha Crisp",
+      "category": "desserts",
+      "description": "Velvety Japanese yuzu cream chilled and crowned with candied citrus peels and delicate matcha tuile cookies.",
+      "price": 750,
+      "is_veg": true,
+      "image": "images/dining/dessert.svg"
+    }
+  ],
+  "the-grand-cafe": [
+    {
+      "id": "tgc-1",
+      "name": "Avocado & Burrata Sourdough Tartine",
+      "category": "starters",
+      "description": "Artisan country loaf rubbed with garlic, crushed Hass avocado, creamy Puglia burrata, and basil oil drizzle.",
+      "price": 750,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "tgc-2",
+      "name": "Smoked Salmon & Capers Bagel",
+      "category": "starters",
+      "description": "House-baked everything bagel with Norwegian smoked salmon, herbed cream cheese, capers, and shaved red onion.",
+      "price": 890,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "tgc-3",
+      "name": "Truffled Forest Mushroom Quiche",
+      "category": "mains",
+      "description": "Flaky butter pastry filled with wild sautéed morels, porcini, Gruyère cheese custard, and organic petite salad.",
+      "price": 820,
+      "is_veg": true,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "tgc-4",
+      "name": "GrandVista Club Sandwich",
+      "category": "mains",
+      "description": "Triple-deck toasted brioche layered with herb-roasted chicken breast, applewood smoked bacon, farm eggs, and Dijon mayo.",
+      "price": 950,
+      "is_veg": false,
+      "image": "images/dining/signature-dish.svg"
+    },
+    {
+      "id": "tgc-5",
+      "name": "Warm Hand-Laminated Pain Au Chocolat",
+      "category": "desserts",
+      "description": "French Normandy butter laminated pastry filled with double batons of 64% Valrhona dark chocolate.",
+      "price": 380,
+      "is_veg": true,
+      "image": "images/dining/dessert.svg"
+    },
+    {
+      "id": "tgc-6",
+      "name": "Madagascar Vanilla Bean Mille-Feuille",
+      "category": "desserts",
+      "description": "Crisp caramelized puff pastry sheets layered with light Tahitian vanilla diplomat cream and fresh raspberries.",
+      "price": 540,
+      "is_veg": true,
+      "image": "images/dining/dessert.svg"
+    },
+    {
+      "id": "tgc-7",
+      "name": "Single-Origin Chikmagalur Pour-Over",
+      "category": "drinks",
+      "description": "Specialty estate roast prepared via V60 filter, revealing bright citrus notes and a velvety bittersweet chocolate finish.",
+      "price": 420,
+      "is_veg": true,
+      "image": "images/dining/cafe.svg"
+    },
+    {
+      "id": "tgc-8",
+      "name": "Iced Spanish Saffron Latte",
+      "category": "drinks",
+      "description": "Double espresso shot layered over condensed milk, chilled oat milk, and a delicate pinch of real saffron threads.",
+      "price": 490,
+      "is_veg": true,
+      "image": "images/dining/cafe.svg"
+    }
+  ]
+}

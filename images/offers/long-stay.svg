@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="longBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b29"/>
+      <stop offset="60%" stop-color="#2d283e"/>
+      <stop offset="100%" stop-color="#14111c"/>
+    </linearGradient>
+    <linearGradient id="violetGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#longBg)"/>
+  <circle cx="400" cy="180" r="170" fill="url(#purpleGlow)"/>
+
+  <!-- Border decor -->
+  <rect x="50" y="50" width="700" height="400" rx="8" fill="none" stroke="url(#violetGold)" stroke-width="1.2" opacity="0.6"/>
+  <rect x="65" y="65" width="670" height="370" rx="4" fill="none" stroke="url(#violetGold)" stroke-width="0.6" stroke-dasharray="6,4" opacity="0.8"/>
+
+  <!-- Home / Hotel Key Icon -->
+  <path d="M400 135 L450 175 L435 175 L435 225 L365 225 L365 175 L350 175 Z" fill="none" stroke="url(#violetGold)" stroke-width="2.5"/>
+  <rect x="390" y="195" width="20" height="30" rx="2" fill="url(#violetGold)"/>
+
+  <text x="400" y="315" fill="url(#violetGold)" font-family="serif" font-size="32" font-weight="700" letter-spacing="4" text-anchor="middle">EXTENDED STAY RESIDENCE</text>
+  <text x="400" y="352" fill="#ede9fe" font-family="sans-serif" font-size="14" letter-spacing="3" text-anchor="middle">STAY 7+ NIGHTS &amp; ENJOY UP TO 35% SAVINGS</text>
+  <rect x="305" y="375" width="190" height="28" rx="14" fill="url(#violetGold)"/>
+  <text x="400" y="394" fill="#2e1065" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">SAVE UP TO 35%</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="loungeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc8a5"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+    <radialGradient id="smokeGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#loungeBg)"/>
+  <circle cx="400" cy="220" r="180" fill="url(#smokeGlow)"/>
+
+  <!-- Bar table counter -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#1f2937"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="url(#gold)" stroke-width="2"/>
+
+  <!-- Smoked Old Fashioned in Crystal Rocks Glass -->
+  <rect x="330" y="240" width="140" height="150" rx="10" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2"/>
+  <!-- Cut crystal diamond facets -->
+  <line x1="330" y1="320" x2="470" y2="320" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <line x1="350" y1="240" x2="380" y2="390" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <line x1="450" y1="240" x2="420" y2="390" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Amber Bourbon Liquor -->
+  <rect x="334" y="280" width="132" height="106" rx="6" fill="#d97706" opacity="0.85"/>
+  <!-- Clear Ice Sphere -->
+  <circle cx="400" cy="330" r="40" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  <!-- Orange peel twist -->
+  <path d="M370 270 Q400 250 425 275 Q410 290 395 275" fill="#f97316"/>
+  <!-- Luxardo Cherry -->
+  <circle cx="420" cy="345" r="10" fill="#881337"/>
+
+  <!-- Smoke whisps rising -->
+  <path d="M400 240 Q390 190 415 150 Q430 110 390 70" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M420 230 Q440 180 410 130" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <text x="400" y="450" fill="url(#gold)" font-family="serif" font-size="16" letter-spacing="3" text-anchor="middle">BARREL-AGED COCKTAILS</text>
+</svg>

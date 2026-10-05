@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyTwilight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b101d"/>
+      <stop offset="60%" stop-color="#18233c"/>
+      <stop offset="100%" stop-color="#312a45"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc8a5"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+    <linearGradient id="cocktailAmber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff5e36"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="80%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#fff8e7" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#dfc8a5" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#dfc8a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background: Night Skyline -->
+  <rect width="800" height="500" fill="url(#skyTwilight)"/>
+  
+  <!-- Moon & Starlight -->
+  <circle cx="680" cy="90" r="45" fill="url(#moonGlow)"/>
+  <circle cx="680" cy="90" r="28" fill="#fff9eb"/>
+  <circle cx="690" cy="85" r="24" fill="#1b253e"/>
+  
+  <!-- Distant City Silhouette -->
+  <rect x="50" y="240" width="45" height="120" fill="#131a2b"/>
+  <rect x="110" y="200" width="60" height="160" fill="#172036"/>
+  <rect x="190" y="220" width="50" height="140" fill="#111827"/>
+  <rect x="260" y="180" width="70" height="180" fill="#1a243d"/>
+  <rect x="350" y="230" width="55" height="130" fill="#141c2e"/>
+  <rect x="430" y="195" width="65" height="165" fill="#182239"/>
+  <rect x="520" y="215" width="50" height="145" fill="#131b2e"/>
+  <rect x="590" y="170" width="75" height="190" fill="#1a253f"/>
+  <rect x="690" y="235" width="60" height="125" fill="#121a2c"/>
+
+  <!-- City Lights in Windows -->
+  <circle cx="130" cy="220" r="1.5" fill="#fcd34d" opacity="0.8"/>
+  <circle cx="150" cy="240" r="1.5" fill="#fcd34d" opacity="0.7"/>
+  <circle cx="280" cy="210" r="1.5" fill="#fcd34d" opacity="0.9"/>
+  <circle cx="300" cy="235" r="1.5" fill="#fcd34d" opacity="0.6"/>
+  <circle cx="450" cy="225" r="1.5" fill="#fcd34d" opacity="0.8"/>
+  <circle cx="470" cy="250" r="1.5" fill="#fcd34d" opacity="0.7"/>
+  <circle cx="610" cy="195" r="1.5" fill="#fcd34d" opacity="0.85"/>
+  <circle cx="630" cy="225" r="1.5" fill="#fcd34d" opacity="0.75"/>
+
+  <!-- Rooftop Terrace Balustrade / Glass Railing -->
+  <line x1="0" y1="360" x2="800" y2="360" stroke="url(#goldGlow)" stroke-width="3"/>
+  <rect x="0" y="360" width="800" height="140" fill="#14161d"/>
+  <line x1="0" y1="365" x2="800" y2="365" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Glass Railing Vertical Posts -->
+  <line x1="100" y1="310" x2="100" y2="360" stroke="#4a5568" stroke-width="3"/>
+  <line x1="250" y1="310" x2="250" y2="360" stroke="#4a5568" stroke-width="3"/>
+  <line x1="400" y1="310" x2="400" y2="360" stroke="#4a5568" stroke-width="3"/>
+  <line x1="550" y1="310" x2="550" y2="360" stroke="#4a5568" stroke-width="3"/>
+  <line x1="700" y1="310" x2="700" y2="360" stroke="#4a5568" stroke-width="3"/>
+  <rect x="0" y="305" width="800" height="55" fill="rgba(100, 140, 180, 0.12)" stroke="rgba(200, 220, 255, 0.25)" stroke-width="1"/>
+
+  <!-- Lounge Table & Seating -->
+  <ellipse cx="400" cy="420" rx="140" ry="38" fill="#222530" stroke="url(#goldGlow)" stroke-width="2"/>
+  <ellipse cx="400" cy="416" rx="120" ry="30" fill="#191a21"/>
+
+  <!-- Ambient Hurricane Lantern on Table -->
+  <rect x="388" y="375" width="24" height="35" rx="6" fill="rgba(255, 230, 180, 0.15)" stroke="url(#goldGlow)" stroke-width="1.5"/>
+  <ellipse cx="400" cy="396" rx="4" ry="7" fill="#ffb74d"/>
+  <circle cx="400" cy="394" r="15" fill="#ffb74d" opacity="0.3"/>
+
+  <!-- Cocktail Glasses on Table -->
+  <path d="M335 390 L350 408 L345 408 L345 418 L330 418 L345 418 L345 408 L320 408 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <polygon points="325,392 345,408 340,392" fill="url(#cocktailAmber)"/>
+
+  <path d="M465 390 L450 408 L455 408 L455 418 L470 418 L455 418 L455 408 L480 408 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <polygon points="475,392 455,408 460,392" fill="#e11d48" opacity="0.8"/>
+
+  <!-- Warm String Fairy Lights overhead -->
+  <path d="M0 40 Q200 90 400 55 T800 50" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <circle cx="80" cy="62" r="5" fill="#ffeb3b" opacity="0.9"/>
+  <circle cx="160" cy="74" r="5" fill="#ffb74d" opacity="0.9"/>
+  <circle cx="240" cy="77" r="5" fill="#ffeb3b" opacity="0.9"/>
+  <circle cx="320" cy="70" r="5" fill="#ffb74d" opacity="0.9"/>
+  <circle cx="400" cy="55" r="5" fill="#ffeb3b" opacity="0.9"/>
+  <circle cx="480" cy="53" r="5" fill="#ffb74d" opacity="0.9"/>
+  <circle cx="560" cy="56" r="5" fill="#ffeb3b" opacity="0.9"/>
+  <circle cx="640" cy="54" r="5" fill="#ffb74d" opacity="0.9"/>
+  <circle cx="720" cy="51" r="5" fill="#ffeb3b" opacity="0.9"/>
+
+  <text x="400" y="475" fill="url(#goldGlow)" font-family="serif" font-size="16" letter-spacing="3" text-anchor="middle" font-weight="600">SKY LOUNGE &amp; ROOFTOP BAR</text>
+</svg>

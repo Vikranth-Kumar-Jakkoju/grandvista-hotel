@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="festBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1305"/>
+      <stop offset="60%" stop-color="#3d1b09"/>
+      <stop offset="100%" stop-color="#190a03"/>
+    </linearGradient>
+    <linearGradient id="festiveGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <radialGradient id="diyaGlow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#festBg)"/>
+  <circle cx="400" cy="180" r="170" fill="url(#diyaGlow)"/>
+
+  <!-- Border decor -->
+  <rect x="50" y="50" width="700" height="400" rx="8" fill="none" stroke="url(#festiveGold)" stroke-width="1.2" opacity="0.6"/>
+  <rect x="65" y="65" width="670" height="370" rx="4" fill="none" stroke="url(#festiveGold)" stroke-width="0.6" stroke-dasharray="6,4" opacity="0.8"/>
+
+  <!-- Festive Diya / Lamp Icon -->
+  <path d="M340 210 Q400 250 460 210 Q430 190 400 190 Q370 190 340 210 Z" fill="url(#festiveGold)"/>
+  <!-- Flame -->
+  <path d="M400 140 C415 160 415 185 400 190 C385 185 385 160 400 140 Z" fill="#ef4444"/>
+  <path d="M400 155 C408 170 408 185 400 188 C392 185 392 170 400 155 Z" fill="#fef08a"/>
+
+  <!-- Sparkles -->
+  <circle cx="340" cy="160" r="3" fill="#fde047"/>
+  <circle cx="460" cy="160" r="3" fill="#fde047"/>
+  <circle cx="310" cy="190" r="2.5" fill="#fef08a"/>
+  <circle cx="490" cy="190" r="2.5" fill="#fef08a"/>
+
+  <text x="400" y="315" fill="url(#festiveGold)" font-family="serif" font-size="32" font-weight="700" letter-spacing="4" text-anchor="middle">FESTIVE CELEBRATIONS</text>
+  <text x="400" y="352" fill="#fed7aa" font-family="sans-serif" font-size="14" letter-spacing="3" text-anchor="middle">FESTIVE BUFFET, GIFT HAMPERS &amp; SPA CREDIT</text>
+  <rect x="315" y="375" width="170" height="28" rx="14" fill="url(#festiveGold)"/>
+  <text x="400" y="394" fill="#451a03" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">SPECIAL HOLIDAY RATE</text>
+</svg>
