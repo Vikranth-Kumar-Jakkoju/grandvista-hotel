@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions — GrandVista Hotel</title>
+  <meta name="description" content="Find answers to common guest questions regarding reservations, check-in policies, breakfast, transfers, and amenities at GrandVista Hotel.">
+
+  <!-- Favicon placeholder (monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link">Dining</a></li>
+            <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link active" style="color: var(--color-accent);">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 11 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Page Header & Breadcrumbs
+         ========================================================================= -->
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span aria-current="page">Frequently Asked Questions</span>
+        </nav>
+        <h1 class="page-header__title">Guest Inquiries &amp; Answers</h1>
+        <p class="page-header__subtitle">
+          Everything you need to know about your arrival, suite amenities, flexible cancellation, and bespoke experiences.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         3. Accessible FAQ Accordion
+         ========================================================================= -->
+    <section class="section section--warm">
+      <div class="container">
+        
+        <div class="faq-accordion" id="faq-accordion" role="region" aria-label="Frequently Asked Questions Accordion">
+          
+          <!-- 1. Check-In & Check-Out Times -->
+          <div class="faq-item is-open">
+            <button type="button" class="faq-question-btn" aria-expanded="true">
+              <span>What are the hotel check-in and check-out times?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="false">
+              <p>
+                Standard check-in begins at <strong>2:00 PM</strong>, and check-out is scheduled until <strong>12:00 PM (Noon)</strong>. If you arrive early, our concierge will gladly secure your luggage while you relax at the rooftop pool or enjoy fine dining.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Airport Transfers -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Are chauffeured airport transfers available?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                Yes. GrandVista offers private chauffeured luxury sedan transfers to and from Indira Gandhi International Airport (DEL) for a flat fee of ₹1,200 per journey. You can select this add-on directly during Step 4 of the online reservation flow or notify our concierge 24 hours prior to arrival.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Breakfast Inclusion -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Is gourmet breakfast included in the room rate?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                Select specialty suites (Executive Suite and Grand Suite) include complimentary daily breakfast for all staying guests. For standard reservations, our gourmet multi-cuisine breakfast buffet can be added at booking for ₹600 per night.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. Parking Options -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What are the on-site parking facilities and charges?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                We provide 100% complimentary, secure subterranean valet parking for all staying guests and restaurant patrons. Fast EV charging stations (CCS2 and Type-2) are also available in our basement garage.
+              </p>
+            </div>
+          </div>
+
+          <!-- 5. Wi-Fi -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Is high-speed internet complimentary throughout the hotel?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                Yes. Enterprise-grade optical fiber Wi-Fi 6 is provided with our compliments in all suites, restaurants, executive meeting salons, and poolside cabanas with speeds up to 300 Mbps.
+              </p>
+            </div>
+          </div>
+
+          <!-- 6. Extra Bed Requests -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Can I request a rollaway extra bed or infant crib?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                Infant cribs (up to 2 years) are provided complimentary upon request. Rollaway luxury plush extra beds for adults or older children can be arranged in spacious rooms and suites for ₹800 per night.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7. Cancellation Policy -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What is GrandVista's cancellation policy?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                We offer a flexible demo cancellation policy. You may cancel or modify your reservation without penalty up to <strong>48 hours</strong> prior to your arrival date (2:00 PM local hotel time). Cancellations within 48 hours incur a one-night room charge.
+              </p>
+            </div>
+          </div>
+
+          <!-- 8. Early Check-In & Late Check-Out -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Can I arrange an early check-in or late check-out?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                Early check-in from 11:00 AM is complimentary based on room availability upon arrival. Guaranteed late check-out until 4:00 PM can be reserved during online booking for a flat fee of ₹1,000.
+              </p>
+            </div>
+          </div>
+
+          <!-- 9. Conference & Banquet Facilities -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What facilities are available for conferences and private events?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                GrandVista houses the Imperial Ballroom (accommodating up to 500 guests), two private boardroom suites, and outdoor garden terraces. We provide complete audiovisual support, bespoke catering menus, and dedicated event coordinators.
+              </p>
+            </div>
+          </div>
+
+          <!-- 10. Rooftop Pool & Gym Access -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Who has access to the rooftop infinity pool and fitness centre?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-pane" aria-hidden="true">
+              <p>
+                All resident guests enjoy complimentary, unlimited access to both the rooftop infinity pool (6:00 AM – 10:00 PM) and the 24/7 TechnoGym fitness centre.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-3xl);">
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-md);">
+            Still have an unanswered question? Our concierge team is available 24/7.
+          </p>
+          <a href="contact.html" class="btn btn--outline-dark">
+            Contact Concierge Desk &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       4. Footer
+       ========================================================================= -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-desc">
+            GrandVista Hotel offers an unforgettable encounter with luxury, warmth, and peerless service in India's capital enclave.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="amenities.html" class="footer-link">Hotel Amenities</a></li>
+            <li><a href="facilities.html" class="footer-link">Event Facilities</a></li>
+            <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+            <li><a href="booking.html" class="footer-link">Book A Room</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact &amp; Reservations</h4>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light-muted); line-height: 1.6;">
+            7 Mansingh Heritage Boulevard, Diplomatic Enclave, New Delhi, India<br>
+            Phone: +91 11 4820 9000<br>
+            Email: reservations@grandvistahotel.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Student Project.</p>
+        <p>Built with Semantic HTML5, CSS3 Custom Properties &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/faq.js"></script>
+</body>
+</html>

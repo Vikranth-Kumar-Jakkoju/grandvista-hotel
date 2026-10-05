@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery &amp; Architecture — GrandVista Hotel</title>
+  <meta name="description" content="Explore photos of GrandVista Hotel in New Delhi. Browse our suites, grand lobby, rooftop pool, fine dining restaurants, and event venues.">
+
+  <!-- Favicon placeholder (monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link">Dining</a></li>
+            <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link active" style="color: var(--color-accent);">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 11 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Page Header & Breadcrumbs
+         ========================================================================= -->
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span aria-current="page">Photo Gallery</span>
+        </nav>
+        <h1 class="page-header__title">Visual Splendour &amp; Spaces</h1>
+        <p class="page-header__subtitle">
+          Immerse yourself in the timeless architectural elegance, serene spa sanctuaries, and bespoke dining spaces of GrandVista.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         3. Gallery Filters & Image Grid
+         ========================================================================= -->
+    <section class="section section--warm">
+      <div class="container">
+        <!-- Category Filter Bar -->
+        <nav class="gallery-filter-bar" aria-label="Filter gallery photos by category">
+          <button type="button" class="gallery-filter-btn is-active" data-category="all">All Photos</button>
+          <button type="button" class="gallery-filter-btn" data-category="rooms">Rooms &amp; Suites</button>
+          <button type="button" class="gallery-filter-btn" data-category="lobby">Lobby</button>
+          <button type="button" class="gallery-filter-btn" data-category="restaurant">Dining &amp; Cellar</button>
+          <button type="button" class="gallery-filter-btn" data-category="pool">Infinity Pool</button>
+          <button type="button" class="gallery-filter-btn" data-category="spa">Spa &amp; Wellness</button>
+          <button type="button" class="gallery-filter-btn" data-category="events">Events &amp; Banquets</button>
+          <button type="button" class="gallery-filter-btn" data-category="exterior">Exterior</button>
+        </nav>
+
+        <!-- Dynamic Grid -->
+        <div class="gallery-catalog-grid" id="gallery-catalog-grid" aria-live="polite">
+          <!-- Populated by js/gallery.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. Lightbox Modal
+         ========================================================================= -->
+    <div 
+      class="lightbox-modal" 
+      id="lightbox-modal" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-label="Enlarged photo view" 
+      aria-hidden="true"
+    >
+      <div class="lightbox-content">
+        <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Close fullscreen view">
+          &times;
+        </button>
+
+        <button type="button" class="lightbox-nav-btn lightbox-nav-btn--prev" id="lightbox-prev" aria-label="Previous photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged view" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn lightbox-nav-btn--next" id="lightbox-next" aria-label="Next photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        <div class="lightbox-footer">
+          <span class="lightbox-caption" id="lightbox-caption"></span>
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       5. Footer
+       ========================================================================= -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-desc">
+            GrandVista Hotel offers an unforgettable encounter with luxury, warmth, and peerless service in India's capital enclave.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="amenities.html" class="footer-link">Hotel Amenities</a></li>
+            <li><a href="facilities.html" class="footer-link">Event Facilities</a></li>
+            <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+            <li><a href="booking.html" class="footer-link">Book A Room</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact &amp; Reservations</h4>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light-muted); line-height: 1.6;">
+            7 Mansingh Heritage Boulevard, Diplomatic Enclave, New Delhi, India<br>
+            Phone: +91 11 4820 9000<br>
+            Email: reservations@grandvistahotel.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Student Project.</p>
+        <p>Built with Semantic HTML5, CSS3 Custom Properties &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

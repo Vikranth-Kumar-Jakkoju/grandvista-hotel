@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Amenities &amp; Services — GrandVista Hotel</title>
+  <meta name="description" content="Discover world-class luxury amenities at GrandVista Hotel including our rooftop infinity pool, 24/7 fitness centre, holistic spa, and executive business lounge.">
+
+  <!-- Favicon placeholder (monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link">Dining</a></li>
+            <li><a href="amenities.html" class="nav-link active">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link active" style="color: var(--color-accent);">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 11 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Page Header & Breadcrumbs
+         ========================================================================= -->
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span aria-current="page">Hotel Amenities</span>
+        </nav>
+        <h1 class="page-header__title">Curated Hotel Amenities</h1>
+        <p class="page-header__subtitle">
+          From rejuvenating wellness rituals to seamless high-speed business connectivity, every experience at GrandVista is thoughtfully designed.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         3. Core Amenities Grid
+         ========================================================================= -->
+    <section class="section section--warm">
+      <div class="container">
+        
+        <div class="amenities-page-grid">
+          <!-- 1. Swimming Pool -->
+          <article class="amenity-facility-card">
+            <div class="amenity-facility-header">
+              <div class="highlight-icon-circle" style="margin-bottom: 0;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12h20M2 16h20M2 20h20"></path>
+                  <circle cx="16" cy="6" r="3"></circle>
+                  <path d="M8 8l4 4"></path>
+                </svg>
+              </div>
+              <span class="amenity-hours-badge">6:00 AM – 10:00 PM</span>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 1.4rem; margin-top: var(--space-md); margin-bottom: var(--space-xs);">
+              Rooftop Heated Infinity Pool
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+              Perched high above New Delhi's diplomatic boulevard, our 25-meter temperature-controlled infinity pool offers breathtaking panoramic views, plush shaded daybeds, towel service, and poolside signature beverage refreshments.
+            </p>
+
+            <div class="amenity-feature-list">
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Temperature-regulated all seasons (28°C)</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Dedicated certified lifeguards on duty</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Complimentary chilled citrus water &amp; sun protection</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Fitness Centre -->
+          <article class="amenity-facility-card">
+            <div class="amenity-facility-header">
+              <div class="highlight-icon-circle" style="margin-bottom: 0;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 5v14M18 5v14M3 9v6M21 9v6M6 12h12"></path>
+                </svg>
+              </div>
+              <span class="amenity-hours-badge">24 Hours / 7 Days</span>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 1.4rem; margin-top: var(--space-md); margin-bottom: var(--space-xs);">
+              State-of-the-Art Fitness Centre
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+              Equipped with the latest TechnoGym cardiovascular and strength training equipment. Includes free weights, functional training turf, stretching studio, and personal coaching upon reservation.
+            </p>
+
+            <div class="amenity-feature-list">
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Cardiovascular machines with immersive screens</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Complimentary fresh fruit &amp; electrolyte hydration</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Private yoga mats and resistance gear</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Holistic Spa -->
+          <article class="amenity-facility-card">
+            <div class="amenity-facility-header">
+              <div class="highlight-icon-circle" style="margin-bottom: 0;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 0 0-7.07 17.07A10 10 0 1 0 12 2z"></path>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </div>
+              <span class="amenity-hours-badge">8:00 AM – 9:00 PM</span>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 1.4rem; margin-top: var(--space-md); margin-bottom: var(--space-xs);">
+              The Lotus Wellness Sanctuary &amp; Spa
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+              Drawing upon time-honored Ayurvedic wisdom and contemporary European hydrotherapy. Features 5 private treatment suites, couples therapy salon, aromatic cedar steam rooms, and vitality vitality jacuzzis.
+            </p>
+
+            <div class="amenity-feature-list">
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Herbal steam &amp; hydrotherapy immersion</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Certified master massage therapists</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Organic cold-pressed herbal oils &amp; teas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Business Centre -->
+          <article class="amenity-facility-card">
+            <div class="amenity-facility-header">
+              <div class="highlight-icon-circle" style="margin-bottom: 0;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <span class="amenity-hours-badge">24 Hours / 7 Days</span>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 1.4rem; margin-top: var(--space-md); margin-bottom: var(--space-xs);">
+              Executive Business Centre &amp; Boardrooms
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+              Designed for global executives requiring uninterrupted productivity. Offers ergonomic work stations, private 10-seat soundproof conference rooms, secure printing, and bilingual secretarial assistance.
+            </p>
+
+            <div class="amenity-feature-list">
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Ultra-fast dedicated optical ethernet ports</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>4K video-conferencing technology</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Bespoke coffee &amp; refreshments bar</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Valet Parking -->
+          <article class="amenity-facility-card">
+            <div class="amenity-facility-header">
+              <div class="highlight-icon-circle" style="margin-bottom: 0;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                  <path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path>
+                </svg>
+              </div>
+              <span class="amenity-hours-badge">24-Hour Valet Service</span>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 1.4rem; margin-top: var(--space-md); margin-bottom: var(--space-xs);">
+              Subterranean Valet &amp; EV Charging
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+              Complimentary, secured underground valet parking for all resident guests and dining patrons. Monitored around the clock by security personnel with high-speed Level-2 and DC fast EV charging stations.
+            </p>
+
+            <div class="amenity-feature-list">
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>100% complimentary valet for staying guests</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>24/7 CCTV surveillance &amp; security gatekeepers</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Fast EV charging bays (Type 2 &amp; CCS2)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. High-Speed Wi-Fi -->
+          <article class="amenity-facility-card">
+            <div class="amenity-facility-header">
+              <div class="highlight-icon-circle" style="margin-bottom: 0;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+              </div>
+              <span class="amenity-hours-badge">Seamless 24/7 Coverage</span>
+            </div>
+
+            <h2 class="panel-title" style="font-size: 1.4rem; margin-top: var(--space-md); margin-bottom: var(--space-xs);">
+              High-Speed Optical Fiber Wi-Fi
+            </h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+              Dual-band enterprise-grade Wi-Fi 6 blankets the entire property. Guests enjoy unlimited, complimentary high-bandwidth access across all suites, gardens, meeting spaces, and dining terraces.
+            </p>
+
+            <div class="amenity-feature-list">
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Speeds up to 300 Mbps symmetric per guest device</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Secure WPA3 encrypted guest network</span>
+              </div>
+              <div class="amenity-feature-item">
+                <span style="color: var(--color-accent); font-weight: bold;">✓</span>
+                <span>Unlimited device connections per suite</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-3xl);">
+          <a href="booking.html" class="btn btn--primary">
+            Book Your Stay with Full Amenities Access &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       4. Footer
+       ========================================================================= -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-desc">
+            GrandVista Hotel offers an unforgettable encounter with luxury, warmth, and peerless service in India's capital enclave.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="amenities.html" class="footer-link">Hotel Amenities</a></li>
+            <li><a href="facilities.html" class="footer-link">Event Facilities</a></li>
+            <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+            <li><a href="booking.html" class="footer-link">Book A Room</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact &amp; Reservations</h4>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light-muted); line-height: 1.6;">
+            7 Mansingh Heritage Boulevard, Diplomatic Enclave, New Delhi, India<br>
+            Phone: +91 11 4820 9000<br>
+            Email: reservations@grandvistahotel.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Student Project.</p>
+        <p>Built with Semantic HTML5, CSS3 Custom Properties &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
