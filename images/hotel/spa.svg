@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="spaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1c19"/>
+      <stop offset="50%" stop-color="#26231e"/>
+      <stop offset="100%" stop-color="#151412"/>
+    </linearGradient>
+    <linearGradient id="goldSpa" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f5e6b3"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#spaBg)"/>
+
+  <!-- Warm Wooden Bamboo Slats Wall -->
+  <g stroke="#3a3429" stroke-width="2" opacity="0.6">
+    <line x1="80" y1="50" x2="80" y2="380"/>
+    <line x1="120" y1="50" x2="120" y2="380"/>
+    <line x1="160" y1="50" x2="160" y2="380"/>
+    <line x1="200" y1="50" x2="200" y2="380"/>
+    <line x1="600" y1="50" x2="600" y2="380"/>
+    <line x1="640" y1="50" x2="640" y2="380"/>
+    <line x1="680" y1="50" x2="680" y2="380"/>
+    <line x1="720" y1="50" x2="720" y2="380"/>
+  </g>
+
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#141311"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#483d2d" stroke-width="2"/>
+
+  <!-- Lotus Water Feature Pool in Center -->
+  <ellipse cx="400" cy="350" rx="150" ry="40" fill="#192429" stroke="#aa771c" stroke-width="2"/>
+  <ellipse cx="400" cy="345" rx="130" ry="25" fill="#10191c"/>
+  
+  <!-- Lotus Flower Motif -->
+  <path d="M400,320 C390,300 400,285 400,280 C400,285 410,300 400,320 Z" fill="#f5e6b3"/>
+  <path d="M400,320 C380,305 385,290 380,285 C388,295 400,310 400,320 Z" fill="#dfc08f"/>
+  <path d="M400,320 C420,305 415,290 420,285 C412,295 400,310 400,320 Z" fill="#dfc08f"/>
+
+  <!-- Warm Lanterns & Candlelight -->
+  <rect x="220" y="240" width="30" height="60" rx="3" fill="#24211d" stroke="#c5a880" stroke-width="1.5"/>
+  <circle cx="235" cy="270" r="12" fill="#ffecb3" opacity="0.4"/>
+  <circle cx="235" cy="270" r="4" fill="#fff"/>
+  
+  <rect x="550" y="240" width="30" height="60" rx="3" fill="#24211d" stroke="#c5a880" stroke-width="1.5"/>
+  <circle cx="565" cy="270" r="12" fill="#ffecb3" opacity="0.4"/>
+  <circle cx="565" cy="270" r="4" fill="#fff"/>
+
+  <!-- Badge / Caption Overlay -->
+  <rect x="40" y="40" width="160" height="34" rx="17" fill="#18191c" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="120" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f5e6b3" text-anchor="middle" letter-spacing="1.5">AYURVEDA SPA</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff">The Wellness Sanctuary</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Holistic therapies, steam hydrotherapy suites &amp; organic botanical elixirs</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lobbyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1b1f"/>
+      <stop offset="50%" stop-color="#252422"/>
+      <stop offset="100%" stop-color="#131417"/>
+    </linearGradient>
+    <linearGradient id="goldLobby" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f5e6b3"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+    <radialGradient id="chandelierGlow" cx="50%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#dfc08f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#dfc08f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#lobbyBg)"/>
+  
+  <!-- Chandelier Ambient Glow -->
+  <circle cx="400" cy="120" r="220" fill="url(#chandelierGlow)"/>
+
+  <!-- Floor Marble Pattern -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#141312"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#4a3e2d" stroke-width="2"/>
+  <polygon points="120,440 240,380 400,440 280,500" fill="#1c1a17" opacity="0.6"/>
+  <polygon points="400,440 520,380 680,440 560,500" fill="#1c1a17" opacity="0.6"/>
+
+  <!-- Classical Pillars -->
+  <rect x="120" y="80" width="36" height="300" fill="#22201d" stroke="#544837" stroke-width="1.5"/>
+  <rect x="644" y="80" width="36" height="300" fill="#22201d" stroke="#544837" stroke-width="1.5"/>
+  <rect x="260" y="90" width="32" height="290" fill="#22201d" stroke="#544837" stroke-width="1.5"/>
+  <rect x="508" y="90" width="32" height="290" fill="#22201d" stroke="#544837" stroke-width="1.5"/>
+
+  <!-- Grand Chandelier Silhouette -->
+  <line x1="400" y1="0" x2="400" y2="70" stroke="url(#goldLobby)" stroke-width="2.5"/>
+  <circle cx="400" cy="75" r="9" fill="#f5e6b3"/>
+  <path d="M340,95 Q400,125 460,95" stroke="url(#goldLobby)" stroke-width="2.5" fill="none"/>
+  <path d="M310,130 Q400,175 490,130" stroke="url(#goldLobby)" stroke-width="2.5" fill="none"/>
+  <!-- Droplets -->
+  <circle cx="340" cy="110" r="3" fill="#f5e6b3"/>
+  <circle cx="400" cy="140" r="4" fill="#f5e6b3"/>
+  <circle cx="460" cy="110" r="3" fill="#f5e6b3"/>
+  <circle cx="310" cy="145" r="3" fill="#f5e6b3"/>
+  <circle cx="490" cy="145" r="3" fill="#f5e6b3"/>
+
+  <!-- Concierge Desk -->
+  <rect x="300" y="290" width="200" height="90" rx="4" fill="#2a2723" stroke="#aa771c" stroke-width="2"/>
+  <rect x="330" y="270" width="140" height="20" rx="3" fill="#36312a" stroke="#c5a880" stroke-width="1"/>
+
+  <!-- Badge / Caption Overlay -->
+  <rect x="40" y="40" width="160" height="34" rx="17" fill="#18191c" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="120" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f5e6b3" text-anchor="middle" letter-spacing="1.5">GRAND LOBBY</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff">The Grand Reception Atrium</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Italian travertine marble, crystal chandeliers &amp; Les Clefs d'Or concierge</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#211e1b"/>
+      <stop offset="60%" stop-color="#2b2621"/>
+      <stop offset="100%" stop-color="#181512"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg4)"/>
+  <polygon points="0,380 800,380 800,500 0,500" fill="#15120f"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#4c3d2b" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Bed 1 -->
+  <rect x="80" y="200" width="280" height="150" rx="6" fill="#2d2720" stroke="#5a4d3a" stroke-width="2"/>
+  <rect x="95" y="280" width="250" height="100" rx="4" fill="#3a332a"/>
+  <path d="M95,305 L345,305 L345,380 L95,380 Z" fill="#eae4d7"/>
+  <rect x="120" y="255" width="90" height="35" rx="5" fill="#f8f6f0"/>
+  <rect x="230" y="255" width="90" height="35" rx="5" fill="#f8f6f0"/>
+
+  <!-- Bed 2 -->
+  <rect x="440" y="200" width="280" height="150" rx="6" fill="#2d2720" stroke="#5a4d3a" stroke-width="2"/>
+  <rect x="455" y="280" width="250" height="100" rx="4" fill="#3a332a"/>
+  <path d="M455,305 L705,305 L705,380 L455,380 Z" fill="#eae4d7"/>
+  <rect x="480" y="255" width="90" height="35" rx="5" fill="#f8f6f0"/>
+  <rect x="590" y="255" width="90" height="35" rx="5" fill="#f8f6f0"/>
+
+  <!-- Center Nightstand -->
+  <rect x="375" y="280" width="50" height="100" rx="3" fill="#201c17" stroke="#aa771c" stroke-width="1"/>
+  <circle cx="400" cy="265" r="8" fill="#d4af37"/>
+
+  <!-- Overlay Badge -->
+  <rect x="40" y="40" width="170" height="34" rx="17" fill="#1b1c1e" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="125" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f3e5ab" text-anchor="middle" letter-spacing="1.5">FAMILY ROOM</text>
+  
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="1">Family Room</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Courtyard View • 2 Queen Beds • 580 sq ft</text>
+</svg>

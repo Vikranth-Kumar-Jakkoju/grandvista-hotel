@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "slug": "deluxe-room",
+    "name": "Deluxe Room",
+    "type": "Deluxe",
+    "price_per_night": 5500,
+    "size_sqft": 380,
+    "max_guests": 2,
+    "bed_type": "King Bed",
+    "view": "City View",
+    "description": "An elegantly appointed sanctuary featuring custom walnut furnishings, Italian marble bathroom with rain shower, and sweeping views of the vibrant city skyline.",
+    "amenities": [
+      "Wi-Fi",
+      "TV",
+      "Mini Bar",
+      "Work Desk",
+      "Air Conditioning"
+    ],
+    "availability_status": "available",
+    "image": "images/rooms/deluxe-room.svg",
+    "is_featured": true,
+    "gallery": [
+      { "src": "images/rooms/deluxe-room.svg", "caption": "Deluxe Bedroom & Ambient Lighting" },
+      { "src": "images/rooms/gallery/bathroom.svg", "caption": "Italian Marble Rain Shower & Vanity" },
+      { "src": "images/rooms/gallery/living.svg", "caption": "Executive Work Desk & Seating Lounge" },
+      { "src": "images/rooms/gallery/view.svg", "caption": "City Skyline Panoramic Window" }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "premium-room",
+    "name": "Premium Room",
+    "type": "Premium",
+    "price_per_night": 7800,
+    "size_sqft": 460,
+    "max_guests": 2,
+    "bed_type": "King Bed",
+    "view": "Garden View",
+    "description": "Designed for discerning guests, featuring a private step-out balcony overlooking manicured courtyard gardens, luxury plush bedding, and an exquisite soaking bathtub.",
+    "amenities": [
+      "Wi-Fi",
+      "TV",
+      "Mini Bar",
+      "Bathtub",
+      "Balcony",
+      "Work Desk",
+      "Air Conditioning"
+    ],
+    "availability_status": "available",
+    "image": "images/rooms/premium-room.svg",
+    "is_featured": true,
+    "gallery": [
+      { "src": "images/rooms/premium-room.svg", "caption": "Premium King Bedroom" },
+      { "src": "images/rooms/gallery/balcony.svg", "caption": "Private Step-Out Balcony" },
+      { "src": "images/rooms/gallery/bathroom.svg", "caption": "Deep-Soaking Oval Bathtub" },
+      { "src": "images/rooms/gallery/living.svg", "caption": "Garden-Facing Lounge Reading Nook" }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "executive-suite",
+    "name": "Executive Suite",
+    "type": "Executive",
+    "price_per_night": 12500,
+    "size_sqft": 650,
+    "max_guests": 3,
+    "bed_type": "Super King Bed",
+    "view": "Panoramic Skyline View",
+    "description": "A sophisticated corner suite boasting an expansive separate lounge salon, ergonomic executive workstation, deep marble bath, and dedicated concierge privilege.",
+    "amenities": [
+      "Wi-Fi",
+      "TV",
+      "Mini Bar",
+      "Bathtub",
+      "Balcony",
+      "Work Desk",
+      "Air Conditioning"
+    ],
+    "availability_status": "limited",
+    "image": "images/rooms/executive-suite.svg",
+    "is_featured": true,
+    "gallery": [
+      { "src": "images/rooms/executive-suite.svg", "caption": "Executive Master Suite & Salon" },
+      { "src": "images/rooms/gallery/living.svg", "caption": "Executive Workstation & Lounge" },
+      { "src": "images/rooms/gallery/bathroom.svg", "caption": "Luxury Marble Ensuite Bathroom" },
+      { "src": "images/rooms/gallery/view.svg", "caption": "Panoramic 270-Degree Skyline Outlook" }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "family-room",
+    "name": "Family Room",
+    "type": "Family",
+    "price_per_night": 10200,
+    "size_sqft": 580,
+    "max_guests": 4,
+    "bed_type": "2 Queen Beds",
+    "view": "Courtyard View",
+    "description": "Thoughtfully crafted for families seeking seamless togetherness without compromising on luxury, offering twin plush queen beds and an inviting residential seating alcove.",
+    "amenities": [
+      "Wi-Fi",
+      "TV",
+      "Mini Bar",
+      "Balcony",
+      "Work Desk",
+      "Air Conditioning"
+    ],
+    "availability_status": "available",
+    "image": "images/rooms/family-room.svg",
+    "is_featured": false,
+    "gallery": [
+      { "src": "images/rooms/family-room.svg", "caption": "Twin Queen Family Accommodation" },
+      { "src": "images/rooms/gallery/living.svg", "caption": "Residential Family Lounge" },
+      { "src": "images/rooms/gallery/balcony.svg", "caption": "Courtyard Balcony" },
+      { "src": "images/rooms/gallery/bathroom.svg", "caption": "Dual-Vanity Family Bathroom" }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "suite",
+    "name": "Suite",
+    "type": "Suite",
+    "price_per_night": 21500,
+    "size_sqft": 920,
+    "max_guests": 4,
+    "bed_type": "California King Bed",
+    "view": "Panoramic Skyline View",
+    "description": "The crowning jewel of GrandVista. Features a grand master bedroom, private dining alcove, wraparound open-air terrace, and bespoke 24-hour butler assistance.",
+    "amenities": [
+      "Wi-Fi",
+      "TV",
+      "Mini Bar",
+      "Bathtub",
+      "Balcony",
+      "Work Desk",
+      "Air Conditioning"
+    ],
+    "availability_status": "limited",
+    "image": "images/rooms/suite.svg",
+    "is_featured": false,
+    "gallery": [
+      { "src": "images/rooms/suite.svg", "caption": "Presidential Grand Suite" },
+      { "src": "images/rooms/gallery/balcony.svg", "caption": "Wraparound Private Terrace" },
+      { "src": "images/rooms/gallery/bathroom.svg", "caption": "Spa Bathtub & Italian Travertine" },
+      { "src": "images/rooms/gallery/view.svg", "caption": "Capital Skyline Horizon" }
+    ]
+  }
+]

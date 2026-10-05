@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="restBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181512"/>
+      <stop offset="50%" stop-color="#241e17"/>
+      <stop offset="100%" stop-color="#12100d"/>
+    </linearGradient>
+    <linearGradient id="wineGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f5e6b3"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#restBg)"/>
+
+  <!-- Back Wine Cellar Display Grid -->
+  <rect x="180" y="50" width="440" height="240" rx="4" fill="#1b1713" stroke="#483d2d" stroke-width="2"/>
+  <g stroke="#352c1f" stroke-width="1.5">
+    <line x1="180" y1="110" x2="620" y2="110"/>
+    <line x1="180" y1="170" x2="620" y2="170"/>
+    <line x1="180" y1="230" x2="620" y2="230"/>
+    <line x1="290" y1="50" x2="290" y2="290"/>
+    <line x1="400" y1="50" x2="400" y2="290"/>
+    <line x1="510" y1="50" x2="510" y2="290"/>
+  </g>
+  <!-- Bottles -->
+  <g fill="#8c2d2d" opacity="0.7">
+    <circle cx="235" cy="80" r="14"/>
+    <circle cx="345" cy="80" r="14"/>
+    <circle cx="455" cy="80" r="14"/>
+    <circle cx="565" cy="80" r="14"/>
+    <circle cx="235" cy="140" r="14"/>
+    <circle cx="345" cy="140" r="14"/>
+    <circle cx="455" cy="140" r="14"/>
+    <circle cx="565" cy="140" r="14"/>
+    <circle cx="235" cy="200" r="14"/>
+    <circle cx="345" cy="200" r="14"/>
+  </g>
+
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#14110e"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#4a3e2b" stroke-width="2"/>
+
+  <!-- Intimate Fine Dining Table Setting -->
+  <ellipse cx="400" cy="380" rx="140" ry="40" fill="#2d251d" stroke="#aa771c" stroke-width="2"/>
+  <ellipse cx="400" cy="375" rx="110" ry="25" fill="#f4efe6"/>
+  <!-- Wine Glasses & Candle -->
+  <circle cx="400" cy="365" r="5" fill="#fff" opacity="0.8"/>
+  <circle cx="400" cy="365" r="16" fill="#ffebad" opacity="0.3"/>
+  <path d="M360,370 L360,355 M355,355 L365,355" stroke="#aa771c" stroke-width="1.5"/>
+  <path d="M440,370 L440,355 M435,355 L445,355" stroke="#aa771c" stroke-width="1.5"/>
+
+  <!-- Velvet Dining Chairs -->
+  <path d="M210,380 C210,320 230,300 270,300 L270,380 Z" fill="#201a14" stroke="#54432f" stroke-width="1.5"/>
+  <path d="M590,380 C590,320 570,300 530,300 L530,380 Z" fill="#201a14" stroke="#54432f" stroke-width="1.5"/>
+
+  <!-- Badge / Caption Overlay -->
+  <rect x="40" y="40" width="160" height="34" rx="17" fill="#18191c" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="120" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f5e6b3" text-anchor="middle" letter-spacing="1.5">FINE DINING</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff">The Sommelier Cellar &amp; Dining</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Michelin-calibre artisanal cuisine &amp; rare vintage collection</text>
+</svg>

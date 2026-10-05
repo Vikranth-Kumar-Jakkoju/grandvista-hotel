@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hotelBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1c20"/>
+      <stop offset="50%" stop-color="#262421"/>
+      <stop offset="100%" stop-color="#141517"/>
+    </linearGradient>
+    <linearGradient id="goldH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#f5e6b3"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#hotelBg)"/>
+
+  <!-- Grand Facade Architecture -->
+  <polygon points="150,150 450,60 750,150" fill="#24211e" stroke="#aa771c" stroke-width="2"/>
+  <rect x="170" y="150" width="560" height="380" fill="#2a2723" stroke="#4a3f31" stroke-width="2"/>
+  
+  <!-- Classical Pillars -->
+  <rect x="200" y="160" width="30" height="370" fill="#35312c" stroke="#aa771c" stroke-width="1"/>
+  <rect x="300" y="160" width="30" height="370" fill="#35312c" stroke="#aa771c" stroke-width="1"/>
+  <rect x="400" y="160" width="30" height="370" fill="#35312c" stroke="#aa771c" stroke-width="1"/>
+  <rect x="500" y="160" width="30" height="370" fill="#35312c" stroke="#aa771c" stroke-width="1"/>
+  <rect x="600" y="160" width="30" height="370" fill="#35312c" stroke="#aa771c" stroke-width="1"/>
+  <rect x="670" y="160" width="30" height="370" fill="#35312c" stroke="#aa771c" stroke-width="1"/>
+
+  <!-- Arched Windows with warm glow -->
+  <g fill="#dfc08f" opacity="0.8">
+    <path d="M 245 220 A 18 18 0 0 1 285 220 L 285 280 L 245 280 Z"/>
+    <path d="M 345 220 A 18 18 0 0 1 385 220 L 385 280 L 345 280 Z"/>
+    <path d="M 545 220 A 18 18 0 0 1 585 220 L 585 280 L 545 280 Z"/>
+    <path d="M 645 220 A 18 18 0 0 1 685 220 L 685 280 L 645 280 Z"/>
+
+    <path d="M 245 320 A 18 18 0 0 1 285 320 L 285 380 L 245 380 Z"/>
+    <path d="M 345 320 A 18 18 0 0 1 385 320 L 385 380 L 345 380 Z"/>
+    <path d="M 545 320 A 18 18 0 0 1 585 320 L 585 380 L 545 380 Z"/>
+    <path d="M 645 320 A 18 18 0 0 1 685 320 L 685 380 L 645 380 Z"/>
+  </g>
+
+  <!-- Grand Entrance Archway -->
+  <path d="M 410 420 A 40 40 0 0 1 490 420 L 490 530 L 410 530 Z" fill="#151311" stroke="url(#goldH)" stroke-width="3"/>
+  <rect x="445" y="440" width="10" height="90" fill="#aa771c" opacity="0.5"/>
+
+  <!-- Hotel Brand Seal -->
+  <circle cx="450" cy="115" r="24" fill="#1b1a18" stroke="url(#goldH)" stroke-width="2"/>
+  <text x="450" y="122" font-family="'Playfair Display', serif" font-size="18" font-weight="bold" fill="#f5e6b3" text-anchor="middle">GV</text>
+
+  <!-- Foreground Landscaping & Lighting -->
+  <rect x="0" y="530" width="900" height="70" fill="#121314"/>
+  <circle cx="370" cy="520" r="18" fill="#1d261d"/>
+  <circle cx="530" cy="520" r="18" fill="#1d261d"/>
+  <line x1="390" y1="480" x2="390" y2="530" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="390" cy="480" r="4" fill="#fff" opacity="0.8"/>
+  <line x1="510" y1="480" x2="510" y2="530" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="510" cy="480" r="4" fill="#fff" opacity="0.8"/>
+</svg>

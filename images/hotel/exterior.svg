@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e131a"/>
+      <stop offset="60%" stop-color="#182330"/>
+      <stop offset="100%" stop-color="#241e17"/>
+    </linearGradient>
+    <linearGradient id="facadeGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f5e6b3"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#nightSky)"/>
+
+  <!-- Warm Stars in Night Sky -->
+  <circle cx="150" cy="60" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="320" cy="40" r="2" fill="#fff" opacity="0.7"/>
+  <circle cx="580" cy="50" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="710" cy="70" r="2" fill="#fff" opacity="0.8"/>
+
+  <!-- Grand Colonial Facade -->
+  <polygon points="120,160 400,70 680,160" fill="#23201c" stroke="#aa771c" stroke-width="2"/>
+  <rect x="140" y="160" width="520" height="260" fill="#2c2823" stroke="#483d2e" stroke-width="2"/>
+
+  <!-- Illuminated Windows -->
+  <g fill="#dfc08f" opacity="0.85">
+    <rect x="180" y="200" width="40" height="55" rx="3"/>
+    <rect x="260" y="200" width="40" height="55" rx="3"/>
+    <rect x="340" y="200" width="40" height="55" rx="3"/>
+    <rect x="420" y="200" width="40" height="55" rx="3"/>
+    <rect x="500" y="200" width="40" height="55" rx="3"/>
+    <rect x="580" y="200" width="40" height="55" rx="3"/>
+
+    <rect x="180" y="290" width="40" height="55" rx="3"/>
+    <rect x="260" y="290" width="40" height="55" rx="3"/>
+    <rect x="500" y="290" width="40" height="55" rx="3"/>
+    <rect x="580" y="290" width="40" height="55" rx="3"/>
+  </g>
+
+  <!-- Grand Portico & Entrance -->
+  <rect x="330" y="280" width="140" height="140" fill="#1b1815" stroke="url(#facadeGold)" stroke-width="2"/>
+  <path d="M360,340 A 40 40 0 0 1 440,340 L440,420 L360,420 Z" fill="#12100d" stroke="#f5e6b3" stroke-width="2"/>
+
+  <!-- Driveway & Manicured Lawns -->
+  <polygon points="0,420 800,420 800,500 0,500" fill="#15171a"/>
+  <ellipse cx="400" cy="460" rx="360" ry="35" fill="#1a1815" stroke="#3d372e" stroke-width="1.5"/>
+
+  <!-- Warm Exterior Up-Lighting -->
+  <circle cx="280" cy="420" r="18" fill="#dfc08f" opacity="0.3"/>
+  <circle cx="520" cy="420" r="18" fill="#dfc08f" opacity="0.3"/>
+
+  <!-- Badge / Caption Overlay -->
+  <rect x="40" y="40" width="160" height="34" rx="17" fill="#18191c" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="120" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f5e6b3" text-anchor="middle" letter-spacing="1.5">EXTERIOR</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff">Heritage Evening Illumination</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Colonial grandeur in the diplomatic enclave of New Delhi</text>
+</svg>

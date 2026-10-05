@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191c22"/>
+      <stop offset="60%" stop-color="#23272e"/>
+      <stop offset="100%" stop-color="#14161a"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#f3e5ab"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg3)"/>
+  
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#141517"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#48443b" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Large Panoramic Windows -->
+  <rect x="70" y="50" width="300" height="290" rx="4" fill="#1b2129" stroke="#363d48" stroke-width="2"/>
+  <line x1="170" y1="50" x2="170" y2="340" stroke="#363d48" stroke-width="2"/>
+  <line x1="270" y1="50" x2="270" y2="340" stroke="#363d48" stroke-width="2"/>
+  <line x1="70" y1="190" x2="370" y2="190" stroke="#363d48" stroke-width="2"/>
+
+  <!-- City Skyline glow in window -->
+  <rect x="90" y="120" width="30" height="180" fill="#323e4d" opacity="0.6"/>
+  <rect x="130" y="100" width="35" height="200" fill="#445469" opacity="0.7"/>
+  <rect x="180" y="130" width="40" height="170" fill="#323e4d" opacity="0.5"/>
+  <rect x="230" y="90" width="32" height="210" fill="#4f627a" opacity="0.7"/>
+  <rect x="280" y="115" width="45" height="185" fill="#384657" opacity="0.6"/>
+
+  <!-- Luxury Executive Sofa / Lounge -->
+  <path d="M420,330 C420,290 440,270 480,270 L720,270 C750,270 770,290 770,330 L770,380 L420,380 Z" fill="#2d3036" stroke="#5a5243" stroke-width="2"/>
+  <rect x="440" y="300" width="135" height="70" rx="8" fill="#3a3d45"/>
+  <rect x="590" y="300" width="135" height="70" rx="8" fill="#3a3d45"/>
+  <circle cx="475" cy="335" r="4" fill="#d4af37"/>
+  <circle cx="535" cy="335" r="4" fill="#d4af37"/>
+  <circle cx="625" cy="335" r="4" fill="#d4af37"/>
+  <circle cx="685" cy="335" r="4" fill="#d4af37"/>
+
+  <!-- Executive Coffee Table -->
+  <ellipse cx="600" cy="390" rx="90" ry="22" fill="#1b1c1e" stroke="#aa771c" stroke-width="1.5"/>
+
+  <!-- Overlay Badge -->
+  <rect x="40" y="40" width="190" height="34" rx="17" fill="#1b1c1e" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="135" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f3e5ab" text-anchor="middle" letter-spacing="1.5">EXECUTIVE SUITE</text>
+  
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="1">Executive Suite</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Panoramic Skyline View • Salon Lounge • 650 sq ft</text>
+</svg>

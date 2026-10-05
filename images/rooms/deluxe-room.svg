@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e2024"/>
+      <stop offset="60%" stop-color="#2a2824"/>
+      <stop offset="100%" stop-color="#16171a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#f3e5ab"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d4957"/>
+      <stop offset="100%" stop-color="#1b232c"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Architectural Room Scene -->
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#181512"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#4a3e2d" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- City View Window -->
+  <rect x="520" y="70" width="220" height="270" rx="6" fill="url(#window)" stroke="#3a3429" stroke-width="3"/>
+  <rect x="535" y="85" width="90" height="115" fill="#252d37" opacity="0.8"/>
+  <rect x="635" y="85" width="90" height="115" fill="#252d37" opacity="0.8"/>
+  <rect x="535" y="210" width="90" height="115" fill="#252d37" opacity="0.8"/>
+  <rect x="635" y="210" width="90" height="115" fill="#252d37" opacity="0.8"/>
+  <!-- Skyline silhouettes in window -->
+  <rect x="545" y="140" width="25" height="60" fill="#586575" opacity="0.4"/>
+  <rect x="580" y="115" width="30" height="85" fill="#6c7c8f" opacity="0.5"/>
+  <rect x="650" y="130" width="28" height="70" fill="#586575" opacity="0.4"/>
+  <rect x="685" y="100" width="25" height="100" fill="#6c7c8f" opacity="0.6"/>
+
+  <!-- Headboard & Bed -->
+  <rect x="110" y="170" width="340" height="170" rx="8" fill="#23211e" stroke="#5a4933" stroke-width="2"/>
+  <!-- Bed Base -->
+  <rect x="130" y="270" width="300" height="120" rx="4" fill="#36322b"/>
+  <!-- Bed Sheets / Duvet -->
+  <path d="M130,300 C130,290 140,285 160,285 L400,285 C420,285 430,290 430,300 L430,380 L130,380 Z" fill="#eee9df"/>
+  <path d="M130,325 Q280,315 430,325 L430,380 L130,380 Z" fill="#d9d1c1"/>
+  <!-- Pillows -->
+  <rect x="160" y="245" width="105" height="42" rx="6" fill="#f8f6f0" stroke="#d5cebf" stroke-width="1"/>
+  <rect x="295" y="245" width="105" height="42" rx="6" fill="#f8f6f0" stroke="#d5cebf" stroke-width="1"/>
+
+  <!-- Bedside Lamps -->
+  <line x1="85" y1="210" x2="85" y2="280" stroke="#c5a880" stroke-width="2"/>
+  <polygon points="70,230 100,230 95,210 75,210" fill="#dfc08f"/>
+  <circle cx="85" cy="245" r="14" fill="#fff" opacity="0.15"/>
+  
+  <line x1="475" y1="210" x2="475" y2="280" stroke="#c5a880" stroke-width="2"/>
+  <polygon points="460,230 490,230 485,210 465,210" fill="#dfc08f"/>
+  <circle cx="475" cy="245" r="14" fill="#fff" opacity="0.15"/>
+
+  <!-- Overlay Badge -->
+  <rect x="40" y="40" width="170" height="34" rx="17" fill="#1b1c1e" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="125" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f3e5ab" text-anchor="middle" letter-spacing="1.5">DELUXE ROOM</text>
+  
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="1">Deluxe Room</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">City View • 380 sq ft • King Bed</text>
+</svg>

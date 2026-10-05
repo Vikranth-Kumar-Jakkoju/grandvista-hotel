@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eventBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19191d"/>
+      <stop offset="50%" stop-color="#242129"/>
+      <stop offset="100%" stop-color="#121116"/>
+    </linearGradient>
+    <linearGradient id="goldEvent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f5e6b3"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#eventBg)"/>
+
+  <!-- Classical Arches & Wall Paneling -->
+  <path d="M120,380 L120,180 A 60 60 0 0 1 240,180 L240,380 Z" fill="#201e26" stroke="#4a4454" stroke-width="2"/>
+  <path d="M280,380 L280,180 A 60 60 0 0 1 400,180 L400,380 Z" fill="#201e26" stroke="#4a4454" stroke-width="2"/>
+  <path d="M440,380 L440,180 A 60 60 0 0 1 560,180 L560,380 Z" fill="#201e26" stroke="#4a4454" stroke-width="2"/>
+  <path d="M600,380 L600,180 A 60 60 0 0 1 720,180 L720,380 Z" fill="#201e26" stroke="#4a4454" stroke-width="2"/>
+
+  <!-- Chandeliers in each arch -->
+  <line x1="180" y1="40" x2="180" y2="120" stroke="url(#goldEvent)" stroke-width="1.5"/>
+  <circle cx="180" cy="125" r="8" fill="#f5e6b3"/>
+  <line x1="340" y1="40" x2="340" y2="120" stroke="url(#goldEvent)" stroke-width="1.5"/>
+  <circle cx="340" cy="125" r="8" fill="#f5e6b3"/>
+  <line x1="500" y1="40" x2="500" y2="120" stroke="url(#goldEvent)" stroke-width="1.5"/>
+  <circle cx="500" cy="125" r="8" fill="#f5e6b3"/>
+  <line x1="660" y1="40" x2="660" y2="120" stroke="url(#goldEvent)" stroke-width="1.5"/>
+  <circle cx="660" cy="125" r="8" fill="#f5e6b3"/>
+
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#141318"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#544c60" stroke-width="2"/>
+
+  <!-- Banquet Round Tables with White Linens & Gold Chairs -->
+  <ellipse cx="220" cy="400" rx="60" ry="25" fill="#f4efe6" stroke="#aa771c" stroke-width="1"/>
+  <ellipse cx="400" cy="420" rx="75" ry="30" fill="#f4efe6" stroke="#aa771c" stroke-width="1.5"/>
+  <ellipse cx="580" cy="400" rx="60" ry="25" fill="#f4efe6" stroke="#aa771c" stroke-width="1"/>
+  <!-- Center Floral centerpieces -->
+  <circle cx="400" cy="405" r="8" fill="#b91c1c"/>
+  <circle cx="220" cy="390" r="6" fill="#b91c1c"/>
+  <circle cx="580" cy="390" r="6" fill="#b91c1c"/>
+
+  <!-- Badge / Caption Overlay -->
+  <rect x="40" y="40" width="160" height="34" rx="17" fill="#18191c" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="120" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f5e6b3" text-anchor="middle" letter-spacing="1.5">GRAND BALLROOM</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#ffffff">Imperial Ballroom &amp; Banquets</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Capacity up to 500 guests for gala dinners, state summits &amp; weddings</text>
+</svg>

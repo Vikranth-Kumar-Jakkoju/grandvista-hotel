@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrandVista Hotel — Stay Better. Experience More.</title>
+  <meta name="description" content="GrandVista Hotel is a premier 5-star luxury heritage hotel offering bespoke hospitality, exquisite suites, and world-class dining.">
+
+  <!-- Favicon placeholder (monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="#" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link">Dining</a></li>
+            <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link active" style="color: var(--color-accent);">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="#booking-search" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 11 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Hero Section
+         ========================================================================= -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+            5-Star Heritage &amp; Luxury Destination
+          </span>
+
+          <h1 class="hero__title">Stay Better. Experience More.</h1>
+
+          <p class="hero__subtitle">
+            Immerse yourself in timeless elegance, bespoke hospitality, and serene comfort in the heart of the city. A tranquil sanctuary where refined heritage meets contemporary luxury.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#booking-search" class="btn btn--primary">Book Your Stay</a>
+            <a href="#featured-rooms" class="btn btn--secondary">Explore Rooms</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. Booking Search Widget
+         ========================================================================= -->
+    <section class="booking-widget-wrapper" id="booking-search" aria-label="Room Reservation Search">
+      <div class="container">
+        <div class="booking-widget">
+          <div class="booking-widget__header">
+            <h2 class="booking-widget__header-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Reserve Your Experience
+            </h2>
+            <span class="booking-widget__header-note">Best Rate Guaranteed Direct</span>
+          </div>
+
+          <form id="booking-search-form" class="booking-form" novalidate>
+            <!-- Check-In Date -->
+            <div class="form-group">
+              <label for="checkin-date" class="form-label">Check-In</label>
+              <div class="form-input-wrap">
+                <input 
+                  type="date" 
+                  id="checkin-date" 
+                  name="checkin" 
+                  class="form-input" 
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Check-Out Date -->
+            <div class="form-group">
+              <label for="checkout-date" class="form-label">Check-Out</label>
+              <div class="form-input-wrap">
+                <input 
+                  type="date" 
+                  id="checkout-date" 
+                  name="checkout" 
+                  class="form-input" 
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Adults -->
+            <div class="form-group">
+              <label for="adults-count" class="form-label">Adults</label>
+              <select id="adults-count" name="adults" class="form-select">
+                <option value="1">1 Adult</option>
+                <option value="2" selected>2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+                <option value="5">5 Adults</option>
+              </select>
+            </div>
+
+            <!-- Children -->
+            <div class="form-group">
+              <label for="children-count" class="form-label">Children</label>
+              <select id="children-count" name="children" class="form-select">
+                <option value="0" selected>0 Children</option>
+                <option value="1">1 Child</option>
+                <option value="2">2 Children</option>
+                <option value="3">3 Children</option>
+              </select>
+            </div>
+
+            <!-- Rooms -->
+            <div class="form-group">
+              <label for="rooms-count" class="form-label">Rooms</label>
+              <select id="rooms-count" name="rooms" class="form-select">
+                <option value="1" selected>1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+                <option value="4">4+ Rooms</option>
+              </select>
+            </div>
+
+            <!-- Room Type -->
+            <div class="form-group">
+              <label for="room-type" class="form-label">Room Type</label>
+              <select id="room-type" name="room_type" class="form-select">
+                <option value="all" selected>All Categories</option>
+                <option value="Deluxe Room">Deluxe Room</option>
+                <option value="Premium Room">Premium Room</option>
+                <option value="Executive Suite">Executive Suite</option>
+                <option value="Family Room">Family Room</option>
+                <option value="Suite">Grand Suite</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+              <label class="form-label" style="visibility: hidden;">Search</label>
+              <button type="submit" class="btn btn--primary" id="btn-check-availability">
+                Check Availability
+              </button>
+            </div>
+          </form>
+
+          <!-- Inline Validation Notification Alert -->
+          <div id="booking-alert" class="booking-alert" role="alert" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. Hotel Introduction Section
+         ========================================================================= -->
+    <section class="section section--warm" id="about-intro">
+      <div class="container">
+        <div class="intro-grid">
+          <!-- Visual Media Card -->
+          <div class="intro-image-card">
+            <img 
+              src="images/hotel/hotel-intro.svg" 
+              alt="GrandVista Hotel Classical Facade and Architecture"
+              loading="lazy"
+            />
+            <div class="intro-badge-pill">
+              Est. 1928 • Heritage Refinement
+            </div>
+          </div>
+
+          <!-- Narrative Content -->
+          <div class="intro-content">
+            <div class="section-header" style="text-align: left; margin-bottom: 0;">
+              <span class="section-eyebrow">Welcome to GrandVista</span>
+              <h2 class="section-title">An Icon of Gracious Living &amp; Unrivaled Comfort</h2>
+            </div>
+
+            <p class="intro-lead">
+              Nestled in the prestigious diplomatic enclave, GrandVista Hotel harmonizes historic grandeur with curated modern luxury.
+            </p>
+
+            <p class="intro-description">
+              Since our inception, GrandVista has welcomed royalty, statesmen, and discerning global travelers. From handcrafted walnut furnishings and Italian marble baths to Michelin-inspired gourmet dining and our tranquil rooftop wellness sanctuary, every moment is crafted to elevate your senses.
+            </p>
+
+            <!-- Key Metadata & Facilities Highlight -->
+            <div class="intro-meta-list">
+              <div class="intro-meta-item">
+                <span class="intro-meta-label">Classification</span>
+                <span class="intro-meta-value">5-Star Luxury Heritage</span>
+              </div>
+              <div class="intro-meta-item">
+                <span class="intro-meta-label">Location</span>
+                <span class="intro-meta-value">Central Diplomatic Haven</span>
+              </div>
+              <div class="intro-meta-item">
+                <span class="intro-meta-label">Signature Dining</span>
+                <span class="intro-meta-value">3 Gourmet Venues &amp; Bar</span>
+              </div>
+              <div class="intro-meta-item">
+                <span class="intro-meta-label">Wellness Sanctuary</span>
+                <span class="intro-meta-value">Spa &amp; Heated Infinity Pool</span>
+              </div>
+            </div>
+
+            <div>
+              <a href="#" class="btn btn--outline-dark">
+                View More About Our Legacy
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. Featured Rooms Section (Dynamically Loaded from data/rooms.json)
+         ========================================================================= -->
+    <section class="section section--white" id="featured-rooms">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Accommodations</span>
+          <h2 class="section-title">Featured Suites &amp; Rooms</h2>
+          <p class="section-subtitle">
+            Thoughtfully appointed sanctuaries designed for sublime relaxation, supreme comfort, and restful nights.
+          </p>
+        </div>
+
+        <!-- Dynamic Container loaded via fetch('data/rooms.json') in js/main.js -->
+        <div class="rooms-grid" id="featured-rooms-list">
+          <div class="rooms-loading">
+            <div class="spinner"></div>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+              Retrieving featured accommodations...
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-2xl);">
+          <a href="rooms.html" class="btn btn--outline-dark">
+            View All Rooms &amp; Suites
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5B. Recently Viewed Rooms Section (Populated via js/recently-viewed.js)
+         ========================================================================= -->
+    <section class="section section--warm recently-viewed-section" id="recently-viewed-section" style="display: none;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Your History</span>
+          <h2 class="section-title">Recently Viewed Accommodations</h2>
+          <p class="section-subtitle">
+            Revisit the luxury rooms and suites you previously explored.
+          </p>
+        </div>
+
+        <div class="rooms-grid recently-viewed-grid" id="recently-viewed-container">
+          <!-- Populated dynamically via RecentlyViewed.render() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. Hotel Highlights Section (8 Key Amenities)
+         ========================================================================= -->
+    <section class="section section--warm" id="highlights">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Exceptional Experiences</span>
+          <h2 class="section-title">Hotel Highlights &amp; Curated Facilities</h2>
+          <p class="section-subtitle">
+            Every convenience considered. Indulge in world-class amenities designed to make your stay effortless and memorable.
+          </p>
+        </div>
+
+        <div class="highlights-grid">
+          <!-- 1. Wi-Fi -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">High-Speed Wi-Fi</h3>
+            <p class="highlight-card__desc">Ultra-fast optical fiber connectivity throughout guest rooms and public areas.</p>
+          </div>
+
+          <!-- 2. Pool -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h20M2 16h20M2 20h20"></path>
+                <circle cx="16" cy="6" r="3"></circle>
+                <path d="M8 8l4 4"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Infinity Pool</h3>
+            <p class="highlight-card__desc">Heated rooftop swimming pool offering panoramic skyline views and sunset cocktails.</p>
+          </div>
+
+          <!-- 3. Fitness Centre -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 5v14M18 5v14M3 9v6M21 9v6M6 12h12"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Fitness Centre</h3>
+            <p class="highlight-card__desc">State-of-the-art cardiovascular and strength gear with certified personal trainers.</p>
+          </div>
+
+          <!-- 4. Restaurant -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Fine Dining</h3>
+            <p class="highlight-card__desc">Award-winning international restaurants, artisanal bakery, and sommelier-curated cellar.</p>
+          </div>
+
+          <!-- 5. 24/7 Reception -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">24/7 Reception</h3>
+            <p class="highlight-card__desc">Attentive front desk and multilingual Les Clefs d'Or concierge always at your service.</p>
+          </div>
+
+          <!-- 6. Parking -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                <path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Valet Parking</h3>
+            <p class="highlight-card__desc">Complimentary secure basement parking with premium valet and EV charging bays.</p>
+          </div>
+
+          <!-- 7. Airport Transfer -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                <circle cx="7" cy="17" r="2"></circle>
+                <path d="M9 17h6"></path>
+                <circle cx="17" cy="17" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Airport Transfer</h3>
+            <p class="highlight-card__desc">Private luxury limousine and chauffeured airport pick-up upon prior reservation.</p>
+          </div>
+
+          <!-- 8. Room Service -->
+          <div class="highlight-card">
+            <div class="highlight-icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 18h16"></path>
+                <path d="M5 18a7 7 0 0 1 14 0"></path>
+                <circle cx="12" cy="7" r="1.5"></circle>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">24h Room Service</h3>
+            <p class="highlight-card__desc">Freshly prepared gourmet dishes delivered promptly to your room night or day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       7. Footer
+       ========================================================================= -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Info -->
+        <div class="footer-col">
+          <a href="#" class="brand-logo" aria-label="GrandVista Hotel">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-desc">
+            GrandVista Hotel offers an unforgettable encounter with luxury, warmth, and peerless service in India's capital enclave.
+          </p>
+          <div class="footer-social-list">
+            <!-- Instagram -->
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a href="#" class="social-icon-btn" aria-label="X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="amenities.html" class="footer-link">Hotel Amenities</a></li>
+            <li><a href="facilities.html" class="footer-link">Event Facilities</a></li>
+            <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Experiences & Policies -->
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+            <li><a href="booking.html" class="footer-link">Book A Room</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact &amp; Reservations</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>7 Mansingh Heritage Boulevard, Diplomatic Enclave, New Delhi, 110011, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+91 11 4820 9000 / +91 11 4820 9001</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>reservations@grandvistahotel.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+            <span>24/7 Front Desk &amp; Concierge Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Student Project.</p>
+        <p>Built with Semantic HTML5, CSS3 Custom Properties &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/recently-viewed.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.RecentlyViewed) {
+        window.RecentlyViewed.render('recently-viewed-container');
+      }
+    });
+  </script>
+</body>
+</html>
