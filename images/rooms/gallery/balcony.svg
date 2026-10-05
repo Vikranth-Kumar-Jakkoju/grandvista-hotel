@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2633"/>
+      <stop offset="60%" stop-color="#2c3746"/>
+      <stop offset="100%" stop-color="#3c342a"/>
+    </linearGradient>
+    <linearGradient id="goldBalc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#f3e5ab"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#skyBg)"/>
+
+  <!-- Sunset Horizon / Warm Glow -->
+  <circle cx="400" cy="280" r="160" fill="#dfc08f" opacity="0.2"/>
+  
+  <!-- Distant Skyline Silhouettes -->
+  <rect x="60" y="220" width="40" height="90" fill="#1b212b" opacity="0.7"/>
+  <rect x="110" y="190" width="55" height="120" fill="#151b24" opacity="0.8"/>
+  <rect x="180" y="230" width="35" height="80" fill="#1b212b" opacity="0.7"/>
+  <rect x="230" y="170" width="60" height="140" fill="#151b24" opacity="0.8"/>
+  <rect x="520" y="180" width="50" height="130" fill="#151b24" opacity="0.8"/>
+  <rect x="590" y="210" width="45" height="100" fill="#1b212b" opacity="0.7"/>
+  <rect x="660" y="160" width="65" height="150" fill="#151b24" opacity="0.8"/>
+
+  <!-- Balcony Deck Floor -->
+  <polygon points="0,310 800,310 800,500 0,500" fill="#1a1815"/>
+  <line x1="0" y1="310" x2="800" y2="310" stroke="#544330" stroke-width="2"/>
+  
+  <!-- Balcony Glass Railing -->
+  <rect x="40" y="270" width="720" height="80" rx="4" fill="#323b47" opacity="0.4" stroke="#c5a880" stroke-width="1.5"/>
+  <line x1="160" y1="270" x2="160" y2="350" stroke="#c5a880" stroke-width="2"/>
+  <line x1="280" y1="270" x2="280" y2="350" stroke="#c5a880" stroke-width="2"/>
+  <line x1="400" y1="270" x2="400" y2="350" stroke="#c5a880" stroke-width="2"/>
+  <line x1="520" y1="270" x2="520" y2="350" stroke="#c5a880" stroke-width="2"/>
+  <line x1="640" y1="270" x2="640" y2="350" stroke="#c5a880" stroke-width="2"/>
+  
+  <!-- Handrail Top Bar -->
+  <rect x="30" y="265" width="740" height="8" rx="2" fill="url(#goldBalc)"/>
+
+  <!-- Outdoor Lounge Chairs & Coffee Table -->
+  <rect x="180" y="320" width="80" height="60" rx="6" fill="#2d2822" stroke="#4a3e2f" stroke-width="2"/>
+  <rect x="320" y="335" width="50" height="40" rx="4" fill="#201d19" stroke="#aa771c" stroke-width="1.5"/>
+  <rect x="430" y="320" width="80" height="60" rx="6" fill="#2d2822" stroke="#4a3e2f" stroke-width="2"/>
+
+  <!-- Badge / Caption overlay -->
+  <rect x="40" y="40" width="180" height="34" rx="17" fill="#1b1c1e" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="130" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f3e5ab" text-anchor="middle" letter-spacing="1.5">PRIVATE BALCONY</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="26" font-weight="700" fill="#ffffff">Step-Out Private Terrace</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Outdoor lounge seating with sweeping city &amp; garden vistas</text>
+</svg>

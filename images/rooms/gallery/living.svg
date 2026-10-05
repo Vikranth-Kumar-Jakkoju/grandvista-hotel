@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="livingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1d22"/>
+      <stop offset="50%" stop-color="#242321"/>
+      <stop offset="100%" stop-color="#141517"/>
+    </linearGradient>
+    <linearGradient id="goldLiv" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f3e5ab"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#livingBg)"/>
+  
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#181512"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#4a3e2d" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Architectural Molding & Wall Panels -->
+  <rect x="70" y="60" width="200" height="280" rx="4" fill="#201f24" stroke="#3b3732" stroke-width="1.5"/>
+  <rect x="300" y="60" width="200" height="280" rx="4" fill="#201f24" stroke="#3b3732" stroke-width="1.5"/>
+  <rect x="530" y="60" width="200" height="280" rx="4" fill="#201f24" stroke="#3b3732" stroke-width="1.5"/>
+
+  <!-- Artwork in Center Panel -->
+  <rect x="330" y="90" width="140" height="90" rx="2" fill="#181715" stroke="url(#goldLiv)" stroke-width="2"/>
+  <path d="M350,150 L380,110 L410,140 L440,115" stroke="#c5a880" stroke-width="2" fill="none"/>
+
+  <!-- Executive Armchair & Sofa Salon -->
+  <path d="M120,330 C120,290 140,270 180,270 L340,270 C370,270 390,290 390,330 L390,380 L120,380 Z" fill="#2c2a26" stroke="#544738" stroke-width="2"/>
+  <rect x="145" y="300" width="95" height="70" rx="6" fill="#383530"/>
+  <rect x="255" y="300" width="95" height="70" rx="6" fill="#383530"/>
+
+  <!-- Executive Work Desk & Chair -->
+  <rect x="460" y="270" width="220" height="110" rx="4" fill="#24211d" stroke="#544738" stroke-width="2"/>
+  <!-- Desk Lamp -->
+  <line x1="500" y1="270" x2="500" y2="220" stroke="url(#goldLiv)" stroke-width="3"/>
+  <path d="M490,225 L520,225 L515,210 L495,210 Z" fill="#dfc08f"/>
+  <circle cx="505" cy="235" r="14" fill="#ffffff" opacity="0.12"/>
+  <!-- Laptop on desk -->
+  <polygon points="560,265 620,265 625,270 555,270" fill="#a09d97"/>
+  <rect x="565" y="235" width="50" height="30" rx="2" fill="#2a2e36" stroke="#4f5b6d" stroke-width="1"/>
+
+  <!-- Badge / Caption overlay -->
+  <rect x="40" y="40" width="180" height="34" rx="17" fill="#1b1c1e" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="130" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f3e5ab" text-anchor="middle" letter-spacing="1.5">LIVING &amp; DESK</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="26" font-weight="700" fill="#ffffff">Executive Salon &amp; Work Area</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Ergonomic walnut desk, high-speed fiber &amp; lounge seating</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bathBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e2024"/>
+      <stop offset="60%" stop-color="#282622"/>
+      <stop offset="100%" stop-color="#141517"/>
+    </linearGradient>
+    <linearGradient id="marble" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ece7dd"/>
+      <stop offset="50%" stop-color="#f5f1e8"/>
+      <stop offset="100%" stop-color="#ded8cb"/>
+    </linearGradient>
+    <linearGradient id="goldB" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f3e5ab"/>
+      <stop offset="100%" stop-color="#9e8055"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bathBg)"/>
+  
+  <!-- Floor -->
+  <polygon points="0,380 800,380 800,500 0,500" fill="#181512"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#4a3e2d" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Marble Wall Tiles Pattern -->
+  <rect x="80" y="60" width="640" height="290" rx="6" fill="#24221f" stroke="#423a2f" stroke-width="2"/>
+  <line x1="80" y1="150" x2="720" y2="150" stroke="#363127" stroke-width="1"/>
+  <line x1="80" y1="240" x2="720" y2="240" stroke="#363127" stroke-width="1"/>
+  <line x1="240" y1="60" x2="240" y2="350" stroke="#363127" stroke-width="1"/>
+  <line x1="400" y1="60" x2="400" y2="350" stroke="#363127" stroke-width="1"/>
+  <line x1="560" y1="60" x2="560" y2="350" stroke="#363127" stroke-width="1"/>
+
+  <!-- Vanity Mirror with Warm Backlight -->
+  <circle cx="260" cy="180" r="75" fill="#191a1d" stroke="url(#goldB)" stroke-width="3"/>
+  <circle cx="260" cy="180" r="82" fill="none" stroke="#f3e5ab" stroke-width="1" opacity="0.25"/>
+
+  <!-- Freestanding Oval Soaking Tub -->
+  <ellipse cx="540" cy="350" rx="140" ry="50" fill="url(#marble)" stroke="#c5a880" stroke-width="2"/>
+  <ellipse cx="540" cy="335" rx="120" ry="32" fill="#d9d2c3"/>
+  
+  <!-- Tub Tap Brass Fitting -->
+  <line x1="420" y1="360" x2="420" y2="280" stroke="url(#goldB)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M420,280 C420,260 450,260 450,275" fill="none" stroke="url(#goldB)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Badge / Caption overlay -->
+  <rect x="40" y="40" width="200" height="34" rx="17" fill="#1b1c1e" opacity="0.9" stroke="#c5a880" stroke-width="1"/>
+  <text x="140" y="62" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f3e5ab" text-anchor="middle" letter-spacing="1.5">ENSUITE BATHROOM</text>
+  <text x="40" y="450" font-family="'Playfair Display', serif" font-size="26" font-weight="700" fill="#ffffff">Italian Marble Bath &amp; Rain Shower</text>
+  <text x="40" y="475" font-family="'Inter', sans-serif" font-size="14" fill="#c5a880">Freestanding deep tub, plush bathrobes &amp; luxury amenities</text>
+</svg>
