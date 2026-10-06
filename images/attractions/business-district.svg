@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cbdGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f1114"/>
+      <stop offset="100%" stop-color="#1e222a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#cbdGrad)"/>
+  <!-- Skyscrapers silhouettes -->
+  <rect x="80" y="240" width="90" height="260" fill="#14171d" stroke="#333b47" stroke-width="1"/>
+  <rect x="190" y="160" width="110" height="340" fill="#1a1e26" stroke="#c5a880" stroke-width="1.5"/>
+  <rect x="320" y="90" width="150" height="410" fill="#222833" stroke="#dfc8a5" stroke-width="1.5"/>
+  <rect x="490" y="140" width="120" height="360" fill="#1b2029" stroke="#c5a880" stroke-width="1.5"/>
+  <rect x="630" y="220" width="90" height="280" fill="#14171d" stroke="#333b47" stroke-width="1"/>
+  <!-- Windows pattern grid -->
+  <g fill="#c5a880" opacity="0.65">
+    <rect x="340" y="120" width="16" height="12"/>
+    <rect x="370" y="120" width="16" height="12"/>
+    <rect x="400" y="120" width="16" height="12"/>
+    <rect x="430" y="120" width="16" height="12"/>
+    <rect x="340" y="160" width="16" height="12"/>
+    <rect x="370" y="160" width="16" height="12"/>
+    <rect x="400" y="160" width="16" height="12"/>
+    <rect x="430" y="160" width="16" height="12"/>
+    <rect x="340" y="200" width="16" height="12"/>
+    <rect x="370" y="200" width="16" height="12"/>
+    <rect x="400" y="200" width="16" height="12"/>
+    <rect x="430" y="200" width="16" height="12"/>
+  </g>
+  <!-- Distance Badge -->
+  <rect x="32" y="32" width="130" height="32" rx="16" fill="#18191c" stroke="#c5a880" stroke-width="1"/>
+  <text x="97" y="53" fill="#c5a880" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1">4.0 KM AWAY</text>
+  <text x="400" y="475" fill="#ffffff" font-family="'Playfair Display', serif" font-size="26" font-weight="600" text-anchor="middle">Central Business &amp; Financial District</text>
+</svg>

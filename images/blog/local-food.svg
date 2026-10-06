@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#211814"/>
+      <stop offset="60%" stop-color="#3d281e"/>
+      <stop offset="100%" stop-color="#694029"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg3)"/>
+  <!-- Cloche / Dining Icon -->
+  <path d="M280,260 C280,180 520,180 520,260 Z" fill="#c5a880" opacity="0.85"/>
+  <circle cx="400" cy="175" r="14" fill="#dfc8a5"/>
+  <rect x="250" y="260" width="300" height="14" rx="7" fill="#dfc8a5"/>
+  <rect x="50" y="40" width="90" height="28" rx="14" fill="#c5a880" fill-opacity="0.2"/>
+  <text x="95" y="59" fill="#c5a880" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">FOOD &amp; WINE</text>
+  <text x="400" y="420" fill="#ffffff" font-family="'Playfair Display', serif" font-size="30" font-weight="600" text-anchor="middle">Artisanal Flavors &amp; Culinary Trails</text>
+</svg>

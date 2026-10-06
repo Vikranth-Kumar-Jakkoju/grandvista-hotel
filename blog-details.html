@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Details — GrandVista Journal</title>
+  <meta name="description" content="Read curated travel stories and luxury hospitality insights from GrandVista Hotel.">
+  <link rel="canonical" href="https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/blog-details.html">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318191c'/><text x='50' y='65' font-family='serif' font-size='50' font-weight='bold' fill='%23c5a880' text-anchor='middle'>GV</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Header & Navigation
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" aria-label="GrandVista Hotel Home">
+          <span class="brand-logo__title">Grand<span>Vista</span></span>
+          <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+        </a>
+
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+            <li><a href="offers.html" class="nav-link">Offers</a></li>
+            <li><a href="dining.html" class="nav-link">Dining</a></li>
+            <li><a href="location.html" class="nav-link">Location</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="event-details.html" class="nav-link">Venues</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="blog.html" class="nav-link">Journal</a></li>
+            <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="booking.html" class="btn btn--primary btn--sm">Book A Room</a>
+          </div>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="rooms.html" class="mobile-nav-link">Rooms</a></li>
+      <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+      <li><a href="location.html" class="mobile-nav-link">Location</a></li>
+      <li><a href="events.html" class="mobile-nav-link">Events</a></li>
+      <li><a href="event-details.html" class="mobile-nav-link">Venues</a></li>
+      <li><a href="reviews.html" class="mobile-nav-link">Reviews</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="amenities.html" class="mobile-nav-link">Amenities</a></li>
+      <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary btn--block">Book Your Stay</a>
+      <p style="font-size: 0.8rem; color: var(--color-accent-light); text-align: center;">
+        Concierge Direct: +91 891 4820 9000
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <div class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="blog.html">Journal</a>
+        <span>/</span>
+        <span aria-current="page" id="article-breadcrumb-title">Article</span>
+      </nav>
+    </div>
+
+    <!-- Article Content View (dynamically rendered via js/blog.js) -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container" id="blog-details-view">
+        <h1 class="page-header__title" style="display:none;" id="static-article-h1">GrandVista Travel Story</h1>
+        <div style="text-align: center; padding: var(--space-4xl) 0;">
+          <div class="spinner"></div>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: var(--space-md);">
+            Retrieving travel story...
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       4. Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <span class="brand-logo__title">Grand<span>Vista</span></span>
+            <span class="brand-logo__tagline">Luxury Hotel &amp; Suites</span>
+          </a>
+          <p class="footer-brand-desc">
+            A sanctuary of bespoke hospitality, refined architecture, and curated luxury in the Visakhapatnam's scenic coast.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Hotel</a></li>
+            <li><a href="rooms.html" class="footer-link">Rooms &amp; Suites</a></li>
+            <li><a href="offers.html" class="footer-link">Special Offers</a></li>
+            <li><a href="dining.html" class="footer-link">Dining &amp; Lounges</a></li>
+            <li><a href="location.html" class="footer-link">Location &amp; Map</a></li>
+            <li><a href="events.html" class="footer-link">Events &amp; Banquets</a></li>
+            <li><a href="event-details.html" class="footer-link">Venue Floorplans</a></li>
+            <li><a href="reviews.html" class="footer-link">Guest Reviews</a></li>
+            <li><a href="blog.html" class="footer-link">Travel Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Information</h4>
+          <ul class="footer-links-list">
+            <li><a href="wishlist.html" class="footer-link">Saved Wishlist</a></li>
+            <li><a href="policies.html" class="footer-link">Hotel Policies</a></li>
+            <li><a href="faq.html" class="footer-link">Guest FAQs</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__title">Contact Desk</h4>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 8px;">
+            Beach Road, Pandurangapuram, Visakhapatnam, Andhra Pradesh 530003, India
+          </p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 8px;">
+            Phone: +91 891 4820 9000 &bull; reservations@grandvistahotel.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrandVista Hotel &amp; Luxury Suites. All rights reserved. Demo Project.</p>
+        <p><a href="privacy.html" style="color: inherit;">Privacy Policy</a> &bull; <a href="terms.html" style="color: inherit;">Terms of Service</a> &bull; <a href="location.html" style="color: inherit;">Location</a> &bull; <a href="blog.html" style="color: inherit;">Journal</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

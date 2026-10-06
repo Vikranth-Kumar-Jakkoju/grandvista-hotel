@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18191c"/>
+      <stop offset="60%" stop-color="#2a2723"/>
+      <stop offset="100%" stop-color="#3d372e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg1)"/>
+  <circle cx="400" cy="200" r="110" fill="none" stroke="#c5a880" stroke-width="2" stroke-dasharray="6 6"/>
+  <!-- Compass / Exploration icon -->
+  <polygon points="400,120 425,195 400,280 375,195" fill="#c5a880"/>
+  <polygon points="400,120 375,195 400,200" fill="#9e8055"/>
+  <polygon points="400,280 425,195 400,200" fill="#dfc8a5"/>
+  <rect x="50" y="40" width="120" height="28" rx="14" fill="#c5a880" fill-opacity="0.2"/>
+  <text x="110" y="59" fill="#c5a880" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">THINGS TO DO</text>
+  <text x="400" y="420" fill="#ffffff" font-family="'Playfair Display', serif" font-size="30" font-weight="600" text-anchor="middle">Curated Exploration Around GrandVista</text>
+</svg>

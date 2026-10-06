@@ -80,12 +80,25 @@
 
       let allRooms = [];
       try {
-        const response = await fetch('data/rooms.json');
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const response = await fetch('backend/api/rooms.php');
+        if (!response.ok) {
+          console.error('Fetch error for backend/api/rooms.php, status:', response.status);
+          container.innerHTML = `
+            <div class="rooms-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+              <p style="color: #ef4444; font-weight: 500;">Server error ${response.status}: Unable to load recently viewed accommodations.</p>
+            </div>
+          `;
+          return;
+        }
         allRooms = await response.json();
       } catch (err) {
-        console.warn('RecentlyViewed using local fallback dataset:', err);
-        allRooms = this._getFallbackRooms();
+        console.error('Fetch error for backend/api/rooms.php:', err);
+        container.innerHTML = `
+          <div class="rooms-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+            <p style="color: #ef4444; font-weight: 500;">Network error connecting to accommodations service.</p>
+          </div>
+        `;
+        return;
       }
 
       // Filter and order rooms to match slugs array order (most recent first)
@@ -182,16 +195,6 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
-    },
-
-    _getFallbackRooms() {
-      return [
-        { id: 1, slug: 'deluxe-room', name: 'Deluxe Room', type: 'Deluxe', price_per_night: 5500, size_sqft: 380, max_guests: 2, bed_type: 'King Bed', view: 'City View', image: 'images/rooms/deluxe-room.svg', availability_status: 'available' },
-        { id: 2, slug: 'premium-room', name: 'Premium Room', type: 'Premium', price_per_night: 7800, size_sqft: 460, max_guests: 2, bed_type: 'King Bed', view: 'Garden View', image: 'images/rooms/premium-room.svg', availability_status: 'available' },
-        { id: 3, slug: 'executive-suite', name: 'Executive Suite', type: 'Executive', price_per_night: 12500, size_sqft: 650, max_guests: 3, bed_type: 'Super King Bed', view: 'Panoramic Skyline View', image: 'images/rooms/executive-suite.svg', availability_status: 'limited' },
-        { id: 4, slug: 'family-room', name: 'Family Room', type: 'Family', price_per_night: 10200, size_sqft: 580, max_guests: 4, bed_type: '2 Queen Beds', view: 'Courtyard View', image: 'images/rooms/family-room.svg', availability_status: 'available' },
-        { id: 5, slug: 'suite', name: 'Suite', type: 'Suite', price_per_night: 21500, size_sqft: 920, max_guests: 4, bed_type: 'California King Bed', view: 'Panoramic Skyline View', image: 'images/rooms/suite.svg', availability_status: 'sold_out' }
-      ];
     }
   };
 
