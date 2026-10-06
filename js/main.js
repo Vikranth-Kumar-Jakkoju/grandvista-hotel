@@ -19,31 +19,50 @@ document.addEventListener('DOMContentLoaded', () => {
 function initNavigation() {
   const header = document.querySelector('.site-header');
   const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
   const mobileDrawer = document.getElementById('mobile-drawer');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link, .nav-menu .nav-link, .nav-menu .nav-cta a');
 
   // Sticky header elevate effect on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    });
+  }
 
   // Mobile menu hamburger toggle
-  if (navToggle && mobileDrawer) {
+  if (navToggle) {
     navToggle.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.toggle('is-open');
-      navToggle.classList.toggle('is-active', isOpen);
+      const isCurrentlyOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      const isOpen = !isCurrentlyOpen;
+
       navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.classList.toggle('is-active', isOpen);
+
+      if (navMenu) {
+        navMenu.classList.toggle('is-open', isOpen);
+        navMenu.classList.toggle('is-active', isOpen);
+        navMenu.classList.toggle('active', isOpen);
+      }
+      if (mobileDrawer) {
+        mobileDrawer.classList.toggle('is-open', isOpen);
+      }
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close mobile menu when clicking any nav link
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('is-open');
+        if (navMenu) {
+          navMenu.classList.remove('is-open', 'is-active', 'active');
+        }
+        if (mobileDrawer) {
+          mobileDrawer.classList.remove('is-open');
+        }
         navToggle.classList.remove('is-active');
         navToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
@@ -191,14 +210,25 @@ function initBookingWidget() {
 
     showAlert(successMsg, 'success');
 
-    // Smooth scroll to featured rooms for immediate exploration
-    const featuredSection = document.getElementById('featured-rooms');
-    if (featuredSection) {
-      setTimeout(() => {
-        featuredSection.scrollIntoView({ behavior: 'smooth' });
-      }, 700);
-    }
+    // Redirect to booking page
+    setTimeout(() => {
+      window.location.href = 'booking.html';
+    }, 1000);
   });
+
+  const submitBtn = document.getElementById('btn-check-availability') || bookingForm.querySelector('button[type="submit"]');
+  if (submitBtn) {
+    submitBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        if (bookingForm.requestSubmit) {
+          bookingForm.requestSubmit();
+        } else {
+          bookingForm.dispatchEvent(new Event('submit', { cancelable: true }));
+        }
+      }
+    });
+  }
 
   function showAlert(message, type) {
     if (!alertBox) return;
