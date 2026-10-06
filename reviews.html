@@ -241,7 +241,7 @@
               <h3 style="font-size: 1.15rem; color: var(--color-text-main); margin-bottom: 0.5rem;">David M. Sterling</h3>
               <p style="font-size: 0.85rem; color: var(--color-accent-dark); font-weight: 500; margin-bottom: 1rem;">Executive Business Solo &bull; October 2026</p>
               <p style="font-size: 0.95rem; line-height: 1.65; color: var(--color-text-muted);">
-                &ldquo;Outstanding coastal location with speedy fiber internet and an exceptional business center. Breakfast spread at The Grand Pavilion is extensive and healthy. Highly recommended.&rdquo;
+                &ldquo;Outstanding location with speedy fiber internet and an exceptional business center. Breakfast spread at The Grand Pavilion is extensive and healthy. Highly recommended.&rdquo;
               </p>
             </div>
             <div style="margin-top: 1.25rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-muted);">
@@ -280,6 +280,7 @@
           <div id="review-alert" style="display: none; padding: 1rem 1.25rem; background: rgba(30, 126, 67, 0.1); border: 1px solid var(--color-status-available); border-radius: var(--radius-sm); color: var(--color-status-available); margin-bottom: 1.5rem; font-weight: 500;">
             Thank you for sharing your experience! Your review has been submitted for moderation and will appear after verification.
           </div>
+          <div id="review-error" style="display: none; padding: 1rem 1.25rem; background: rgba(185, 28, 28, 0.1); border: 1px solid var(--color-status-soldout); border-radius: var(--radius-sm); color: var(--color-status-soldout); margin-bottom: 1.5rem; font-weight: 500;"></div>
 
           <form id="review-form">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
@@ -404,11 +405,51 @@
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('review-form');
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const alert = document.getElementById('review-alert');
-          if (alert) alert.style.display = 'block';
-          form.reset();
+          const alertSuccess = document.getElementById('review-alert');
+          const alertError = document.getElementById('review-error');
+          if (alertSuccess) alertSuccess.style.display = 'none';
+          if (alertError) alertError.style.display = 'none';
+
+          const bookingRefVal = document.getElementById('review-ref').value.trim();
+          const payload = {
+            guest_name: document.getElementById('review-name').value.trim(),
+            email: document.getElementById('review-email').value.trim(),
+            booking_reference: bookingRefVal || null,
+            stay_type: document.getElementById('review-type').value,
+            rating: parseInt(document.getElementById('review-rating').value, 10),
+            review: document.getElementById('review-text').value.trim(),
+            stay_date: new Date().toISOString().split('T')[0]
+          };
+
+          try {
+            const res = await fetch('/backend/api/review-submit.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            if (res.ok && data.success) {
+              if (alertSuccess) {
+                alertSuccess.textContent = data.message || 'Thank you for sharing your experience! Your review has been submitted for moderation and will appear after verification.';
+                alertSuccess.style.display = 'block';
+              }
+              form.reset();
+            } else {
+              console.error('/backend/api/review-submit.php', res.status, data);
+              if (alertError) {
+                alertError.textContent = data.message || 'Failed to submit review. Please check your details and try again.';
+                alertError.style.display = 'block';
+              }
+            }
+          } catch (err) {
+            console.error('/backend/api/review-submit.php', err);
+            if (alertError) {
+              alertError.textContent = 'A network error occurred while submitting your review. Please try again.';
+              alertError.style.display = 'block';
+            }
+          }
         });
       }
     });

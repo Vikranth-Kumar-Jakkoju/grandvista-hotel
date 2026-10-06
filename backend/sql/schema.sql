@@ -30,7 +30,7 @@ CREATE TABLE `booking_services` (
   PRIMARY KEY (`id`),
   KEY `booking_id` (`booking_id`),
   CONSTRAINT `booking_services_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `bookings` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `bookings` (
   UNIQUE KEY `booking_reference` (`booking_reference`),
   KEY `room_id` (`room_id`),
   CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,6 +112,110 @@ CREATE TABLE `enquiries` (
 LOCK TABLES `enquiries` WRITE;
 /*!40000 ALTER TABLE `enquiries` DISABLE KEYS */;
 /*!40000 ALTER TABLE `enquiries` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `event_enquiries`
+--
+
+DROP TABLE IF EXISTS `event_enquiries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `event_enquiries` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event_date` date NOT NULL,
+  `guests` int NOT NULL,
+  `venue` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `budget` decimal(12,2) DEFAULT NULL,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('new','in_progress','confirmed','cancelled') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'new',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `event_date` (`event_date`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_enquiries`
+--
+
+LOCK TABLES `event_enquiries` WRITE;
+/*!40000 ALTER TABLE `event_enquiries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_enquiries` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `event_images`
+--
+
+DROP TABLE IF EXISTS `event_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `event_images` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `event_id` int NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sort_order` int DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `event_id` (`event_id`),
+  CONSTRAINT `event_images_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_images`
+--
+
+LOCK TABLES `event_images` WRITE;
+/*!40000 ALTER TABLE `event_images` DISABLE KEYS */;
+INSERT INTO `event_images` VALUES (1,1,'images/hotel/events.svg',1),(2,1,'images/hotel/lobby.svg',2),(3,2,'images/hotel/events.svg',1),(4,2,'images/hotel/exterior.svg',2),(5,3,'images/hotel/events.svg',1),(6,3,'images/hotel/restaurant.svg',2);
+/*!40000 ALTER TABLE `event_images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `events` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `capacity` int NOT NULL,
+  `area_sqft` int NOT NULL,
+  `theatre_capacity` int DEFAULT '0',
+  `classroom_capacity` int DEFAULT '0',
+  `banquet_capacity` int DEFAULT '0',
+  `cocktail_capacity` int DEFAULT '0',
+  `stage` tinyint(1) DEFAULT '1',
+  `av_equipment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `catering` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `decoration_options` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('available','maintenance','reserved') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'available',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES (1,'The Grand Ballroom','the-grand-ballroom','A magnificent pillar-less ballroom adorned with crystal chandeliers, acoustic wall panels, and state-of-the-art audiovisual capabilities. Perfect for grand galas, high-profile diplomatic summits, and bespoke wedding celebrations.',500,8000,500,300,380,550,1,'Dual 4K Laser Projection, Line Array Audio, Wireless Shure Mics, Motorized Stage Trusses','Bespoke multi-course royal banquet menus curated by Master Chefs, artisanal live stations','Custom floral arches, crystal candelabras, dynamic intelligent ambient lighting','images/hotel/events.svg','available','2026-10-06 12:50:19'),(2,'The Diplomatic Hall','the-diplomatic-hall','An executive conference and symposium venue designed for heads of state, diplomatic delegates, and corporate leadership forums. Features secure conferencing facilities and translation booths.',150,3200,160,100,120,150,1,'Encrypted Video Conferencing Hub, Polycom Microphones, Retractable HD Screens','Executive continental luncheons, barista tea & coffee breaks, high tea service','Minimalist diplomatic conference setup, executive ergonomic leather seating','images/hotel/events.svg','available','2026-10-06 12:50:19'),(3,'The Terrace Pavilion','the-terrace-pavilion','An al fresco rooftop pavilion overlooking the heritage gardens and city skyline. Ideal for evening cocktail receptions, intimate soirees, and outdoor gala dinners under starlit skies.',200,4500,180,80,150,220,1,'Surround Acoustic Sound System, Ambient Weather-proof Uplighting','Gourmet barbecue grills, wood-fired artisanal pizzas, sommelier wine & cocktail pairings','Fairy light canopies, bespoke botanical centerpieces, teak wood outdoor cabanas','images/hotel/events.svg','available','2026-10-06 12:50:19');
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -234,6 +338,40 @@ LOCK TABLES `restaurants` WRITE;
 /*!40000 ALTER TABLE `restaurants` DISABLE KEYS */;
 INSERT INTO `restaurants` VALUES (1,'grandvista-restaurant','GrandVista Restaurant','Modern Indian, European Contemporary, Awadhi Royal Cuisine','GrandVista Restaurant presents an epicurean journey marrying centuries-old royal culinary heritage with progressive global gastronomy. Under the guidance of our Master Executive Chef, each recipe honors heritage spices, sustainable farm-to-table produce, and theatrical table-side presentations.',NULL,NULL,'images/dining/restaurant.svg','open'),(2,'sky-lounge','Sky Lounge & Rooftop Bar','Artisanal Tapas, Wood-Fired Robata Grill, Craft Mixology & Rare Spirits','Perched on the 14th floor commanding uninterrupted 360-degree vistas across the capital skyline, Sky Lounge is the city\'s premier evening sanctuary. Sip bespoke barrel-aged concoctions, rare vintage malts, and sample artisanal small plates while listening to soothing deep ambient house grooves under the open sky.',NULL,NULL,'images/dining/sky-lounge.svg','open'),(3,'the-grand-cafe','The Grand Café','French Boulangerie & Viennoiserie, Specialty Single-Origin Coffees, Gourmet Sandwiches & All-Day High Tea','The Grand Café is an intimate, sun-dappled haven evoking Parisian boulevards. Savor morning sourdough croissants baked fresh throughout the day, pour-over specialty Arabica coffees from Chikmagalur estates, and bespoke afternoon high tea tiered stands served in bone china.',NULL,NULL,'images/dining/cafe.svg','open');
 /*!40000 ALTER TABLE `restaurants` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reviews`
+--
+
+DROP TABLE IF EXISTS `reviews`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reviews` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `booking_reference` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `guest_name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stay_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` tinyint NOT NULL,
+  `review` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stay_date` date NOT NULL,
+  `status` enum('pending','approved','rejected') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `status` (`status`),
+  KEY `booking_reference` (`booking_reference`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reviews`
+--
+
+LOCK TABLES `reviews` WRITE;
+/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+INSERT INTO `reviews` VALUES (1,'GVH-2026-10021','Ambassador Rajeshwar Sen','rajeshwar.sen@example.com','Diplomatic Mission / Business',5,'An exemplary stay at GrandVista. The Executive Suite provided unmatched tranquility, flawless concierge security, and pristine heritage surroundings. The culinary standards at The Grand Pavilion remain second to none.','2026-08-14','approved','2026-10-06 12:50:19'),(2,'GVH-2026-10045','Lady Eleanor Vance','eleanor.vance@example.com','Couples Leisure / Heritage Vacation',5,'From the moment our chauffeur met us at the airport to the personalized high tea in the private courtyard, GrandVista was pure magic. The Ayurvedic Spa treatments restored our energy after long travels.','2026-09-02','approved','2026-10-06 12:50:19'),(3,'GVH-2026-10088','Dr. Alistair Finch','alistair.finch@example.com','Academic Conference & Dining',5,'Attended a symposium hosted in The Diplomatic Hall followed by dinner at Spice Symphony. The audiovisual setup was seamless, acoustics superb, and the spice-infused tasting menu was unforgettable.','2026-09-18','approved','2026-10-06 12:50:19'),(4,'GVH-2026-10112','Priya & Vikram Malhotra','priya.malhotra@example.com','Wedding Anniversary',5,'Celebrated our 15th anniversary in the Presidential Suite. The champagne on arrival, rose petal turndown, and private dinner at The Terrace Pavilion exceeded every expectation. True luxury hospitality.','2026-09-25','approved','2026-10-06 12:50:19'),(5,'GVH-2026-10134','David M. Sterling','dsterling@example.com','Executive Business Solo',4,'Outstanding location with speedy fiber internet and an exceptional business center. Breakfast spread at The Grand Pavilion is extensive and healthy. Highly recommended.','2026-10-01','approved','2026-10-06 12:50:19'),(6,'GVH-2026-10156','Meera Subramaniam','meera.subramaniam@example.com','Family Leisure / Suite Stay',5,'Our multi-generational family stayed in the Family Room and Deluxe Room. The staff went out of their way to care for my elderly mother and the infinity pool was beloved by the children.','2026-10-04','approved','2026-10-06 12:50:19');
+/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -376,4 +514,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-06 17:26:15
+-- Dump completed on 2026-10-06 18:53:24

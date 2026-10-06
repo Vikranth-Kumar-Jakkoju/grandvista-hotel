@@ -182,6 +182,7 @@
             <div id="proposal-alert" style="display: none; padding: 1rem 1.25rem; background: rgba(30, 126, 67, 0.1); border: 1px solid var(--color-status-available); border-radius: var(--radius-sm); color: var(--color-status-available); margin-bottom: 1.5rem; font-weight: 500;">
               Thank you! Your event inquiry has been received. Our senior events concierge will contact you within 4 hours.
             </div>
+            <div id="proposal-error" style="display: none; padding: 1rem 1.25rem; background: rgba(185, 28, 28, 0.1); border: 1px solid var(--color-status-soldout); border-radius: var(--radius-sm); color: var(--color-status-soldout); margin-bottom: 1.5rem; font-weight: 500;"></div>
 
             <form id="event-inquiry-form">
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
@@ -203,6 +204,21 @@
                 <div class="form-group">
                   <label for="event-phone">Phone Number *</label>
                   <input type="tel" id="event-phone" name="phone" class="form-input" placeholder="e.g. +91 98765 43210" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="form-group">
+                  <label for="event-venue">Select Venue *</label>
+                  <select id="event-venue" name="venue" class="form-select" required>
+                    <option value="The Grand Ballroom">The Grand Ballroom (500 cap)</option>
+                    <option value="The Diplomatic Hall">The Diplomatic Hall (150 cap)</option>
+                    <option value="The Terrace Pavilion">The Terrace Pavilion (200 cap)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="event-budget">Estimated Budget (₹)</label>
+                  <input type="number" id="event-budget" name="budget" class="form-input" min="0" placeholder="e.g. 500000">
                 </div>
               </div>
 
@@ -348,16 +364,72 @@
         const v = venues[slug];
         document.getElementById('venue-breadcrumb-name').textContent = v.name;
         document.getElementById('venue-title').textContent = v.name + ' Floorplan & Specs';
+        const venueSelect = document.getElementById('event-venue');
+        if (venueSelect) {
+          venueSelect.value = v.name;
+        }
       }
 
-      // Handle inquiry form submission gracefully
+      // Enforce minimum date of today
+      const dateInput = document.getElementById('event-date');
+      if (dateInput) {
+        dateInput.min = new Date().toISOString().split('T')[0];
+      }
+
+      // Handle inquiry form submission via fetch
       const form = document.getElementById('event-inquiry-form');
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const alert = document.getElementById('proposal-alert');
-          if (alert) alert.style.display = 'block';
-          form.reset();
+          const alertSuccess = document.getElementById('proposal-alert');
+          const alertError = document.getElementById('proposal-error');
+          if (alertSuccess) alertSuccess.style.display = 'none';
+          if (alertError) alertError.style.display = 'none';
+
+          const budgetVal = document.getElementById('event-budget').value;
+          const payload = {
+            name: document.getElementById('event-name').value.trim(),
+            company: document.getElementById('event-company').value.trim(),
+            email: document.getElementById('event-email').value.trim(),
+            phone: document.getElementById('event-phone').value.trim(),
+            event_type: document.getElementById('event-type').value,
+            event_date: document.getElementById('event-date').value,
+            guests: parseInt(document.getElementById('event-guests').value, 10),
+            venue: document.getElementById('event-venue').value,
+            budget: budgetVal ? parseFloat(budgetVal) : null,
+            message: document.getElementById('event-message').value.trim()
+          };
+
+          try {
+            const res = await fetch('/backend/api/event-enquiry.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            if (res.ok && data.success) {
+              if (alertSuccess) {
+                alertSuccess.textContent = data.message || 'Thank you! Your event inquiry has been received. Our senior events concierge will contact you within 4 hours.';
+                alertSuccess.style.display = 'block';
+              }
+              form.reset();
+              if (dateInput) {
+                dateInput.min = new Date().toISOString().split('T')[0];
+              }
+            } else {
+              console.error('/backend/api/event-enquiry.php', res.status, data);
+              if (alertError) {
+                alertError.textContent = data.message || 'Error submitting event inquiry. Please check your details.';
+                alertError.style.display = 'block';
+              }
+            }
+          } catch (err) {
+            console.error('/backend/api/event-enquiry.php', err);
+            if (alertError) {
+              alertError.textContent = 'A network error occurred while submitting your event inquiry.';
+              alertError.style.display = 'block';
+            }
+          }
         });
       }
     });
