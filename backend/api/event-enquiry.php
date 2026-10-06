@@ -83,7 +83,7 @@ if (empty($eventType)) {
 $today = date('Y-m-d');
 if (empty($eventDate)) {
     $errors[] = 'Event date is required.';
-} elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $eventDate) || strtotime($eventDate) === false) {
+} elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $eventDate) || !checkdate((int)substr($eventDate, 5, 2), (int)substr($eventDate, 8, 2), (int)substr($eventDate, 0, 4))) {
     $errors[] = 'Event date must be a valid date in YYYY-MM-DD format.';
 } elseif ($eventDate < $today) {
     $errors[] = 'Event date cannot be in the past.';

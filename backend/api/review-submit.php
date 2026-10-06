@@ -77,7 +77,7 @@ $today = date('Y-m-d');
 if (empty($stayDate)) {
     // If not provided, default to today
     $stayDate = $today;
-} elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $stayDate) || strtotime($stayDate) === false) {
+} elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $stayDate) || !checkdate((int)substr($stayDate, 5, 2), (int)substr($stayDate, 8, 2), (int)substr($stayDate, 0, 4))) {
     $errors[] = 'Stay date must be a valid date in YYYY-MM-DD format.';
 } elseif ($stayDate > $today) {
     $errors[] = 'Stay date cannot be in the future.';
