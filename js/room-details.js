@@ -373,7 +373,7 @@
 
               <div style="margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-light); font-size: 0.8rem; color: var(--color-text-muted); text-align: center;">
                 Need assistance? Call Concierge: <br>
-                <strong style="color: var(--color-primary);">+91 11 4820 9000</strong>
+                <strong style="color: var(--color-primary);">+91 891 4820 9000</strong>
               </div>
             </div>
           </aside>

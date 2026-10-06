@@ -1,121 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:8000/index.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/index.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/rooms.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/rooms.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/room-details.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/room-details.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/booking.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/booking.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/offers.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/offers.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/dining.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/dining.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/restaurant-details.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/restaurant-details.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/location.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/location.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/blog.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/events.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/blog-details.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/event-details.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/amenities.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/reviews.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/blog.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/blog-details.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/facilities.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/amenities.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/gallery.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/facilities.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/about.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/gallery.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/contact.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/about.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/faq.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/contact.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/faq.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/policies.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/policies.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/wishlist.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/wishlist.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/privacy.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/privacy.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:8000/terms.html</loc>
+    <loc>https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/terms.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -22,5 +22,5 @@
   <!-- Distance Badge -->
   <rect x="32" y="32" width="130" height="32" rx="16" fill="#18191c" stroke="#c5a880" stroke-width="1"/>
   <text x="97" y="53" fill="#c5a880" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1">2.0 KM AWAY</text>
-  <text x="400" y="470" fill="#ffffff" font-family="'Playfair Display', serif" font-size="26" font-weight="600" text-anchor="middle">Royal Victorian Botanical Gardens</text>
+  <text x="400" y="470" fill="#ffffff" font-family="'Playfair Display', serif" font-size="26" font-weight="600" text-anchor="middle">Visakhapatnam Hilltop Gardens</text>
 </svg>

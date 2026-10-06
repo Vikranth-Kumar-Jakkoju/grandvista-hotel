@@ -9,63 +9,63 @@
   const attractionsData = [
     {
       id: 1,
-      name: 'Golden Promenade Beach & Pier',
+      name: 'Ramakrishna Beach',
       category: 'Nature & Coastal',
-      distance: '2.5 km',
-      travelTime: '8 mins by private car',
+      distance: '0.8 km',
+      travelTime: '5 mins by car / 10 mins walk',
       openingHours: 'Open 24 hours daily',
       image: 'images/attractions/beach.svg',
-      description: 'A serene coastline promenade lined with heritage lampposts, pristine golden sands, and fresh ocean breezes. Perfect for sunrise strolls, jogging, and sunset dining.'
+      description: 'A popular Visakhapatnam beachfront for seaside walks, ocean views, and local food stalls.'
     },
     {
       id: 2,
-      name: 'The Imperial Luxury Galleria',
-      category: 'Shopping & Leisure',
-      distance: '1.2 km',
-      travelTime: '4 mins by car / 12 mins walk',
-      openingHours: '10:00 AM – 10:00 PM daily',
-      image: 'images/attractions/shopping-mall.svg',
-      description: 'An architectural marvel featuring over 150 international haute couture boutiques, fine watchmakers, curated artisan jewelers, and gourmet confectionery salons.'
+      name: 'INS Kursura Submarine Museum',
+      category: 'Maritime History',
+      distance: '1.5 km',
+      travelTime: '5 mins by car / 20 mins walk',
+      openingHours: 'Hours vary; check before visiting',
+      image: 'images/attractions/museum.svg',
+      description: 'A decommissioned Indian Navy submarine converted into a museum on the Visakhapatnam waterfront.'
     },
     {
       id: 3,
-      name: 'National Heritage Museum & Gallery',
+      name: 'Visakha Museum',
       category: 'Arts & Culture',
-      distance: '3.8 km',
-      travelTime: '12 mins by car / metro',
-      openingHours: '9:30 AM – 5:30 PM (Closed Mondays)',
+      distance: '1.5 km',
+      travelTime: '5 mins by car',
+      openingHours: 'Hours vary; check before visiting',
       image: 'images/attractions/museum.svg',
-      description: 'Houses five centuries of neoclassical sculpture, royal Mughal textiles, classical oil portraits, and archaeological treasures with English audio guides.'
+      description: 'A city museum showcasing regional history, maritime heritage, and cultural exhibits.'
     },
     {
       id: 4,
-      name: 'Central Business & Financial District',
-      category: 'Business & Commerce',
-      distance: '4.0 km',
-      travelTime: '10 mins by car / express shuttle',
-      openingHours: 'Commercial hours (8:00 AM – 8:00 PM)',
-      image: 'images/attractions/business-district.svg',
-      description: 'The premier commercial hub featuring global corporate headquarters, the Stock Exchange, international banking houses, and rooftop executive lounges.'
+      name: 'Kailasagiri Hill Park',
+      category: 'Parks & Views',
+      distance: 'Approx. 8 km',
+      travelTime: '20–30 mins by car',
+      openingHours: 'Hours vary; check before visiting',
+      image: 'images/attractions/botanical-gardens.svg',
+      description: 'A hilltop park with panoramic views of Visakhapatnam and the Bay of Bengal.'
     },
     {
       id: 5,
-      name: 'Historic Imperial Heritage Citadel',
+      name: 'Simhachalam Temple',
       category: 'History & Architecture',
-      distance: '5.5 km',
-      travelTime: '15 mins by car',
-      openingHours: 'Sunrise to Sunset daily',
+      distance: 'Approx. 18 km',
+      travelTime: '40–50 mins by car',
+      openingHours: 'Hours vary; check before visiting',
       image: 'images/attractions/imperial-fort.svg',
-      description: 'A 16th-century red sandstone fortress boasting regal gates, courtyards, marble pavilions, and evening sound-and-light heritage spectacles.'
+      description: 'A historic hilltop temple dedicated to Lord Narasimha, located within Visakhapatnam.'
     },
     {
       id: 6,
-      name: 'Royal Victorian Botanical Gardens',
+      name: 'Tenneti Park',
       category: 'Parks & Recreation',
-      distance: '2.0 km',
-      travelTime: '6 mins by car / 18 mins walk',
-      openingHours: '6:00 AM – 7:00 PM daily',
+      distance: 'Approx. 6 km',
+      travelTime: '15–20 mins by car',
+      openingHours: 'Open daily; hours may vary',
       image: 'images/attractions/botanical-gardens.svg',
-      description: 'Spanning over 60 verdant acres with manicured rose gardens, century-old tropical palm groves, tranquil lotus ponds, and a Victorian glass conservatory.'
+      description: 'A coastal park with walking paths and views over the Bay of Bengal.'
     }
   ];
 

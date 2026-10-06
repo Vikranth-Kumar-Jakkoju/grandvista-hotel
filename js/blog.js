@@ -17,20 +17,20 @@
       publishedDate: 'October 2, 2026',
       readMinutes: 6,
       image: 'images/blog/things-to-do.svg',
-      excerpt: 'From private art viewings at heritage galleries to tranquil morning walks through Mughal gardens, discover the finest cultural experiences steps from GrandVista.',
+      excerpt: 'From sunrise walks at Ramakrishna Beach to maritime history at INS Kursura, discover Visakhapatnam near GrandVista.',
       content: `
-        <p>Stepping out of the serene marble corridors of GrandVista Hotel, guests find themselves nestled in the most prestigious and culturally vibrant neighborhood of the capital. The Diplomatic Enclave pairs quiet tree-lined boulevards with instantaneous access to the city's finest monuments, museums, and artisanal markets.</p>
+        <p>Set on Visakhapatnam's coast, GrandVista offers a convenient base for exploring the city's beaches, maritime history, and cultural landmarks.</p>
 
-        <h2>Morning: Stroll the Imperial Botanical Groves</h2>
-        <p>Begin your morning just after sunrise with a short six-minute stroll to the historic Victorian Botanical Gardens. Over 60 acres of heritage flora, tranquil lotus ponds, and a cast-iron glasshouse conservatory offer a refreshing sanctuary before the city awakens. The morning air is filled with the scent of blossoming jasmine and exotic orchids.</p>
+        <h2>Morning: Walk Along Ramakrishna Beach</h2>
+        <p>Start the day with a seaside walk along Ramakrishna Beach, where the Bay of Bengal meets the city's long waterfront promenade.</p>
 
-        <blockquote>"The beauty of our enclave lies in its duality: serene seclusion within our gates, with historic landmarks just beyond the threshold."</blockquote>
+        <blockquote>"Visakhapatnam's coastline brings the calm of the sea close to the energy of the city."</blockquote>
 
-        <h2>Midday: Private Viewings at National Heritage Gallery</h2>
-        <p>Art connoisseurs will relish spending midday exploring the National Heritage Museum &amp; Gallery, located less than four kilometers from the hotel. Housing over five centuries of classical Indian miniature paintings, royal textiles, and neoclassical sculpture, the gallery offers curated audio guides. Our concierge team can arrange private after-hours viewing access upon request.</p>
+        <h2>Midday: Discover the INS Kursura Submarine Museum</h2>
+        <p>Visit the decommissioned INS Kursura, now a museum on the waterfront, to learn about India's naval history. Check current opening hours before setting out.</p>
 
-        <h2>Afternoon: Haute Couture at The Imperial Galleria</h2>
-        <p>A short chauffeured ride brings you to The Imperial Luxury Galleria, the city’s landmark luxury shopping destination. Here, international fashion houses sit alongside bespoke master tailors and artisanal perfumeries. Savor an afternoon cup of single-origin Darjeeling tea in the central atrium before returning to GrandVista for sunset cocktails at Sky Lounge.</p>
+        <h2>Afternoon: Take in the View from Kailasagiri</h2>
+        <p>Head to Kailasagiri Hill Park for sweeping views over Visakhapatnam and the Bay of Bengal, then return to GrandVista for sunset cocktails at Sky Lounge.</p>
       `,
       relatedService: {
         title: 'Chauffeured City Excursions',
@@ -49,7 +49,7 @@
       publishedDate: 'September 28, 2026',
       readMinutes: 5,
       image: 'images/blog/weekend-guide.svg',
-      excerpt: 'How to experience the ultimate rejuvenating 48 hours in the capital, combining bespoke suite indulgence, award-winning spa treatments, and fine dining.',
+      excerpt: 'How to enjoy a rejuvenating 48 hours in Visakhapatnam, combining bespoke suite indulgence, spa treatments, and fine dining.',
       content: `
         <p>A weekend escape should feel like a timeless pause—an immersion into uncompromising comfort, sublime gastronomy, and peaceful revitalization. Whether you are visiting from abroad or enjoying a mindful weekend staycation, this 48-hour itinerary is designed to maximize relaxation and cultural discovery.</p>
 
@@ -84,7 +84,7 @@
       image: 'images/blog/local-food.svg',
       excerpt: 'Discover the rich culinary tapestry of our historic city, from fragrant slow-cooked biryanis and clay-oven kebabs to refined street delicacies and artisan desserts.',
       content: `
-        <p>Our capital city is globally celebrated as an unrivaled culinary crossroad. Century-old recipes handed down through generations of imperial royal chefs converge with contemporary gastronomy. For discerning epicures, every alley and dining room tells a story through aroma, spice, and craft.</p>
+        <p>Visakhapatnam's food scene brings coastal Andhra flavours together with regional Indian cooking. Fresh seafood, fragrant spices, and recipes passed through generations make every meal a discovery.</p>
 
         <h2>1. The Art of Galouti &amp; Kakori Kebabs</h2>
         <p>Originally perfected for royalty who demanded meltingly tender meats, these kebabs are infused with over twenty-five proprietary ground spices, rose water, and raw papaya. Seared over copper griddles, they melt upon contact with the palate.</p>
