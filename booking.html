@@ -589,7 +589,7 @@
                 </table>
 
                 <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--space-lg);">
-                  🔒 <strong>Payment on Arrival:</strong> No prepayment required today. Total will be settled at hotel reception. Includes all luxury cess &amp; applicable 12% GST.
+                  🔒 <strong>Payment on Arrival:</strong> No prepayment required today. Total will be settled at hotel reception. Includes all luxury cess &amp; applicable 18% GST.
                 </div>
 
                 <button type="button" class="btn btn--primary btn--block" id="confirm-booking-btn">
@@ -638,7 +638,7 @@
               <div class="confirmation-reference-code" id="confirm-booking-reference">
                 GVH-2026-00000
               </div>
-              <span class="room-card__status-badge room-card__status-badge--limited" style="display: inline-block; margin-top: 6px;">
+              <span class="room-card__status-badge room-card__status-badge--limited" id="confirm-booking-status" style="display: inline-block; margin-top: 6px;">
                 Pending Confirmation
               </span>
             </div>
@@ -646,6 +646,10 @@
             <!-- Receipt Breakdown Table -->
             <table class="confirmation-summary-table" aria-label="Confirmed booking details">
               <tbody>
+                <tr>
+                  <th>Booking Status</th>
+                  <td id="confirm-status-text" style="font-weight: 600; color: #d97706;">Pending Confirmation</td>
+                </tr>
                 <tr>
                   <th>Primary Guest</th>
                   <td id="confirm-guest-name">Eleanor Vance</td>
@@ -669,6 +673,18 @@
                 <tr>
                   <th>Guest Party</th>
                   <td id="confirm-guests">2 Adults</td>
+                </tr>
+                <tr>
+                  <th>Accommodation Subtotal</th>
+                  <td id="confirm-room-subtotal">₹0</td>
+                </tr>
+                <tr>
+                  <th>Services Subtotal</th>
+                  <td id="confirm-services-subtotal">₹0</td>
+                </tr>
+                <tr>
+                  <th>Taxes &amp; Fees (18% GST)</th>
+                  <td id="confirm-taxes">₹0</td>
                 </tr>
                 <tr>
                   <th>Total Due at Check-In</th>

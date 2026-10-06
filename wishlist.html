@@ -217,17 +217,27 @@
 
       let rooms = [];
       try {
-        const resp = await fetch('data/rooms.json');
-        if (resp.ok) rooms = await resp.json();
+        const resp = await fetch('backend/api/rooms.php');
+        if (!resp.ok) {
+          console.error('Fetch error for backend/api/rooms.php, status:', resp.status);
+          grid.innerHTML = `
+            <div class="rooms-empty-state" style="grid-column: 1 / -1; border-color: #ef4444;" role="alert">
+              <h3 class="empty-state-title" style="color: #b91c1c;">Unable to Load Saved Accommodations</h3>
+              <p class="empty-state-desc">Server error ${resp.status}: Unable to load room details. Please try again later.</p>
+            </div>
+          `;
+          return;
+        }
+        rooms = await resp.json();
       } catch (e) {
-        console.warn('Fallback rooms for wishlist');
-        rooms = [
-          { id: 1, slug: 'deluxe-room', name: 'Deluxe Room', type: 'Deluxe', price_per_night: 5500, size_sqft: 380, max_guests: 2, bed_type: 'King Bed', view: 'City View', image: 'images/rooms/deluxe-room.svg' },
-          { id: 2, slug: 'premium-room', name: 'Premium Room', type: 'Premium', price_per_night: 7800, size_sqft: 460, max_guests: 2, bed_type: 'King Bed', view: 'Garden View', image: 'images/rooms/premium-room.svg' },
-          { id: 3, slug: 'executive-suite', name: 'Executive Suite', type: 'Executive', price_per_night: 12500, size_sqft: 650, max_guests: 3, bed_type: 'Super King Bed', view: 'Panoramic Skyline View', image: 'images/rooms/executive-suite.svg' },
-          { id: 4, slug: 'family-room', name: 'Family Room', type: 'Family', price_per_night: 10200, size_sqft: 580, max_guests: 4, bed_type: '2 Queen Beds', view: 'Courtyard View', image: 'images/rooms/family-room.svg' },
-          { id: 5, slug: 'suite', name: 'Suite', type: 'Suite', price_per_night: 21500, size_sqft: 920, max_guests: 4, bed_type: 'California King Bed', view: 'Panoramic Skyline View', image: 'images/rooms/suite.svg' }
-        ];
+        console.error('Fetch error for backend/api/rooms.php:', e);
+        grid.innerHTML = `
+          <div class="rooms-empty-state" style="grid-column: 1 / -1; border-color: #ef4444;" role="alert">
+            <h3 class="empty-state-title" style="color: #b91c1c;">Unable to Load Saved Accommodations</h3>
+            <p class="empty-state-desc">Network error connecting to accommodations service. Please check your connection.</p>
+          </div>
+        `;
+        return;
       }
 
       const savedRooms = rooms.filter(r => savedSlugs.includes(r.slug.toLowerCase()));
