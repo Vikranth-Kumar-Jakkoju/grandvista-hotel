@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fortGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2c1a14"/>
+      <stop offset="60%" stop-color="#5a3826"/>
+      <stop offset="100%" stop-color="#b46d3e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#fortGrad)"/>
+  <!-- Sunset glow -->
+  <circle cx="400" cy="190" r="85" fill="#f59e0b" opacity="0.6"/>
+  <!-- Fort Bastions and Battlements -->
+  <path d="M60,500 L60,320 L100,320 L100,280 L140,280 L140,320 L220,320 L220,260 L280,260 L280,320 L360,320 L360,240 L440,240 L440,320 L520,320 L520,260 L580,260 L580,320 L660,320 L660,280 L700,280 L700,320 L740,320 L740,500 Z" fill="#1e120c" stroke="#c5a880" stroke-width="1.5"/>
+  <!-- Arched Gateway -->
+  <path d="M360,500 L360,380 C360,330 440,330 440,380 L440,500 Z" fill="#f59e0b" opacity="0.3"/>
+  <!-- Distance Badge -->
+  <rect x="32" y="32" width="130" height="32" rx="16" fill="#18191c" stroke="#c5a880" stroke-width="1"/>
+  <text x="97" y="53" fill="#c5a880" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1">5.5 KM AWAY</text>
+  <text x="400" y="465" fill="#ffffff" font-family="'Playfair Display', serif" font-size="26" font-weight="600" text-anchor="middle">Historic Imperial Heritage Citadel</text>
+</svg>

@@ -1,252 +1,176 @@
-# GrandVista Hotel — Website Project
+# GrandVista Hotel & Luxury Suites
 
-A premium, responsive hotel website for **GrandVista Hotel**, a 5-star luxury heritage boutique hotel in New Delhi's diplomatic enclave. Built completely from scratch using **plain HTML5, CSS3, and vanilla JavaScript** with zero third-party UI libraries or frameworks.
+A luxury 5-star heritage boutique hotel web application designed and built with semantic HTML5, modern CSS3, vanilla JavaScript (ES6+), and a lightweight, secure PHP 8.5 + MySQL 8.0 backend.
 
----
-
-## 📁 Project Structure
-
-```text
-hotel-website/
-├── index.html                  # Homepage (Sticky Nav, Hero, Search Widget, Intro, Featured Rooms, Highlights, Footer)
-├── rooms.html                  # Rooms Listing Page (Filters, Sorting, Dynamic Grid, Empty State)
-├── room-details.html           # Room Details Page (Template driven by ?room=<slug>, Lightbox Gallery, Policies, Booking Card)
-├── booking.html                # Multi-Step Booking Engine (Dates, Room Select, Guest Info, Requests, Review, Confirmation)
-├── gallery.html                # Photo Gallery (Category Filters, Lightbox Modal with Touch/Keyboard Navigation)
-├── amenities.html              # Hotel Amenities & Services (6 Facility Showcases with Operating Hours & Highlights)
-├── about.html                  # Heritage & Story (History, Mission, Architecture, Stats & Visual Timeline 1928–2026)
-├── contact.html                # Contact & Location (Interactive Coordinates, SVG Map, Department Contacts, Inquiry Form)
-├── faq.html                    # Frequently Asked Questions (Accessible ARIA Accordion for 10 Common Inquiries)
-├── policies.html               # Hotel Policies & Terms (Check-in/out, 48h Cancellation, Children, Pets, ID, Smoking)
-├── wishlist.html               # Dedicated Saved Wishlist (Dynamic Grid, Empty State, Remove & Clear Actions)
-├── css/
-│   └── style.css               # Design system tokens, responsive layout, rooms, details, booking & component styles
-├── js/
-│   ├── main.js                 # Navigation toggle, sticky scroll, booking form validation, featured rooms fetch, wishlist bootstrap
-│   ├── filters.js              # Client-side filtering, sorting, wishlist toggle, and empty state management for rooms.html
-│   ├── room-details.js         # URL query parser, gallery carousel, lightbox with swipe/keyboard, metadata updates, wishlist toggle
-│   ├── booking.js              # 6-step in-memory state engine, date validation, live financial math, confirmation receipt
-│   ├── wishlist.js             # LocalStorage wishlist engine, custom events, heart button renderer, dynamic nav badge
-│   ├── recently-viewed.js      # LocalStorage history tracker (max 4, most recent first), homepage history render engine
-│   ├── gallery.js              # Category filtering and touch/keyboard-accessible fullscreen lightbox modal for gallery.html
-│   ├── contact.js              # Form validation, live feedback alert banner, and inquiry submission handler for contact.html
-│   └── faq.js                  # Accessible keyboard-navigable ARIA accordion component for faq.html
-├── data/
-│   └── rooms.json              # 5 Room types dataset with amenities, pricing, availability & gallery images
-├── images/
-│   ├── hotel/                  # Hotel visuals & facility illustrations
-│   │   ├── hero-bg.svg
-│   │   ├── hotel-intro.svg
-│   │   ├── lobby.svg
-│   │   ├── pool.svg
-│   │   ├── spa.svg
-│   │   ├── restaurant.svg
-│   │   ├── events.svg
-│   │   └── exterior.svg
-│   └── rooms/                  # Room card graphics & gallery placeholders
-│       ├── deluxe-room.svg
-│       ├── premium-room.svg
-│       ├── executive-suite.svg
-│       ├── family-room.svg
-│       ├── suite.svg
-│       └── gallery/
-│           ├── balcony.svg
-│           ├── bathroom.svg
-│           ├── living.svg
-│           └── view.svg
-└── README.md                   # Documentation and comprehensive project guide
-```
+- **GitHub Repository:** [https://github.com/Vikranth-Kumar-Jakkoju/grandvista-hotel](https://github.com/Vikranth-Kumar-Jakkoju/grandvista-hotel)
+- **Live Demo (Frontend Showcase):** [https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/](https://vikranth-kumar-jakkoju.github.io/grandvista-hotel/) *(Note: Live demo showcases client-side features; full transactional booking, inquiries, and table reservations connect to the PHP/MySQL backend when running locally).*
 
 ---
 
-## 🎨 1. Design System (`css/style.css`)
+## 📖 Description
 
-The design system is defined via CSS custom properties on `:root` to ensure consistency and modularity:
+GrandVista Hotel is an architectural icon located along Visakhapatnam's coast, blending 98+ years of heritage hospitality with contemporary luxury. This digital portal provides guests with an end-to-end booking experience, curated culinary discovery, local neighborhood guides, and immersive multimedia exploration.
 
-### Color Palette (Warm Neutral & Luxury Gold)
-- **Deep Charcoal (Primary Base):** `--color-primary: #18191c;`, `--color-primary-light: #26282e;`
-- **Warm Gold / Brass (Accent):** `--color-accent: #c5a880;`, `--color-accent-light: #dfc8a5;`, `--color-accent-dark: #9e8055;`
-- **Cream & Warm Surfaces:** `--color-bg-warm: #faf7f2;`, `--color-bg-card: #ffffff;`, `--color-bg-subtle: #f3efe8;`
-- **High-Contrast Text:** `--color-text-main: #242528;`, `--color-text-muted: #6a6c72;`, `--color-text-light: #f7f4ee;`
-- **Borders & Dividers:** `--color-border: #e6e0d5;`, `--color-border-gold: rgba(197, 168, 128, 0.4);`
-- **Availability Status Tokens:**
-  - *Available:* `--color-status-available: #1e7e43;` (light emerald badge)
-  - *Limited:* `--color-status-limited: #b45309;` (warm amber badge)
-  - *Sold Out:* `--color-status-soldout: #b91c1c;` (soft crimson badge)
-
-### Typography
-- **Headings (Serif):** `Playfair Display`, serif (Google Fonts)
-- **Body & Controls (Sans-Serif):** `Inter`, sans-serif (Google Fonts)
-- **Fluid & Scaled Hierarchy:** `--font-size-xs` (12px) to `--font-size-5xl` (60px)
-
-### Spacing & Border Radii
-- **Spacing Scale:** `--space-2xs` (4px), `--space-xs` (8px), `--space-sm` (12px), `--space-md` (16px), `--space-lg` (24px), `--space-xl` (32px), `--space-2xl` (48px), `--space-3xl` (72px), `--space-4xl` (96px).
-- **Border Radii:** `--radius-xs` (2px), `--radius-sm` (4px), `--radius-md` (8px), `--radius-lg` (14px), `--radius-full` (9999px).
-
-### Responsiveness
-- Mobile-first methodology with standard responsive breakpoints:
-  - Mobile: `< 640px`
-  - Tablet: `640px – 1023px`
-  - Desktop: `≥ 1024px`
+The project is built entirely without bulky UI frameworks (no Bootstrap, React, or jQuery), ensuring ultra-fast load times, semantic accessibility, zero external client-side dependencies, and full responsiveness across all viewports (tested down to 375px and 320px mobile screens with zero horizontal overflow).
 
 ---
 
-## 🛏️ 2. Room Data Schema (`data/rooms.json`)
+## ✨ Features
 
-The data file contains 5 structured room records:
-1. **Deluxe Room** (`deluxe-room`) — ₹5,500/night (380 sq ft, 2 guests, King Bed, City View)
-2. **Premium Room** (`premium-room`) — ₹7,800/night (460 sq ft, 2 guests, King Bed, Garden View)
-3. **Executive Suite** (`executive-suite`) — ₹12,500/night (650 sq ft, 3 guests, Super King Bed, Skyline View)
-4. **Family Room** (`family-room`) — ₹10,200/night (580 sq ft, 4 guests, 2 Queen Beds, Courtyard View)
-5. **Suite** (`suite`) — ₹21,500/night (920 sq ft, 4 guests, California King Bed, Panoramic View)
+### 1. 23-Page Complete Digital Portal
+1. **Homepage (`index.html`):** Hero showcase, booking availability widget, hotel heritage intro, featured accommodations, amenities highlight grid, and recently viewed tracker.
+2. **Accommodations Catalog (`rooms.html`):** Multi-faceted room filtering (category, bed type, view, guest count, price range, and amenities), live sort dropdown (featured, price asc/desc, size), heart wishlist toggles, and availability badges.
+3. **Room Details (`room-details.html?room=<slug>`):** Dynamic slug-driven template, full-featured lightbox gallery with thumbnail reel and touch/keyboard controls, guest specifications, policies, and booking jump cards.
+4. **Multi-Step Booking Engine (`booking.html`):** 6-step guided reservation engine (Dates & Room selection, Guest details, Add-on services, Live financial breakdown, and Confirmation receipt).
+5. **Special Offers & Packages (`offers.html`):** Curated seasonal packages, promo code copy buttons, discount details, and direct booking links.
+6. **Dining & Culinary (`dining.html`):** Showcase of fine dining venues (The Grand Pavilion, Spice Symphony, Sky Lounge & Bar), venue hours, dress codes, and instant reservation modal.
+7. **Restaurant Details (`restaurant-details.html?restaurant=<slug>`):** Venue details, chef's philosophy, categorized menus (appetizers, mains, desserts, drinks) with dietary tags, and an integrated table booking form.
+8. **Location & Transit (`location.html`):** Hotel coordinates, OpenStreetMap interactive embed, transit hub distances (Airport, Railway Station, Bus Station, Beach Road), and 6 nearby attraction cards.
+9. **Event Spaces & Banquets (`events.html`):** Architectural showcase of 3 distinguished event venues (The Grand Ballroom, The Diplomatic Hall, The Terrace Pavilion) with capacity breakdowns, audiovisual tech, and catering options.
+10. **Venue Details & Floorplans (`event-details.html?slug=<slug>`):** Detailed floorplan layouts, seating specifications (theatre, classroom, banquet, cocktail), stage dimensions, and interactive event proposal request form.
+11. **Guest Reviews & Testimonials (`reviews.html`):** 4.9/5 overall rating breakdown, verified reviews from diplomats and executives, category filters, and verified review submission engine.
+12. **Editorial Blog & Travel Guide (`blog.html`):** 6 travel and lifestyle articles across categories with instant category filtering.
+13. **Article Details (`blog-details.html?slug=<slug>`):** Slug-driven article reader with reading time, author, date, rich typography, related stories, and cross-links to hotel services (rooms, dining, offers).
+14. **Hotel Amenities (`amenities.html`):** 6 facility highlights (Infinity Pool, Fitness Centre, Ayurvedic Spa, Business Centre, Valet Parking, Fiber Wi-Fi) with operating hours.
+15. **Banquets & Facilities (`facilities.html`):** Event spaces, corporate meeting halls, wedding lawns, capacity charts, and event booking inquiry forms.
+16. **Photo Gallery (`gallery.html`):** Category-filtered photo gallery with keyboard/swipe fullscreen lightbox.
+17. **Heritage & Story (`about.html`):** Hotel narrative since 1928, milestones timeline, mission, and leadership.
+18. **Frequently Asked Questions (`faq.html`):** ARIA-compliant accessible accordion answering common guest inquiries.
+19. **Contact & Concierge (`contact.html`):** Department directory, front desk coordinates, and validated inquiry form.
+20. **Hotel Policies (`policies.html`):** Transparent guidelines on check-in/out, cancellations, children, pets, smoking, and identity verification.
+21. **Saved Wishlist (`wishlist.html`):** LocalStorage-backed saved rooms collection with real-time navigation badge sync.
+22. **Privacy Policy (`privacy.html`):** Guest data privacy disclosures, GDPR/DPDP alignment, and cookie policies.
+23. **Terms of Service (`terms.html`):** Reservation terms, liability limits, and stay conditions.
 
----
+### 2. Multi-Step Booking & Server-Side Security
+- **Server-Side Recalculation:** All financial math (room price per night, nights count, add-on services subtotals, 18% GST tax rate, and grand total) is validated and computed strictly on the server (`backend/api/booking.php`). Tampered client prices are completely ignored.
+- **Pending Confirmation Status:** New bookings are securely inserted with `status = 'pending'`, generating an alphanumeric booking reference (`GVH-2026-XXXXX`).
+- **Input Validation:** Server-side sanitization and validation for names, phone numbers, email regex, date chronometry (check-out must be after check-in, no past dates), and guest counts.
 
-## 🖥️ 3. Implemented Pages & Features
-
-### 1. Homepage (`index.html`)
-- **Sticky Navigation Bar:** Logo, 10 sitemap links, wishlist counter badge, and animated mobile hamburger drawer.
-- **Hero Section:** Headline *"Stay Better. Experience More."* with dual CTAs.
-- **Booking Search Widget:** Check-in, check-out, adults, children, rooms, room type, with vanilla JS validation.
-- **Hotel Introduction Section:** Heritage, diplomatic enclave location, classification, and facilities.
-- **Featured Rooms Section:** Dynamically rendered top 3 rooms from `rooms.json`.
-- **Hotel Highlights Section:** 8-item custom SVG icon grid.
-- **Footer:** Full contact info, social placeholders, and sitemap navigation links.
-
-### 2. Rooms Listing Page (`rooms.html` & `js/filters.js`)
-- **Multi-Parameter Filtering:** Room Type, Min Guests, Bed Type, Room Size, View, Price Range (Min/Max), and Amenities (Multi-select checkboxes).
-- **Sort Dropdown:** Featured First, Price: Low to High, Price: High to Low, Room Size: Largest First.
-- **Client-Side Pipeline:** Seamless filtering and sorting in real-time without reloading.
-- **Empty State:** Friendly *"No Accommodations Found"* message with a one-click *"Reset All Filters"* action.
-- **Card States:** Heart wishlist toggle button, availability badge, view tag, specs, amenity pills, *"View Details"* link (`room-details.html?room=<slug>`), and conditional *"Book Now"* button (disabled *"Sold Out"* state for sold-out rooms).
-
-### 3. Room Details Page (`room-details.html` & `js/room-details.js`)
-- **URL Parameter Driven:** Reads `?room=<slug>` from the address bar.
-- **Dynamic SEO:** Sets `<title>` and `<meta name="description">` specifically for the active room.
-- **Interactive Image Gallery:** Main photo display with captions and counter badge, thumbnail strip, and click-to-enlarge Lightbox modal with keyboard arrows (`ArrowLeft`/`ArrowRight`), `Escape` to close, and mobile touch swipe left/right.
-- **Detailed Specifications:** Key metrics grid (Size, Guests, Bedding, View).
-- **Hotel Policies Block:** Check-in (2:00 PM), check-out (12:00 PM), flexible cancellation guarantee demo text, and identification requirements.
-- **Sticky Booking Sidebar:** Real-time pricing, guarantee reassurance, concierge contact, and *"Book This Room"* action.
-- **Wishlist Integration:** Header heart button toggles room state in localStorage and updates navigation badges in real time.
-- **Room Not Found State:** Graceful error handling for missing or invalid room slugs.
-
-### 4. Multi-Step Booking Flow (`booking.html` & `js/booking.js`)
-- **Visible Stepper Progress Bar:** Top step progress indicator (Step X of 6) with dynamic fill track and active/completed circles.
-- **Deep Linking Support:** Opening `booking.html#<slug>` automatically finds the room, pre-selects it, and skips directly to Step 2.
-- **Step 1 — Search & Dates:** Date inputs with dynamic minimums (no past dates, check-out strictly after check-in, minimum 1 adult).
-- **Step 2 — Select Room:** Displays all available rooms from `rooms.json` (excluding `sold_out`). Interactive radio-style selectable cards with highlight border, checkmark badge, and specifications.
-- **Step 3 — Guest Information:** Full Name, Email Address (validated with regex), Mobile Phone (numeric validation), Country, and Number of Guests.
-- **Step 4 — Personalize & Special Requests:** Optional add-on services with live pricing (Airport Transfers, Breakfast, Extra Bed, Spa, Dinner, Floral setup, Late Checkout, Early Check-in).
-- **Step 5 — Live Review & Cost Breakdown:** Summary cards with "Edit" jump-back links, itemized pricing, 12% GST calculation, and grand total.
-- **Step 6 — Booking Confirmation:** Generates reference code (`GVH-2026-#####`), status badge, complete itemized receipt, and *"Book Another Stay"* reset button.
-
-### 5. Photo Gallery Page (`gallery.html` & `js/gallery.js`)
-- **Category Filter Bar:** 8 categories (All Photos, Rooms & Suites, Lobby, Dining & Cellar, Infinity Pool, Spa & Wellness, Events & Banquets, Exterior).
-- **Interactive Lightbox Modal:** Fullscreen zoom modal with previous/next controls, image counter, descriptive captions, keyboard support (<kbd>Escape</kbd>, <kbd>&larr;</kbd>, <kbd>&rarr;</kbd>), and touch swipe gestures.
-- **Accessibility:** Photo cards are focusable via keyboard (<kbd>Tab</kbd>) and can be opened with <kbd>Enter</kbd> or <kbd>Space</kbd>.
-
-### 6. Curated Amenities Page (`amenities.html`)
-- **6 Facility Showcases:**
-  1. *Temperature-Controlled Infinity Pool* (6:00 AM – 10:00 PM)
-  2. *State-of-the-Art Fitness Centre* (24 Hours Open)
-  3. *Holistic Ayurvedic & Wellness Spa* (8:00 AM – 9:00 PM)
-  4. *Executive Diplomatic Business Centre* (24 Hours Open)
-  5. *Complimentary Chauffeured Valet Parking* (24 Hours Open)
-  6. *High-Speed Fiber Wi-Fi* (Complimentary High-Bandwidth)
-- **Detailed Features:** Each facility highlights specialized services, operating hours badges, and direct links to reserve rooms.
-
-### 7. About Hotel Page (`about.html`)
-- **Heritage & Narrative:** Explores the history of GrandVista since 1928, its diplomatic heritage, and architectural conservation.
-- **Hospitality Mission & Pillars:** Focuses on timeless warmth, authentic discretion, and bespoke concierge service.
-- **Key Metrics Grid:** 98+ years of heritage, 120 artisan staff, 40 bespoke suites, and 99.4% guest satisfaction.
-- **Visual Horizontal Timeline:** Responsive milestone progression through 1928 (Inception), 1965 (Diplomatic Expansion), 1998 (Heritage Modernization), and 2026 (The GrandVista Era).
-
-### 8. Contact & Location Page (`contact.html` & `js/contact.js`)
-- **Direct Coordinates:** Mansingh Heritage Boulevard address, direct concierge telephone, and reservation email.
-- **Department Directory:** Front Desk, Sommelier Dining, Banquets & Events, Spa & Wellness.
-- **Interactive SVG Map:** Visual location map block highlighting proximity to central embassies and monuments.
-- **Validated Inquiry Form:** Client-side input validation for full name, email format, subject selection, and message length, with an animated confirmation alert banner.
-
-### 9. Frequently Asked Questions (`faq.html` & `js/faq.js`)
-- **10 Core Guest Questions:** Covers check-in/out policies, airport transfers, breakfast timings, smoking guidelines, pet policies, cancellations, and valet parking.
-- **Accessible Accordion:** Native ARIA attributes (`aria-expanded`, `aria-hidden`, `aria-controls`), keyboard toggle support (<kbd>Enter</kbd> and <kbd>Space</kbd>), and automatic collapse of sibling panels.
-
-### 10. Hotel Policies & Terms Page (`policies.html`)
-- **Comprehensive Policy Cards:**
-  - Check-in (2:00 PM) & Early Arrival
-  - Check-out (12:00 PM) & Late Departure
-  - 48-Hour Cancellation Guarantee
-  - Children & Extra Bed Policies
-  - Pet Policy (Guide & Service Animals Welcome)
-  - Government ID Verification Requirements
-  - 100% Non-Smoking Sanctuary
-  - Secure Payment Methods & Currency Exchange
-
-### 11. Saved Wishlist Page (`wishlist.html` & `js/wishlist.js`)
-- **LocalStorage Persistence:** Uses key `grandvista_wishlist` to maintain saved room slugs across sessions.
-- **Global Heart Toggle Buttons:** Appears on room listing cards (`rooms.html`) and the room details header (`room-details.html`).
-- **Dynamic Navigation Badge:** Automatically syncs and updates the count badge (`.wishlist-count-badge`) in both desktop and mobile navigation across all 11 pages.
-- **Dedicated Management View:** Displays saved rooms with specs, prices, and direct "Book" CTAs, individual removal buttons, a "Clear All" action, and an empty state banner with a call to explore accommodations.
+### 3. SEO & Standards Compliance
+- **SEO Elements:** Every page contains a unique `<title>`, unique `<meta name="description">`, `<link rel="canonical">`, and exactly one `<h1>`.
+- **Search Engine Assets:** Complete [sitemap.xml](sitemap.xml) and [robots.txt](robots.txt) indexing all 23 pages.
+- **Mobile First & Responsive:** Tested and verified at mobile viewports (375px / 390px) with 0 horizontal scroll (`scrollWidth == innerWidth`).
 
 ---
 
-## ⚙️ 4. Advanced Features Architecture
+## 🛠️ Technologies Used
 
-### Wishlist Flow & Synchronization
-```
-[User clicks heart button on Room Card / Room Details]
-                     │
-                     ▼
-       window.GrandVistaWishlist.toggle(slug)
-                     │
-         ┌───────────┴───────────┐
-         ▼                       ▼
-Update localStorage      Dispatch 'wishlist:updated'
-['deluxe-room', ...]             │
-                                 ▼
-                     Update .wishlist-count-badge
-                     in Desktop & Mobile Nav across pages
-                                 │
-                                 ▼
-                     Re-render cards on wishlist.html (if active)
-```
-
-### Recently Viewed Rooms Architecture (`js/recently-viewed.js`)
-- **Independent Storage Key:** `grandvista_recently_viewed`.
-- **Capacity & Ordering:** Stores room slugs ordered most recent first, strictly capped at a maximum of 4 items.
-- **De-duplication:** Re-viewing an existing accommodation moves it to the front of the list rather than creating duplicates.
-- **Auto-Hiding Homepage Section:** If the list is empty (e.g. on first visit), the section is omitted entirely with zero flash of empty content. Once rooms are tracked, the section displays matching cards with specifications, real-time rates, and direct links to view details or book.
-
-### Fullscreen Lightbox Pattern
-- **Modal Container:** Focus-trapped container with `role="dialog"` and `aria-modal="true"`.
-- **Keyboard Navigation:** <kbd>Escape</kbd> to close, <kbd>&larr;</kbd> for previous image, <kbd>&rarr;</kbd> for next image.
-- **Touch Gesture Support:** Detects touch start and end horizontal displacement (`deltaX > 40px`) for seamless mobile swiping.
+- **Frontend:**
+  - Semantic **HTML5**
+  - Modern **CSS3** (CSS Variables, Flexbox, CSS Grid, media queries)
+  - Vanilla **JavaScript (ES6+)** (No third-party libraries, Fetch API, LocalStorage, Custom Events, URLSearchParams)
+- **Backend:**
+  - **PHP 8.5+** (Modular RESTful API endpoints in `backend/api/`)
+  - **PDO MySQL** with prepared statements for SQL injection prevention
+  - Clean JSON responses (`{ success, message, data, errors }`) and semantic HTTP status codes (200, 201, 400, 404, 405, 500)
+- **Database:**
+  - **MySQL 8.0** relational database (`grandvista_hotel`)
+  - Normalized tables: `rooms`, `bookings`, `booking_services`, `enquiries`, `table_reservations`, `restaurants`, `menu_items`, `offers`, `events`, `event_images`, `event_enquiries`, `reviews`
+  - Canonical schema in `backend/sql/schema.sql` and Phase 1 migration in `backend/sql/002_events_reviews.sql`
+- **Development & Version Control:**
+  - Git & GitHub
+  - Built-in PHP Development Server (`php -S localhost:8000`)
 
 ---
 
-## 🚀 5. How to Run Locally
+## 📸 Screenshots
 
-Because the website uses native `fetch()` to load `data/rooms.json`, running via any local HTTP server is recommended:
+All screenshots are stored in the `/screenshots` directory.
 
-### Option A: VS Code Live Server (Recommended)
-1. Open the `hotel-website` folder in VS Code.
-2. Right click `index.html` (or any other page) and select **"Open with Live Server"**.
+### Desktop Previews (1280px Viewport)
 
-### Option B: Python 3 Built-In Server
-Run from the `hotel-website` directory:
+| Homepage | Accommodations |
+| :---: | :---: |
+| ![Homepage Desktop](screenshots/home_desktop.png) | ![Rooms Desktop](screenshots/rooms_desktop.png) |
+
+| Multi-Step Booking Engine | Dining Venues |
+| :---: | :---: |
+| ![Booking Desktop](screenshots/booking_desktop.png) | ![Dining Desktop](screenshots/dining_desktop.png) |
+
+| Location & Nearby Attractions | Editorial Travel Blog |
+| :---: | :---: |
+| ![Location Desktop](screenshots/location_desktop.png) | ![Blog Desktop](screenshots/blog_desktop.png) |
+
+| Blog Article Details | Legal Policies |
+| :---: | :---: |
+| ![Blog Details Desktop](screenshots/blog_details_desktop.png) | ![Privacy Desktop](screenshots/privacy_desktop.png) |
+
+### Mobile Previews (375px Viewport)
+
+| Mobile Home | Mobile Rooms | Mobile Booking | Mobile Location |
+| :---: | :---: | :---: | :---: |
+| ![Mobile Home](screenshots/home_mobile.png) | ![Mobile Rooms](screenshots/rooms_mobile.png) | ![Mobile Booking](screenshots/booking_mobile.png) | ![Mobile Location](screenshots/location_mobile.png) |
+
+---
+
+## ⚙️ Installation & Local Setup
+
+### Prerequisites
+- **PHP 8.2+** (PHP 8.5 recommended) with `pdo_mysql` extension enabled.
+- **MySQL 8.0+** running locally.
+- Modern web browser (Chrome, Edge, Firefox, Safari).
+
+### 1. Clone the Repository
 ```bash
-python -m http.server 8000
+git clone https://github.com/Vikranth-Kumar-Jakkoju/grandvista-hotel.git
+cd grandvista-hotel
 ```
-Then open `http://localhost:8000` in your browser.
 
-### Option C: Direct File Opening
-Double-clicking any HTML file in your local file explorer will open directly. The built-in fallback dataset ensures all pages render smoothly even if your browser's security policy blocks `file:///` local fetch requests.
+### 2. Database Setup
+1. Open your MySQL client and create the database:
+   ```sql
+   CREATE DATABASE grandvista_hotel CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
+2. Import the canonical database schema and initial catalog seed:
+   ```bash
+   mysql -u root -p grandvista_hotel < backend/sql/schema.sql
+   ```
+3. Configure environment credentials:
+   - Copy `backend/.env.example` to `backend/.env`:
+     ```bash
+     cp backend/.env.example backend/.env
+     ```
+   - Open `backend/.env` and update your MySQL credentials:
+     ```env
+     DB_HOST=localhost
+     DB_PORT=3306
+     DB_NAME=grandvista_hotel
+     DB_USER=root
+     DB_PASS=your_mysql_password
+     ```
+     *(Note: `backend/.env` is ignored by Git in `.gitignore` to prevent secret leaks).*
+
+### 3. Run the Local Development Server
+Start the built-in PHP development server from the project root directory:
+```bash
+php -S localhost:8000
+```
+
+### 4. Access the Website
+Open your browser and navigate to:
+```text
+http://localhost:8000/
+```
 
 ---
 
-## 🛡️ 6. Quality & Accessibility Audit
+## 🔗 Backend API Endpoints
 
-- **Zero Third-Party Dependencies:** 100% pure semantic HTML5, modern CSS3 (Custom Properties, Flexbox, Grid), and vanilla JavaScript.
-- **Responsive Layout:** Tested across mobile (375px), tablet (768px), and desktop (1024px+). No horizontal scrolling or overflow bugs.
-- **SEO Ready:** Every page includes distinct `<title>`, unique `<meta name="description">`, OpenGraph tags, semantic `<h1>`–`<h3>` hierarchy, and descriptive image `alt` attributes.
-- **Accessible Forms:** All `<input>`, `<select>`, and `<textarea>` controls have associated `<label>` elements or ARIA descriptions.
+The backend provides clean RESTful JSON endpoints under `backend/api/`:
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/backend/api/rooms.php` | List all rooms or get specific room with `?slug=<slug>` |
+| `GET` | `/backend/api/offers.php` | List active hotel special offers and packages |
+| `GET` | `/backend/api/restaurants.php` | List dining venues or get specific restaurant with `?slug=<slug>` |
+| `GET` | `/backend/api/menu-items.php` | Fetch menu items with optional filter `?restaurant_id=<id>` |
+| `POST` | `/backend/api/booking.php` | Create room booking (server recomputes prices, nights, tax @ 18%) |
+| `POST` | `/backend/api/contact.php` | Submit general concierge inquiry form |
+| `POST` | `/backend/api/table-reservation.php` | Submit dining table reservation |
+
+---
+
+## 📄 License & Attribution
+
+Designed and developed for GrandVista Hotel & Luxury Suites as part of the Web Development Internship at Netmaxin. All demo photography, illustrations, and trademarks belong to their respective creators or are custom SVG vector illustrations created for this project.

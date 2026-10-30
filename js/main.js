@@ -252,9 +252,15 @@ async function loadFeaturedRooms() {
   if (!container) return;
 
   try {
-    const response = await fetch('data/rooms.json');
+    const response = await fetch('backend/api/rooms.php');
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      console.error('Fetch error for backend/api/rooms.php, status:', response.status);
+      container.innerHTML = `
+        <div class="rooms-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+          <p style="color: #ef4444; font-weight: 500;">Server error ${response.status}: Unable to load featured accommodations. Please try again later.</p>
+        </div>
+      `;
+      return;
     }
     const rooms = await response.json();
 
@@ -264,9 +270,12 @@ async function loadFeaturedRooms() {
 
     renderFeaturedRooms(displayRooms, container);
   } catch (err) {
-    console.warn('Could not fetch data/rooms.json directly (e.g. file:// protocol restriction). Using local fallback dataset.', err);
-    // Fallback data ensures page always renders properly even if opened as a local file without a live server
-    renderFeaturedRooms(getFallbackRooms(), container);
+    console.error('Fetch error for backend/api/rooms.php:', err);
+    container.innerHTML = `
+      <div class="rooms-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+        <p style="color: #ef4444; font-weight: 500;">Network error connecting to accommodations service. Please check your connection.</p>
+      </div>
+    `;
   }
 }
 
@@ -388,56 +397,3 @@ function escapeHTML(str) {
     .replace(/'/g, '&#039;');
 }
 
-/* Safe Fallback Dataset (Used if CORS blocks local file:// fetch) */
-function getFallbackRooms() {
-  return [
-    {
-      id: 1,
-      slug: 'deluxe-room',
-      name: 'Deluxe Room',
-      type: 'Deluxe',
-      price_per_night: 5500,
-      size_sqft: 380,
-      max_guests: 2,
-      bed_type: 'King Bed',
-      view: 'City View',
-      description: 'An elegantly appointed sanctuary featuring custom walnut furnishings, Italian marble bathroom with rain shower, and sweeping views of the vibrant city skyline.',
-      amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Work Desk', 'Air Conditioning'],
-      availability_status: 'available',
-      image: 'images/rooms/deluxe-room.svg',
-      is_featured: true,
-    },
-    {
-      id: 2,
-      slug: 'premium-room',
-      name: 'Premium Room',
-      type: 'Premium',
-      price_per_night: 7800,
-      size_sqft: 460,
-      max_guests: 2,
-      bed_type: 'King Bed',
-      view: 'Garden View',
-      description: 'Designed for discerning guests, featuring a private step-out balcony overlooking manicured courtyard gardens, luxury plush bedding, and an exquisite soaking bathtub.',
-      amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-      availability_status: 'available',
-      image: 'images/rooms/premium-room.svg',
-      is_featured: true,
-    },
-    {
-      id: 3,
-      slug: 'executive-suite',
-      name: 'Executive Suite',
-      type: 'Executive',
-      price_per_night: 12500,
-      size_sqft: 650,
-      max_guests: 3,
-      bed_type: 'Super King Bed',
-      view: 'Panoramic Skyline View',
-      description: 'A sophisticated corner suite boasting an expansive separate lounge salon, ergonomic executive workstation, deep marble bath, and dedicated concierge privilege.',
-      amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-      availability_status: 'limited',
-      image: 'images/rooms/executive-suite.svg',
-      is_featured: true,
-    },
-  ];
-}

@@ -49,17 +49,42 @@
         return;
       }
 
-      // Success State Simulation
-      alertBox.textContent = `✓ Thank you, ${nameVal}! Your message regarding "${subjectVal}" has been sent to our concierge desk. We will respond to ${emailVal} within 4 business hours.`;
-      alertBox.className = 'booking-alert is-success';
-      alertBox.style.display = 'flex';
+      // POST to backend/api/contact.php on valid submission
+      fetch('backend/api/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: nameVal,
+          email: emailVal,
+          phone: phoneVal,
+          subject: subjectVal,
+          message: messageVal
+        })
+      })
+      .then(async (res) => {
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.message || `Server error ${res.status}`);
+        }
+        return res.json();
+      })
+      .then(() => {
+        // Success State
+        alertBox.textContent = `✓ Thank you, ${nameVal}! Your message regarding "${subjectVal}" has been sent to our concierge desk. We will respond to ${emailVal} within 4 business hours.`;
+        alertBox.className = 'booking-alert is-success';
+        alertBox.style.display = 'flex';
 
-      contactForm.reset();
+        contactForm.reset();
 
-      // Clear alert after 10s
-      setTimeout(() => {
-        alertBox.style.display = 'none';
-      }, 10000);
+        // Clear alert after 10s
+        setTimeout(() => {
+          alertBox.style.display = 'none';
+        }, 10000);
+      })
+      .catch((err) => {
+        console.error('Fetch error for backend/api/contact.php:', err);
+        showError(err.message || 'Network error connecting to contact service. Please try again.');
+      });
     });
 
     function showError(msg, inputEl) {

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="beachSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a3342" />
+      <stop offset="60%" stop-color="#b48358" />
+      <stop offset="100%" stop-color="#dfc8a5" />
+    </linearGradient>
+    <linearGradient id="beachWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d5a73" />
+      <stop offset="70%" stop-color="#1f3344" />
+      <stop offset="100%" stop-color="#18232e" />
+    </linearGradient>
+    <linearGradient id="beachSand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c5a880" />
+      <stop offset="100%" stop-color="#9e8055" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#beachSky)"/>
+  <circle cx="400" cy="220" r="70" fill="#f4ebd9" opacity="0.85"/>
+  <path d="M0,280 C200,260 600,300 800,270 L800,420 L0,420 Z" fill="url(#beachWater)"/>
+  <path d="M0,330 C250,300 550,360 800,320 L800,500 L0,500 Z" fill="url(#beachSand)"/>
+  <!-- Palm silhouettes -->
+  <path d="M80,500 Q120,340 160,260 Q170,240 180,220" stroke="#18191c" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M180,220 Q130,200 90,220 M180,220 Q150,180 120,170 M180,220 Q200,160 210,140 M180,220 Q230,180 250,190 M180,220 Q240,220 270,240" stroke="#18191c" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Badge -->
+  <rect x="32" y="32" width="130" height="32" rx="16" fill="#18191c" fill-opacity="0.85"/>
+  <text x="97" y="53" fill="#c5a880" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1">2.5 KM AWAY</text>
+  <text x="400" y="460" fill="#ffffff" font-family="'Playfair Display', serif" font-size="28" font-weight="600" text-anchor="middle">Golden Promenade Beach</text>
+</svg>

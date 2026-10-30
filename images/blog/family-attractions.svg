@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#192026"/>
+      <stop offset="60%" stop-color="#24333d"/>
+      <stop offset="100%" stop-color="#3d5a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg5)"/>
+  <!-- Ferris wheel / Carousel Silhouette -->
+  <circle cx="400" cy="200" r="90" fill="none" stroke="#c5a880" stroke-width="2.5"/>
+  <circle cx="400" cy="200" r="14" fill="#c5a880"/>
+  <line x1="400" y1="110" x2="400" y2="290" stroke="#c5a880" stroke-width="1.5"/>
+  <line x1="310" y1="200" x2="490" y2="200" stroke="#c5a880" stroke-width="1.5"/>
+  <line x1="336" y1="136" x2="464" y2="264" stroke="#c5a880" stroke-width="1.5"/>
+  <line x1="464" y1="136" x2="336" y2="264" stroke="#c5a880" stroke-width="1.5"/>
+  <!-- Cabins -->
+  <circle cx="400" cy="110" r="10" fill="#dfc8a5"/>
+  <circle cx="400" cy="290" r="10" fill="#dfc8a5"/>
+  <circle cx="310" cy="200" r="10" fill="#dfc8a5"/>
+  <circle cx="490" cy="200" r="10" fill="#dfc8a5"/>
+  <rect x="50" y="40" width="140" height="28" rx="14" fill="#c5a880" fill-opacity="0.2"/>
+  <text x="120" y="59" fill="#c5a880" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">FAMILY TRAVEL</text>
+  <text x="400" y="420" fill="#ffffff" font-family="'Playfair Display', serif" font-size="30" font-weight="600" text-anchor="middle">Memorable Adventures for All Ages</text>
+</svg>

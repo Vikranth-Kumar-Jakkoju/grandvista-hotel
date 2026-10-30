@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mallSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18191c"/>
+      <stop offset="100%" stop-color="#2a2c33"/>
+    </linearGradient>
+    <linearGradient id="mallGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c5a880" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#dfc8a5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#18191c" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#mallSky)"/>
+  <!-- Grand Arched Structure -->
+  <path d="M200,500 L200,220 C200,120 600,120 600,220 L600,500 Z" fill="#202227" stroke="#c5a880" stroke-width="2"/>
+  <path d="M250,500 L250,240 C250,160 550,160 550,240 L550,500 Z" fill="url(#mallGlass)" stroke="#c5a880" stroke-width="1.5"/>
+  <!-- Pillars & Atrium lines -->
+  <line x1="400" y1="140" x2="400" y2="500" stroke="#c5a880" stroke-width="2"/>
+  <line x1="320" y1="180" x2="320" y2="500" stroke="#c5a880" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="480" y1="180" x2="480" y2="500" stroke="#c5a880" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <!-- Chandeliers / Geometric Lights -->
+  <circle cx="400" cy="240" r="28" fill="#c5a880" opacity="0.8"/>
+  <circle cx="400" cy="240" r="16" fill="#fff" opacity="0.9"/>
+  <!-- Distance Badge -->
+  <rect x="32" y="32" width="130" height="32" rx="16" fill="#18191c" stroke="#c5a880" stroke-width="1"/>
+  <text x="97" y="53" fill="#c5a880" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1">1.2 KM AWAY</text>
+  <text x="400" y="460" fill="#ffffff" font-family="'Playfair Display', serif" font-size="28" font-weight="600" text-anchor="middle">The Imperial Luxury Galleria</text>
+</svg>

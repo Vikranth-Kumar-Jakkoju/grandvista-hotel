@@ -11,7 +11,7 @@
     { id: 1, category: 'exterior', title: 'Grand Heritage Facade', desc: 'Colonial classical architecture illuminated at dusk', src: 'images/hotel/exterior.svg' },
     { id: 2, category: 'lobby', title: 'The Grand Reception Atrium', desc: 'Handcrafted crystal chandeliers and Italian marble floors', src: 'images/hotel/lobby.svg' },
     { id: 3, category: 'rooms', title: 'Deluxe Room & City Panorama', desc: 'Plush walnut appointments and floor-to-ceiling skyline views', src: 'images/rooms/deluxe-room.svg' },
-    { id: 4, category: 'pool', title: 'Rooftop Heated Infinity Pool', desc: 'Panoramic capital vistas and sunset cocktail terrace', src: 'images/hotel/pool.svg' },
+    { id: 4, category: 'pool', title: 'Rooftop Heated Infinity Pool', desc: 'Panoramic Visakhapatnam coastal views and sunset cocktail terrace', src: 'images/hotel/pool.svg' },
     { id: 5, category: 'restaurant', title: 'The Sommelier Cellar & Fine Dining', desc: 'Michelin-calibre gastronomy and vintage sommelier collection', src: 'images/hotel/restaurant.svg' },
     { id: 6, category: 'spa', title: 'Ayurvedic & Holistic Wellness Spa', desc: 'Private herbal steam suites and ancient rejuvenating treatments', src: 'images/hotel/spa.svg' },
     { id: 7, category: 'events', title: 'Imperial Grand Ballroom', desc: 'Colonial arched ceilings for state banquets and royal celebrations', src: 'images/hotel/events.svg' },
@@ -19,7 +19,7 @@
     { id: 9, category: 'rooms', title: 'Executive Suite Master Salon', desc: 'Expansive private parlor and ergonomic marble executive work desk', src: 'images/rooms/executive-suite.svg' },
     { id: 10, category: 'rooms', title: 'Presidential Grand Suite', desc: 'Wraparound terrace, dining salon and 24h butler service', src: 'images/rooms/suite.svg' },
     { id: 11, category: 'rooms', title: 'Ensuite Marble Bathroom & Tub', desc: 'Deep-soaking freestanding oval bathtub and rain shower', src: 'images/rooms/gallery/bathroom.svg' },
-    { id: 12, category: 'exterior', title: 'Hotel Portico & Diplomatic Gardens', desc: 'Private chauffeured porte-cochere and manicured palms', src: 'images/hotel/hotel-intro.svg' },
+    { id: 12, category: 'exterior', title: 'Hotel Portico & Coastal Gardens', desc: 'Private chauffeured porte-cochere and manicured palms', src: 'images/hotel/hotel-intro.svg' },
   ];
 
   let currentCategory = 'all';

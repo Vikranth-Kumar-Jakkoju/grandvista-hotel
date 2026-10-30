@@ -3,7 +3,7 @@
  * File: js/filters.js
  * 
  * Features:
- * 1. Fetches all room records from data/rooms.json (with file:// fallback)
+ * 1. Fetches all room records from backend/api/rooms.php
  * 2. Multi-parameter client-side filtering:
  *    - Room Type
  *    - Max Guests
@@ -49,12 +49,17 @@
     if (!DOM.grid) return;
 
     try {
-      const response = await fetch('data/rooms.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const response = await fetch('backend/api/rooms.php');
+      if (!response.ok) {
+        console.error('Fetch error for backend/api/rooms.php, status:', response.status);
+        showApiErrorMessage(DOM.grid, `Server error ${response.status}: Unable to load accommodations. Please try again later.`);
+        return;
+      }
       allRooms = await response.json();
     } catch (err) {
-      console.warn('Using local rooms fallback dataset due to fetch limitation:', err);
-      allRooms = getLocalFallbackRooms();
+      console.error('Fetch error for backend/api/rooms.php:', err);
+      showApiErrorMessage(DOM.grid, 'Network error connecting to accommodations service. Please check your connection.');
+      return;
     }
 
     // Populate initial views and bed types dynamically if needed or bind filters
@@ -349,90 +354,22 @@
   }
 
   /**
-   * Fallback dataset matching data/rooms.json (if file:// CORS restriction is active)
+   * Render visible error state when API request fails
    */
-  function getLocalFallbackRooms() {
-    return [
-      {
-        id: 1,
-        slug: 'deluxe-room',
-        name: 'Deluxe Room',
-        type: 'Deluxe',
-        price_per_night: 5500,
-        size_sqft: 380,
-        max_guests: 2,
-        bed_type: 'King Bed',
-        view: 'City View',
-        description: 'An elegantly appointed sanctuary featuring custom walnut furnishings, Italian marble bathroom with rain shower, and sweeping views of the vibrant city skyline.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'available',
-        image: 'images/rooms/deluxe-room.svg',
-        is_featured: true
-      },
-      {
-        id: 2,
-        slug: 'premium-room',
-        name: 'Premium Room',
-        type: 'Premium',
-        price_per_night: 7800,
-        size_sqft: 460,
-        max_guests: 2,
-        bed_type: 'King Bed',
-        view: 'Garden View',
-        description: 'Designed for discerning guests, featuring a private step-out balcony overlooking manicured courtyard gardens, luxury plush bedding, and an exquisite soaking bathtub.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'available',
-        image: 'images/rooms/premium-room.svg',
-        is_featured: true
-      },
-      {
-        id: 3,
-        slug: 'executive-suite',
-        name: 'Executive Suite',
-        type: 'Executive',
-        price_per_night: 12500,
-        size_sqft: 650,
-        max_guests: 3,
-        bed_type: 'Super King Bed',
-        view: 'Panoramic Skyline View',
-        description: 'A sophisticated corner suite boasting an expansive separate lounge salon, ergonomic executive workstation, deep marble bath, and dedicated concierge privilege.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'limited',
-        image: 'images/rooms/executive-suite.svg',
-        is_featured: true
-      },
-      {
-        id: 4,
-        slug: 'family-room',
-        name: 'Family Room',
-        type: 'Family',
-        price_per_night: 10200,
-        size_sqft: 580,
-        max_guests: 4,
-        bed_type: '2 Queen Beds',
-        view: 'Courtyard View',
-        description: 'Thoughtfully crafted for families seeking seamless togetherness without compromising on luxury, offering twin plush queen beds and an inviting residential seating alcove.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'available',
-        image: 'images/rooms/family-room.svg',
-        is_featured: false
-      },
-      {
-        id: 5,
-        slug: 'suite',
-        name: 'Suite',
-        type: 'Suite',
-        price_per_night: 21500,
-        size_sqft: 920,
-        max_guests: 4,
-        bed_type: 'California King Bed',
-        view: 'Panoramic Skyline View',
-        description: 'The crowning jewel of GrandVista. Features a grand master bedroom, private dining alcove, wraparound open-air terrace, and bespoke 24-hour butler assistance.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'limited',
-        image: 'images/rooms/suite.svg',
-        is_featured: false
-      }
-    ];
+  function showApiErrorMessage(container, message) {
+    if (!container) return;
+    container.innerHTML = `
+      <div class="rooms-empty-state" style="grid-column: 1 / -1; border-color: #ef4444;" role="alert">
+        <div class="empty-state-icon" style="color: #ef4444;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+        <h3 class="empty-state-title" style="color: #b91c1c;">Unable to Load Accommodations</h3>
+        <p class="empty-state-desc">${escapeHTML(message)}</p>
+      </div>
+    `;
   }
 })();

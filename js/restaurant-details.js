@@ -13,230 +13,7 @@
 (function () {
   'use strict';
 
-  // Fallback venue data for offline / file:// protocol
-  const FALLBACK_RESTAURANTS = [
-    {
-      id: "grandvista-restaurant",
-      slug: "grandvista-restaurant",
-      name: "GrandVista Restaurant",
-      subtitle: "Contemporary Fine Dining & Royal Indian Heritage",
-      hero_image: "images/dining/restaurant.svg",
-      gallery: [
-        {
-          src: "images/dining/restaurant.svg",
-          caption: "The Grand Dining Hall with crystal chandeliers and intimate banquette seating",
-          alt: "GrandVista Restaurant Grand Dining Room"
-        },
-        {
-          src: "images/dining/signature-dish.svg",
-          caption: "Signature Pan-Seared Himalayan Trout with Saffron Infusion",
-          alt: "Signature Culinary Dish"
-        },
-        {
-          src: "images/dining/dessert.svg",
-          caption: "Grand Chocolate Sphere with Gold Dust and Fresh Berry Coulis",
-          alt: "Artisan Dessert"
-        },
-        {
-          src: "images/dining/patio.svg",
-          caption: "Courtyard Al Fresco Verandah overlooking the garden fountains",
-          alt: "Verandah Al Fresco Seating"
-        }
-      ],
-      cuisine: [
-        "Modern Indian",
-        "European Contemporary",
-        "Awadhi Royal Cuisine"
-      ],
-      hours: "Breakfast: 7:00 AM – 10:30 AM | Lunch: 12:30 PM – 3:30 PM | Dinner: 7:00 PM – 11:30 PM",
-      dress_code: "Smart Casual / Elegant Evening (Collared shirts, no athletic wear)",
-      location: "Main Lobby Level, East Wing Atrium",
-      description: "GrandVista Restaurant presents an epicurean journey marrying centuries-old royal culinary heritage with progressive global gastronomy. Under the guidance of our Master Executive Chef, each recipe honors heritage spices, sustainable farm-to-table produce, and theatrical table-side presentations.",
-      signature_dishes: [
-        {
-          name: "Royal Saffron Dum Biryani",
-          description: "Slow-cooked aged basmati rice layered with aromatic saffron, marinated meat or royal wild mushrooms, sealed with artisanal whole wheat dough.",
-          price: 1450,
-          is_veg: false,
-          image: "images/dining/signature-dish.svg"
-        },
-        {
-          name: "Truffled Morel & Paneer Tikka",
-          description: "Charcoal-smoked cottage cheese stuffed with Kashmiri morels, glazed in black truffle butter and hung curd marinade.",
-          price: 1250,
-          is_veg: true,
-          image: "images/dining/signature-dish.svg"
-        },
-        {
-          name: "Grand Cru Chocolate Sphere",
-          description: "70% Valrhona dark chocolate dome melted table-side with warm Madagascar bourbon vanilla ganache and raspberry coulis.",
-          price: 850,
-          is_veg: true,
-          image: "images/dining/dessert.svg"
-        }
-      ]
-    },
-    {
-      id: "sky-lounge",
-      slug: "sky-lounge",
-      name: "Sky Lounge & Rooftop Bar",
-      subtitle: "Panoramic Skyline Views, Tapas & Mixology",
-      hero_image: "images/dining/sky-lounge.svg",
-      gallery: [
-        {
-          src: "images/dining/sky-lounge.svg",
-          caption: "Rooftop observation terrace with illuminated skyline vistas",
-          alt: "Sky Lounge Rooftop Observation View"
-        },
-        {
-          src: "images/dining/cocktail.svg",
-          caption: "Bespoke Oak-Smoked Bourbon Cocktail crafted by our Resident Mixologist",
-          alt: "Handcrafted Rooftop Cocktail"
-        },
-        {
-          src: "images/dining/patio.svg",
-          caption: "Starlit lounge cabanas with fire pits and plush lounge sofas",
-          alt: "Rooftop Starlit Cabana"
-        },
-        {
-          src: "images/dining/signature-dish.svg",
-          caption: "Gourmet Robata Skewers and Mediterranean mezze platters",
-          alt: "Rooftop Tapas Platter"
-        }
-      ],
-      cuisine: [
-        "Artisanal Tapas",
-        "Wood-Fired Robata Grill",
-        "Craft Mixology & Rare Spirits"
-      ],
-      hours: "Evening & Nightly: 5:00 PM – 1:00 AM (Live DJ from 8:00 PM)",
-      dress_code: "Chic Evening / Glamour (Collared shirts for gentlemen)",
-      location: "Rooftop Terrace (14th Floor)",
-      description: "Perched on the 14th floor commanding uninterrupted 360-degree vistas across the capital skyline, Sky Lounge is the city's premier evening sanctuary. Sip bespoke barrel-aged concoctions, rare vintage malts, and sample artisanal small plates while listening to soothing deep ambient house grooves under the open sky.",
-      signature_dishes: [
-        {
-          name: "Smoked Hickory Old Fashioned",
-          description: "Single barrel bourbon infused with orange zest, Angostura bitters, served under a cloche with fresh hickory wood smoke.",
-          price: 950,
-          is_veg: true,
-          image: "images/dining/cocktail.svg"
-        },
-        {
-          name: "Glazed Pork Belly / Tofu Robata Skewers",
-          description: "Slow-braised skewers caramelized over binchotan charcoal with yuzu honey reduction and toasted sesame.",
-          price: 1100,
-          is_veg: false,
-          image: "images/dining/signature-dish.svg"
-        },
-        {
-          name: "Truffle Edamame & Parmesan Dumplings",
-          description: "Steamed crystal dumplings filled with crushed edamame, shaved black truffles, and aged parmesan broth.",
-          price: 980,
-          is_veg: true,
-          image: "images/dining/signature-dish.svg"
-        }
-      ]
-    },
-    {
-      id: "the-grand-cafe",
-      slug: "the-grand-cafe",
-      name: "The Grand Café",
-      subtitle: "Artisanal Boulangerie, Viennoiserie & Single-Origin Roasts",
-      hero_image: "images/dining/cafe.svg",
-      gallery: [
-        {
-          src: "images/dining/cafe.svg",
-          caption: "Sunlit European brass & marble café atrium with fresh morning pastry displays",
-          alt: "The Grand Café Marble Atrium"
-        },
-        {
-          src: "images/dining/dessert.svg",
-          caption: "Handcrafted Parisian Macarons and seasonal French fruit tartlets",
-          alt: "Artisan Pastry & Tarts"
-        },
-        {
-          src: "images/dining/patio.svg",
-          caption: "Sun-dappled courtyard garden patio for relaxed morning coffee and books",
-          alt: "Courtyard Café Patio"
-        },
-        {
-          src: "images/dining/signature-dish.svg",
-          caption: "Freshly baked sourdough tartines with avocado, smoked salmon, and poached egg",
-          alt: "Artisan Sourdough Tartine"
-        }
-      ],
-      cuisine: [
-        "French Boulangerie & Viennoiserie",
-        "Specialty Single-Origin Coffees",
-        "Gourmet Sandwiches & High Tea"
-      ],
-      hours: "Daily: 6:30 AM – 10:00 PM (Oven bakes fresh 3 times daily)",
-      dress_code: "Casual / Relaxed Comfort",
-      location: "Lobby Level, North Courtyard Colonnade",
-      description: "The Grand Café is an intimate, sun-dappled haven evoking Parisian boulevards. Savor morning sourdough croissants baked fresh throughout the day, pour-over specialty Arabica coffees from Chikmagalur estates, and bespoke afternoon high tea tiered stands served in bone china.",
-      signature_dishes: [
-        {
-          name: "Chikmagalur Pour-Over Single Origin",
-          description: "Shade-grown specialty coffee brewed manually table-side with citrus and bittersweet dark cocoa undertones.",
-          price: 420,
-          is_veg: true,
-          image: "images/dining/cafe.svg"
-        },
-        {
-          name: "Almond Croissant & Wild Berry Tart",
-          description: "Flaky hand-laminated butter croissant filled with frangipane cream, paired with fresh seasonal berries.",
-          price: 480,
-          is_veg: true,
-          image: "images/dining/dessert.svg"
-        },
-        {
-          name: "Avocado & Burrata Sourdough Tartine",
-          description: "Crusty wood-fired sourdough toast topped with Hass avocado, creamy artisanal burrata, heirloom cherry tomatoes, and basil oil.",
-          price: 750,
-          is_veg: true,
-          image: "images/dining/signature-dish.svg"
-        }
-      ]
-    }
-  ];
-
-  // Fallback menu items
-  const FALLBACK_MENUS = {
-    "grandvista-restaurant": [
-      { id: "gvr-1", name: "Kashmiri Morel & Truffle Tikka", category: "starters", description: "Charcoal-tandoor smoked cottage cheese morsels stuffed with wild Himalayan morels, brushed with black truffle butter.", price: 1250, is_veg: true },
-      { id: "gvr-2", name: "Galouti Kebab on Sheermal", category: "starters", description: "Melt-in-mouth Awadhi spiced lamb patties seasoned with 24 royal herbs, served atop miniature saffron milk breads.", price: 1400, is_veg: false },
-      { id: "gvr-3", name: "Burrata with Charred Fig & Kasundi", category: "starters", description: "Fresh artisan burrata paired with wood-roasted figs, Bengal mustard Kasundi dressing, and roasted walnuts.", price: 950, is_veg: true },
-      { id: "gvr-4", name: "Pan-Seared Sea Bass with Saffron Jus", category: "mains", description: "Wild-caught Chilean sea bass filet on a bed of curried leeks, served with fragrant Kashmiri saffron emulsion.", price: 1850, is_veg: false },
-      { id: "gvr-5", name: "Dal GrandVista — 36-Hour Simmered", category: "mains", description: "Our legendary black lentils slowly simmered over woodfire embers for 36 hours with churned white butter and tomato puree.", price: 890, is_veg: true },
-      { id: "gvr-6", name: "Dum Pukht Awadhi Nalli Nihari", category: "mains", description: "Slow-braised tender lamb shanks in an aromatic spiced marrow gravy, topped with ginger juliennes and fresh mint.", price: 1650, is_veg: false },
-      { id: "gvr-7", name: "Grand Cru Valrhona Chocolate Sphere", category: "desserts", description: "Dark chocolate dome filled with salted caramel mousse and hazelnut praline, melted table-side with hot berry coulis.", price: 850, is_veg: true },
-      { id: "gvr-8", name: "Rosewater & Pistachio Kulfi Tasting", category: "desserts", description: "Slow-reduced clotted milk ice cream scented with Persian rosewater and edible 24K silver leaf.", price: 680, is_veg: true },
-      { id: "gvr-9", name: "The Royal Viceroy — Signature Concoction", category: "drinks", description: "Rare scotch whisky infused with Darjeeling First Flush tea, smoked clove mist, and spiced demerara syrup.", price: 1100, is_veg: true },
-      { id: "gvr-10", name: "Saffron Cardamom Lassi Shrub (Mocktail)", category: "drinks", description: "Hand-churned organic yogurt shaken with organic saffron honey, crushed green cardamom, and rose petal infusion.", price: 550, is_veg: true }
-    ],
-    "sky-lounge": [
-      { id: "sky-1", name: "Robata Glazed Shiitake & Asparagus", category: "starters", description: "Charcoal-grilled mountain asparagus and jumbo shiitake mushrooms glazed with sweet yuzu soy reduction.", price: 890, is_veg: true },
-      { id: "sky-2", name: "Crispy Calamari & Tiger Prawns", category: "starters", description: "Lightly tempura-dusted squid rings and wild prawns tossed in Togarashi spice with citrus wasabi aioli.", price: 1200, is_veg: false },
-      { id: "sky-3", name: "Truffle & Edamame Crystal Dumplings", category: "starters", description: "Delicate steamed translucent parcels filled with crushed edamame beans and aromatic black truffle oil.", price: 980, is_veg: true },
-      { id: "sky-4", name: "Wagyu & Truffle Brioche Sliders (2 pcs)", category: "mains", description: "Premium wagyu patties seared rare on toasted mini brioche buns with aged Gruyère and onion jam.", price: 1650, is_veg: false },
-      { id: "sky-5", name: "Artisanal Mezze & Flatbread Platter", category: "mains", description: "Roasted beet hummus, smoked baba ganoush, muhammara, marinated kalamata olives, and fresh wood-fired za'atar lavash.", price: 1150, is_veg: true },
-      { id: "sky-6", name: "Smoked Hickory Old Fashioned", category: "drinks", description: "Kentucky bourbon, aromatic bitters, brown sugar cube, presented in cut crystal with captured hickory smoke.", price: 950, is_veg: true },
-      { id: "sky-7", name: "GrandVista Twilight Sky Martini", category: "drinks", description: "Empress 1908 botanical gin, elderflower liqueur, freshly squeezed lime juice, and a lavender mist float.", price: 900, is_veg: true },
-      { id: "sky-8", name: "Yuzu Citrus Posset & Matcha Crisp", category: "desserts", description: "Velvety Japanese yuzu cream chilled and crowned with candied citrus peels and delicate matcha tuile cookies.", price: 750, is_veg: true }
-    ],
-    "the-grand-cafe": [
-      { id: "tgc-1", name: "Avocado & Burrata Sourdough Tartine", category: "starters", description: "Artisan country loaf rubbed with garlic, crushed Hass avocado, creamy Puglia burrata, and basil oil drizzle.", price: 750, is_veg: true },
-      { id: "tgc-2", name: "Smoked Salmon & Capers Bagel", category: "starters", description: "House-baked everything bagel with Norwegian smoked salmon, herbed cream cheese, capers, and shaved red onion.", price: 890, is_veg: false },
-      { id: "tgc-3", name: "Truffled Forest Mushroom Quiche", category: "mains", description: "Flaky butter pastry filled with wild sautéed morels, porcini, Gruyère cheese custard, and organic petite salad.", price: 820, is_veg: true },
-      { id: "tgc-4", name: "GrandVista Club Sandwich", category: "mains", description: "Triple-deck toasted brioche layered with herb-roasted chicken breast, applewood smoked bacon, farm eggs, and Dijon mayo.", price: 950, is_veg: false },
-      { id: "tgc-5", name: "Warm Hand-Laminated Pain Au Chocolat", category: "desserts", description: "French Normandy butter laminated pastry filled with double batons of 64% Valrhona dark chocolate.", price: 380, is_veg: true },
-      { id: "tgc-6", name: "Madagascar Vanilla Bean Mille-Feuille", category: "desserts", description: "Crisp caramelized puff pastry sheets layered with light Tahitian vanilla diplomat cream and fresh raspberries.", price: 540, is_veg: true },
-      { id: "tgc-7", name: "Single-Origin Chikmagalur Pour-Over", category: "drinks", description: "Specialty estate roast prepared via V60 filter, revealing bright citrus notes and a velvety bittersweet chocolate finish.", price: 420, is_veg: true },
-      { id: "tgc-8", name: "Iced Spanish Saffron Latte", category: "drinks", description: "Double espresso shot layered over condensed milk, chilled oat milk, and a delicate pinch of real saffron threads.", price: 490, is_veg: true }
-    ]
-  };
-
-  let allVenues = FALLBACK_RESTAURANTS;
+  let allVenues = [];
   let currentVenue = null;
   let currentMenuItems = [];
   let activeMenuCategory = 'all';
@@ -247,42 +24,72 @@
     const urlParams = new URLSearchParams(window.location.search);
     const slug = (urlParams.get('restaurant') || 'grandvista-restaurant').toLowerCase();
 
-    currentVenue = allVenues.find((v) => v.slug === slug) || allVenues[0];
     loadVenueData(slug);
     initReservationForm();
   }
 
-  function loadVenueData(slug) {
-    Promise.all([
-      fetch('data/restaurants.json').then((r) => r.json()).catch(() => FALLBACK_RESTAURANTS),
-      fetch('data/menu-items.json').then((r) => r.json()).catch(() => FALLBACK_MENUS)
-    ])
-      .then(([restaurants, menus]) => {
-        allVenues = Array.isArray(restaurants) ? restaurants : FALLBACK_RESTAURANTS;
-        currentVenue = allVenues.find((v) => v.slug === slug) || allVenues[0];
-        const allMenus = menus || FALLBACK_MENUS;
-        currentMenuItems = allMenus[currentVenue.slug] || [];
+  async function loadVenueData(slug) {
+    try {
+      const [resRestaurants, resMenus] = await Promise.all([
+        fetch('backend/api/restaurants.php'),
+        fetch(`backend/api/menu-items.php?restaurant=${encodeURIComponent(slug)}`)
+      ]);
 
-        renderVenue(currentVenue);
-        renderGallery(currentVenue);
-        renderSignatureDishes(currentVenue);
-        renderDigitalMenu();
-        initMenuFilters();
-        prefillReservationVenue(currentVenue);
-      })
-      .catch((err) => {
-        console.warn('Fallback rendering for restaurant-details:', err);
-        allVenues = FALLBACK_RESTAURANTS;
-        currentVenue = allVenues.find((v) => v.slug === slug) || allVenues[0];
-        currentMenuItems = FALLBACK_MENUS[currentVenue.slug] || [];
+      if (!resRestaurants.ok) {
+        console.error('Fetch error for backend/api/restaurants.php, status:', resRestaurants.status);
+        showVenueError(`Server error ${resRestaurants.status}: Unable to load restaurant information. Please try again later.`);
+        return;
+      }
+      if (!resMenus.ok) {
+        console.error('Fetch error for backend/api/menu-items.php, status:', resMenus.status);
+        showVenueError(`Server error ${resMenus.status}: Unable to load dining menu. Please try again later.`);
+        return;
+      }
 
-        renderVenue(currentVenue);
-        renderGallery(currentVenue);
-        renderSignatureDishes(currentVenue);
-        renderDigitalMenu();
-        initMenuFilters();
-        prefillReservationVenue(currentVenue);
-      });
+      const restaurants = await resRestaurants.json();
+      const menus = await resMenus.json();
+
+      allVenues = Array.isArray(restaurants) ? restaurants : [];
+      currentVenue = allVenues.find((v) => v.slug === slug) || allVenues[0];
+
+      if (!currentVenue) {
+        console.error('Restaurant not found for slug:', slug);
+        showVenueError(`Requested restaurant "${slug}" could not be found.`);
+        return;
+      }
+
+      currentMenuItems = Array.isArray(menus) ? menus : [];
+
+      renderVenue(currentVenue);
+      renderGallery(currentVenue);
+      renderSignatureDishes(currentVenue);
+      renderDigitalMenu();
+      initMenuFilters();
+      prefillReservationVenue(currentVenue);
+    } catch (err) {
+      console.error('Fetch error loading restaurant details:', err);
+      showVenueError('Network error connecting to dining service. Please check your connection.');
+    }
+  }
+
+  function showVenueError(message) {
+    const main = document.querySelector('main');
+    if (!main) return;
+    const errorContainer = document.querySelector('.section--warm .container') || main;
+    errorContainer.innerHTML = `
+      <div class="rooms-empty-state" style="border-color: #ef4444; margin: 3rem auto; max-width: 600px; text-align: center;" role="alert">
+        <div class="empty-state-icon" style="color: #ef4444;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+        <h2 class="empty-state-title" style="color: #b91c1c;">Unable to Load Restaurant Information</h2>
+        <p class="empty-state-desc">${message}</p>
+        <a href="dining.html" class="btn btn--primary" style="margin-top: 1.5rem;">Return to Dining Overview</a>
+      </div>
+    `;
   }
 
   function renderVenue(venue) {
@@ -575,7 +382,7 @@
       });
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       let isValid = true;
@@ -635,8 +442,51 @@
 
       if (!isValid) return;
 
-      // Generate Reference Code
-      const refNumber = 'GVR-' + Math.floor(10000 + Math.random() * 90000);
+      // Clear form error banner if present
+      const alertEl = document.getElementById('res-form-general-error');
+      if (alertEl) alertEl.style.display = 'none';
+
+      // POST to backend/api/table-reservation.php
+      let refNumber = '';
+      const reservationData = {
+        venue: selectedSlug,
+        restaurant_id: matchedVenue ? matchedVenue.id : 1,
+        name: name,
+        email: email,
+        phone: phone,
+        date: date,
+        time: time,
+        guests: parseInt(guests, 10) || 2,
+        seating: seating,
+        requests: requests
+      };
+
+      try {
+        const resp = await fetch('backend/api/table-reservation.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(reservationData)
+        });
+        if (!resp.ok) {
+          console.error('Fetch error for backend/api/table-reservation.php, status:', resp.status);
+          const errData = await resp.json().catch(() => ({}));
+          const errMsg = errData.message || (Array.isArray(errData.errors) ? errData.errors.join(', ') : `Server error ${resp.status}: Unable to complete reservation.`);
+          showReservationError(errMsg);
+          return;
+        }
+        const data = await resp.json();
+        if (data && data.success && (data.reference || data.data?.reference)) {
+          refNumber = data.reference || data.data?.reference;
+        } else {
+          console.error('Fetch error for backend/api/table-reservation.php, unexpected response:', data);
+          showReservationError(data?.message || 'Server did not return a valid confirmation.');
+          return;
+        }
+      } catch (err) {
+        console.error('Fetch error for backend/api/table-reservation.php:', err);
+        showReservationError('Network error connecting to table reservation service. Please check your connection.');
+        return;
+      }
 
       // Render Confirmation
       if (confirmationBox) {
@@ -671,10 +521,30 @@
           dateInput.value = today;
         }
         document.querySelectorAll('.form-error').forEach((el) => (el.textContent = ''));
+        const alertEl = document.getElementById('res-form-general-error');
+        if (alertEl) alertEl.style.display = 'none';
         if (confirmationBox) confirmationBox.style.display = 'none';
         form.style.display = 'block';
       });
     }
+  }
+
+  function showReservationError(message) {
+    let alertEl = document.getElementById('res-form-general-error');
+    if (!alertEl) {
+      alertEl = document.createElement('div');
+      alertEl.id = 'res-form-general-error';
+      alertEl.className = 'form-error';
+      alertEl.style.cssText = 'color: #b91c1c; font-size: 0.875rem; margin-bottom: 12px; text-align: center; padding: 10px; background: #fee2e2; border-radius: 4px; border: 1px solid #f87171;';
+      const form = document.getElementById('table-reservation-form');
+      if (form) {
+        const submitWrap = form.querySelector('.reservation-grid__full:last-of-type') || form;
+        submitWrap.prepend(alertEl);
+      }
+    }
+    alertEl.textContent = message;
+    alertEl.style.display = 'block';
+    alertEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function showError(elementId, message) {

@@ -113,7 +113,12 @@
     confirmCheckout: document.getElementById('confirm-checkout'),
     confirmNights: document.getElementById('confirm-nights'),
     confirmGuests: document.getElementById('confirm-guests'),
+    confirmRoomSubtotal: document.getElementById('confirm-room-subtotal'),
+    confirmServicesSubtotal: document.getElementById('confirm-services-subtotal'),
+    confirmTaxes: document.getElementById('confirm-taxes'),
     confirmTotal: document.getElementById('confirm-total-amount'),
+    confirmBookingStatus: document.getElementById('confirm-booking-status'),
+    confirmStatusText: document.getElementById('confirm-status-text'),
     bookAnotherBtn: document.getElementById('book-another-btn'),
   };
 
@@ -125,12 +130,17 @@
   async function initBookingFlow() {
     // 1. Fetch room records
     try {
-      const response = await fetch('data/rooms.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const response = await fetch('backend/api/rooms.php');
+      if (!response.ok) {
+        console.error('Fetch error for backend/api/rooms.php, status:', response.status);
+        showAlert(DOM.step1Alert, `Server error ${response.status}: Unable to load accommodations. Please try again later.`);
+        return;
+      }
       bookingState.roomsList = await response.json();
     } catch (err) {
-      console.warn('Booking flow using local fallback dataset:', err);
-      bookingState.roomsList = getLocalFallbackRooms();
+      console.error('Fetch error for backend/api/rooms.php:', err);
+      showAlert(DOM.step1Alert, 'Network error connecting to accommodations service. Please check your connection.');
+      return;
     }
 
     // 2. Setup initial dates & constraints for Step 1
@@ -375,10 +385,65 @@
     }
 
     if (DOM.confirmBookingBtn) {
-      DOM.confirmBookingBtn.addEventListener('click', () => {
-        // Generate random fake booking reference: GVH-2026-#####
-        const randomNum = Math.floor(10000 + Math.random() * 90000);
-        bookingState.bookingReference = `GVH-2026-${randomNum}`;
+      DOM.confirmBookingBtn.addEventListener('click', async () => {
+        const selectedServices = Object.keys(bookingState.services)
+          .filter((k) => bookingState.services[k].selected)
+          .map((k) => ({
+            name: bookingState.services[k].name,
+            price: bookingState.services[k].price
+          }));
+
+        const payload = {
+          room_id: bookingState.selectedRoom ? bookingState.selectedRoom.id : 1,
+          room_slug: bookingState.selectedRoom ? bookingState.selectedRoom.slug : '',
+          guest_name: bookingState.guest.fullName,
+          email: bookingState.guest.email,
+          phone: bookingState.guest.phone,
+          country: bookingState.guest.country || 'India',
+          check_in: bookingState.dates.checkin,
+          check_out: bookingState.dates.checkout,
+          adults: bookingState.dates.adults,
+          children: bookingState.dates.children,
+          rooms_count: bookingState.dates.roomsCount,
+          nights: bookingState.dates.nights,
+          room_subtotal: bookingState.totals.roomTotal,
+          services_subtotal: bookingState.totals.servicesTotal,
+          taxes: bookingState.totals.taxes,
+          total_amount: bookingState.totals.grandTotal,
+          services: selectedServices
+        };
+
+        try {
+          const resp = await fetch('backend/api/booking.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!resp.ok) {
+            console.error('Fetch error for backend/api/booking.php, status:', resp.status);
+            showStep5Error(`Server error ${resp.status}: Unable to process reservation. Please verify your details and try again.`);
+            return;
+          }
+          const data = await resp.json();
+          if (data && data.success && (data.booking_reference || data.data?.booking_reference)) {
+            bookingState.bookingReference = data.booking_reference || data.data?.booking_reference;
+            if (data.data) {
+              if (data.data.room_subtotal !== undefined) bookingState.totals.roomTotal = data.data.room_subtotal;
+              if (data.data.services_subtotal !== undefined) bookingState.totals.servicesTotal = data.data.services_subtotal;
+              if (data.data.taxes !== undefined) bookingState.totals.taxes = data.data.taxes;
+              if (data.data.total_amount !== undefined) bookingState.totals.grandTotal = data.data.total_amount;
+              if (data.data.nights !== undefined) bookingState.dates.nights = data.data.nights;
+            }
+          } else {
+            console.error('Fetch error for backend/api/booking.php, unexpected response:', data);
+            showStep5Error(data?.message || 'Unable to confirm reservation details from server response.');
+            return;
+          }
+        } catch (err) {
+          console.error('Fetch error for backend/api/booking.php:', err);
+          showStep5Error('Network error connecting to booking service. Please check your connection.');
+          return;
+        }
 
         renderConfirmationStep();
         goToStep(6);
@@ -552,7 +617,7 @@
     });
 
     const subtotal = roomTotal + servicesTotal;
-    const taxes = Math.round(subtotal * 0.12); // 12% GST
+    const taxes = Math.round(subtotal * 0.18); // 18% GST (PDR benchmark: 15,000 -> 2,700)
     const grandTotal = subtotal + taxes;
 
     bookingState.totals = {
@@ -684,7 +749,7 @@
           <td>₹${totals.subtotal.toLocaleString('en-IN')}</td>
         </tr>
         <tr>
-          <td>Taxes &amp; Luxury Hospitality Cess (12% GST)</td>
+          <td>Taxes &amp; Luxury Hospitality Cess (18% GST)</td>
           <td>₹${totals.taxes.toLocaleString('en-IN')}</td>
         </tr>
         <tr class="cost-total-row">
@@ -724,7 +789,12 @@
     if (DOM.confirmCheckout) DOM.confirmCheckout.textContent = `${formatDisplayDate(checkout)} (by 12:00 PM)`;
     if (DOM.confirmNights) DOM.confirmNights.textContent = `${nights} Night(s)`;
     if (DOM.confirmGuests) DOM.confirmGuests.textContent = `${adults} Adult(s)${children > 0 ? `, ${children} Child(ren)` : ''}`;
-    if (DOM.confirmTotal) DOM.confirmTotal.textContent = `₹${totals.grandTotal.toLocaleString('en-IN')} (incl. 12% GST)`;
+    if (DOM.confirmRoomSubtotal) DOM.confirmRoomSubtotal.textContent = `₹${totals.roomTotal.toLocaleString('en-IN')}`;
+    if (DOM.confirmServicesSubtotal) DOM.confirmServicesSubtotal.textContent = `₹${totals.servicesTotal.toLocaleString('en-IN')}`;
+    if (DOM.confirmTaxes) DOM.confirmTaxes.textContent = `₹${totals.taxes.toLocaleString('en-IN')}`;
+    if (DOM.confirmTotal) DOM.confirmTotal.textContent = `₹${totals.grandTotal.toLocaleString('en-IN')} (incl. 18% GST)`;
+    if (DOM.confirmBookingStatus) DOM.confirmBookingStatus.textContent = 'Pending Confirmation';
+    if (DOM.confirmStatusText) DOM.confirmStatusText.textContent = 'Pending Confirmation';
   }
 
   /**
@@ -853,85 +923,22 @@
   }
 
   /**
-   * Local Fallback dataset
+   * Render visible error alert in Step 5 review container
    */
-  function getLocalFallbackRooms() {
-    return [
-      {
-        id: 1,
-        slug: 'deluxe-room',
-        name: 'Deluxe Room',
-        type: 'Deluxe',
-        price_per_night: 5500,
-        size_sqft: 380,
-        max_guests: 2,
-        bed_type: 'King Bed',
-        view: 'City View',
-        description: 'An elegantly appointed sanctuary featuring custom walnut furnishings, Italian marble bathroom with rain shower, and sweeping views of the vibrant city skyline.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'available',
-        image: 'images/rooms/deluxe-room.svg',
-      },
-      {
-        id: 2,
-        slug: 'premium-room',
-        name: 'Premium Room',
-        type: 'Premium',
-        price_per_night: 7800,
-        size_sqft: 460,
-        max_guests: 2,
-        bed_type: 'King Bed',
-        view: 'Garden View',
-        description: 'Designed for discerning guests, featuring a private step-out balcony overlooking manicured courtyard gardens, luxury plush bedding, and an exquisite soaking bathtub.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'available',
-        image: 'images/rooms/premium-room.svg',
-      },
-      {
-        id: 3,
-        slug: 'executive-suite',
-        name: 'Executive Suite',
-        type: 'Executive',
-        price_per_night: 12500,
-        size_sqft: 650,
-        max_guests: 3,
-        bed_type: 'Super King Bed',
-        view: 'Panoramic Skyline View',
-        description: 'A sophisticated corner suite boasting an expansive separate lounge salon, ergonomic executive workstation, deep marble bath, and dedicated concierge privilege.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'limited',
-        image: 'images/rooms/executive-suite.svg',
-      },
-      {
-        id: 4,
-        slug: 'family-room',
-        name: 'Family Room',
-        type: 'Family',
-        price_per_night: 10200,
-        size_sqft: 580,
-        max_guests: 4,
-        bed_type: '2 Queen Beds',
-        view: 'Courtyard View',
-        description: 'Thoughtfully crafted for families seeking seamless togetherness without compromising on luxury, offering twin plush queen beds and an inviting residential seating alcove.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'available',
-        image: 'images/rooms/family-room.svg',
-      },
-      {
-        id: 5,
-        slug: 'suite',
-        name: 'Suite',
-        type: 'Suite',
-        price_per_night: 21500,
-        size_sqft: 920,
-        max_guests: 4,
-        bed_type: 'California King Bed',
-        view: 'Panoramic Skyline View',
-        description: 'The crowning jewel of GrandVista. Features a grand master bedroom, private dining alcove, wraparound open-air terrace, and bespoke 24-hour butler assistance.',
-        amenities: ['Wi-Fi', 'TV', 'Mini Bar', 'Bathtub', 'Balcony', 'Work Desk', 'Air Conditioning'],
-        availability_status: 'limited',
-        image: 'images/rooms/suite.svg',
-      },
-    ];
+  function showStep5Error(message) {
+    let errorAlert = document.getElementById('step5-error-alert');
+    if (!errorAlert && DOM.confirmBookingBtn) {
+      errorAlert = document.createElement('div');
+      errorAlert.id = 'step5-error-alert';
+      errorAlert.className = 'booking-alert is-error';
+      errorAlert.setAttribute('role', 'alert');
+      errorAlert.style.marginBottom = 'var(--space-md)';
+      DOM.confirmBookingBtn.parentNode.insertBefore(errorAlert, DOM.confirmBookingBtn);
+    }
+    if (errorAlert) {
+      errorAlert.textContent = message;
+      errorAlert.style.display = 'flex';
+      errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   }
 })();
